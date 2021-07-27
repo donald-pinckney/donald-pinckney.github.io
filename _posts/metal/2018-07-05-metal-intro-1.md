@@ -118,7 +118,14 @@ This class includes an initializer (with an `MTKView` as a parameter), and the t
 Now that we have this skeleton class, we can create an instance in the `viewDidLoad` function and configure `mtkView` with it. First, we add an instance variable for it to the `ViewController` class:
 
 ```swift
-var renderer: Renderer!
+// ... snipping irrelvant code
+class ViewController: NSViewController {
+    
+    // ... snipping irrelvant code
+    var renderer: Renderer! // added this!
+    
+    // ... snipping irrelvant code
+}
 ```
 
 At the end of the `viewDidLoad` function we create an instance of the `Renderer` class and configure the `delegate` property:
