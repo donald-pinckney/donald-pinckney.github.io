@@ -1,9 +1,0 @@
-[book]
-title = "IBook"
-description = "Interactive book experiment"
-author = "Donald Pinckney"
-multilingual = false
-src = "src"
-
-[output.html]
-mathjax-support = true

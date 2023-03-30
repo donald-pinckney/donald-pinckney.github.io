@@ -1,9 +1,0 @@
-[book]
-title = "Machine Learning with PyTorch"
-description = "An introductory look at implementing machine learning algorithms using Python and PyTorch."
-author = "Donald Pinckney"
-multilingual = false
-src = "src"
-
-[output.html]
-mathjax-support = true
