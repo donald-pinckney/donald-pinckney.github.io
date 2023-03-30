@@ -8,9 +8,6 @@ trap "{ rm -rf $dest; rm -rf $binTemp; }" EXIT SIGINT SIGTERM
 git checkout src
 
 
-# Build books
-books/build_all.sh
-
 # Build to temp directory
 bundle exec jekyll build -qd $dest
 

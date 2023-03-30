@@ -16,30 +16,30 @@
         {% assign bu = site.baseurl | append: "/" %}
         {% assign blog_bu = site.baseurl | append: "/blog/" %}
 
-        <a class="horizontal-item sidebar-nav-item{% if page.url == bu %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+        <a class="horizontal-item sidebar-nav-item{% if page.url == bu %} active{% endif %}"
+          href="{{ site.baseurl }}/">Home</a>
 
         {% comment %}
-          The code below dynamically generates a sidebar nav of pages with
-          `layout: page` in the front-matter. See readme for usage.
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
         {% endcomment %}
 
         {% assign pages_list = site.pages %}
         {% for node in pages_list %}
-          {% if node.title != null and node.sortBelow != true %}
-            {% if (node.layout == "page")  %}
-              {% if page.url == node.url %}
-                {% assign activity = "active" %}
-              {% else %}
-                {% assign activity = "" %}
-              {% endif %}
-              <a class="horizontal-item sidebar-nav-item {{ activity }}" href="{{ node.url }}">{{ node.title }}</a>
-            {% endif %}
-          {% endif %}
+        {% if node.title != null and node.sortBelow != true %}
+        {% if (node.layout == "page") %}
+        {% if page.url == node.url %}
+        {% assign activity = "active" %}
+        {% else %}
+        {% assign activity = "" %}
+        {% endif %}
+        <a class="horizontal-item sidebar-nav-item {{ activity }}" href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+        {% endif %}
         {% endfor %}
 
-        <a class="horizontal-item sidebar-nav-item{% if page.url == blog_bu or page.layout == 'post' or page.layout == 'bookpost' %} active{% endif %}" href="{{ site.baseurl }}/blog/">Blog Posts</a>
-
-        <a class="horizontal-item sidebar-nav-item" href="{{ site.baseurl }}/books/pytorch/book/ch1-setup/intro.html">PyTorch Guide</a>
+        <a class="horizontal-item sidebar-nav-item{% if page.url == blog_bu or page.layout == 'post' or page.layout == 'bookpost' %} active{% endif %}"
+          href="{{ site.baseurl }}/blog/">Blog Posts</a>
 
         <a class="horizontal-item sidebar-nav-item" href="https://jessie-jingwen-lin.github.io" target="_blank">Wife</a>
 
@@ -51,25 +51,29 @@
 
       <div class="horizontal-block">
         {% for node in pages_list %}
-          {% if node.title != null and node.sortBelow == true %}
-            {% if node.layout == "page" %}
-              <a class="horizontal-item sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-            {% endif %}
-          {% endif %}
+        {% if node.title != null and node.sortBelow == true %}
+        {% if node.layout == "page" %}
+        <a class="horizontal-item sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+          href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+        {% endif %}
         {% endfor %}
 
 
-        <a href="https://github.com/{{ site.social.github }}" class="sidebar-nav-item horizontal-item social" target="_blank">
+        <a href="https://github.com/{{ site.social.github }}" class="sidebar-nav-item horizontal-item social"
+          target="_blank">
           <i class="fa fa-github"></i><span class="only-desktop"> {{ site.social.github}}</span>
         </a>
-        <a href="https://twitter.com/{{ site.social.twitter }}" class="sidebar-nav-item horizontal-item social" target="_blank">
+        <a href="https://twitter.com/{{ site.social.twitter }}" class="sidebar-nav-item horizontal-item social"
+          target="_blank">
           <i class="fa fa-twitter"></i><span class="only-desktop">@{{site.social.twitter}}</span>
         </a>
         <a href="mailto:{{ site.social.email }}" class="sidebar-nav-item horizontal-item social" target="_blank">
           <i class="fa fa-envelope"></i>&nbsp;<span class="only-desktop">{{site.social.email}}</span>
         </a>
-        <a href="{{ site.baseurl }}/public/files/documents/resume.pdf" class="sidebar-nav-item horizontal-item social" target="_blank">
-            <i class="fa fa-file"></i>&nbsp;<span>Curriculum vitae</span>
+        <a href="{{ site.baseurl }}/public/files/documents/resume.pdf" class="sidebar-nav-item horizontal-item social"
+          target="_blank">
+          <i class="fa fa-file"></i>&nbsp;<span>Curriculum vitae</span>
         </a>
 
       </div>
