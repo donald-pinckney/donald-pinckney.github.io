@@ -42,28 +42,46 @@ img {
 </p>
 
 <p>
-    Concretely, I've worked on improving fundamental programming abstractions, such as serverless computing, as well as building better developer tools, such as better compilers, runtime systems, and most recently, package managers. Going forward, I expect to think deeply about how generative AI tools can best interface with human developers.
+    Concretely, I've worked on improving fundamental programming abstractions, such as serverless computing, as well as building better developer tools, such as compilers, runtime systems, and most recently, package managers. Going forward, I expect to think deeply about how generative AI tools can best interface with human developers.
 </p>
 
-<h1 id="recents" class="clickable-header top-level-header">Projects</h1>
+<h1 id="recents" class="clickable-header top-level-header">Research Projects</h1>
 
 <ol>
     <li>
+        <strong>Automating Dependency Repair (in progress!):</strong> 
+    </li>
+    <li>
+        <strong>Optimizing Package Management (ICSE 2023):</strong> 
+    </li>
+    <li>
+        <strong>Big Data Analyses of NPM (MSE 2023, ESEC/FSE 2023):</strong> 
+    </li>
+    <li>
+        <strong>Evaluating LLMs Across Programming Languages (TSE 2023):</strong> 
+        Large language models (LLMs) are blowing up the internet now, both for casual natural language use as well as for programming tasks.
+        ChatGPT, Codex, and other tools appear to be able to code fairly well, but how well depends on which programming language!
+        We designed and built MultiPL-E, a systematic and extensible system for fairly evaluating LLMs across a large number of programming languages (18!).
+
+        The key insight is that LLM programming benchmark suites (HumanEval, etc.) are written as Python unit tests, and unit tests are (almost always) written in a subset of Python and do not use features such as functions, loops, etc. Therefore, we were able to write trivial "compilers" to translate Python unit tests to nearly any other language, and obtain equivalent benchmark suites.
+        This work was <a href="https://arxiv.org/abs/2208.08227" target="_blank">published in TSE 2023</a> and presented at ESEC/FSE 2023.
+    </li>
+    <li>
         <strong>Delimited Continuations for WebAssembly (DLS 2020):</strong> 
         WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
-        support for user-level or multiplexed threads, as seen in Go. Currently such "threads"
+        support for user-level or multiplexed threads, as seen in Go. Currently such threads
         must be simulated, leading to a significant performance penalty for Go code compiled
-        to Wasm. We resolve this by adding support for <emph>delimited continuations</emph>
+        to Wasm. We resolve this by adding support for <emph>delimited continuations</emph> (a form of stack capture operations)
         to WebAssembly, which allows for efficient expression of user-level threads, as well as
-        many other interesting computation effects.
+        many other interesting computational effects.
         This work was <a href="https://dl.acm.org/doi/10.1145/3426422.3426978" target="_blank">presented at DLS 2020</a>.
     </li>
     <li>
         <strong>Serverless Computing (OOPSLA 2019):</strong> 
         Serverless functions are super convenient, but the underlying cloud platforms (such as AWS Lambda) 
         nondeterministically reuse or restart the containers inside of which code is run, leading to
-        bugs in real-world code. We investigate under what formal conditions 
-        serverless functions can be expected to behave deterministically.
+        bugs in real-world code. Documentation and online tutorials offer spotty guidance on what exactly this behavior is, and how a programmer can guarantee their code is safe. We help explain these dynamics by building a framework for analyzing the semantics of
+        serverless functions, which others built on when designing richer serverless abstractions, such as <a href="https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview" target="_blank">Microsoft Azure's Durable Functions</a>.
         This work was <a href="https://dl.acm.org/doi/10.1145/3360575" target="_blank">presented at OOPSLA 2019</a>, and received a distinguished paper award.
     </li>
 </ol>
