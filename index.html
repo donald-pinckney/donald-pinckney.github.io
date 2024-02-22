@@ -50,12 +50,22 @@ img {
 <ol>
     <li>
         <strong>Automating Dependency Repair (in progress!):</strong> 
+        Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.
+
+        To address this problem, we're building automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we aim to integrate constraint solving with large language models' suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.
     </li>
     <li>
         <strong>Optimizing Package Management (ICSE 2023):</strong> 
+        Dependency management is unfortunately not as simple as just installing the dependencies you want: part of software engineering
+        now involves careful selection of dependency versions, to make sure that: you get newer versions, you avoid security vulnerabilities, you successfully unify dependencies on the same package into a single version, and so on. These goals are often at odds, and are not handled well by existing package managers' baked-in heuristics.
+
+        To solve this, we built <b>MaxNPM</b>, a fork of the NPM CLI which lets users customize dependency solving goals, so that 
+        software developers can guide the tooling appriopriately for their situation. We evaluated MaxNPM with a large sample of packages from the NPM ecosystem and show that it can reduce vulnerabilities in dependencies, choose newer dependencies than NPM can, and can choose fewer dependencies than NPM.
     </li>
     <li>
-        <strong>Big Data Analyses of NPM (MSE 2023, ESEC/FSE 2023):</strong> 
+        <strong>Big Data Analyses of NPM (MSR 2023, ESEC/FSE 2023):</strong>
+        Package managers and their massive open-source ecosystems are the foundation for how any practical software is built. However, the behavior of how developers share and consume packages at-scale is not terribly well understood. How do developers specify their dependencies? How do developers tag new releases of their own packages? Do common practices lead to issues in dependency management, such as out-of-date dependencies or security issues?
+        To answer these types of questions, we built a system which in realtime archives a replica of the entire NPM ecosystem, including both package metadata and code data (20+ TB). The <a href="https://dependencies.science" target="_blank">dataset is now public</a> and can be used for a wide variety of NPM dependency graph queries or big code analysis. Our analysis of the data finds some surprising behaviors, with an asymmetry between how developers tag updates that they publish vs. how developers write dependency constraints.
     </li>
     <li>
         <strong>Evaluating LLMs Across Programming Languages (TSE 2023):</strong> 
