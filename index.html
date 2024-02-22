@@ -88,8 +88,8 @@
 <meta property="og:title" content="Research Interests" />
 <meta name="author" content="Donald Pinckney" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="PhD student researching programming languages at Northeastern University." />
-<meta property="og:description" content="PhD student researching programming languages at Northeastern University." />
+<meta name="description" content="PhD student at NEU researching programming languages. Graduating soon, looking for new opportunities!" />
+<meta property="og:description" content="PhD student at NEU researching programming languages. Graduating soon, looking for new opportunities!" />
 <link rel="canonical" href="https://donaldpinckney.com/" />
 <meta property="og:url" content="https://donaldpinckney.com/" />
 <meta property="og:site_name" content="Donald Pinckney" />
@@ -97,7 +97,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Research Interests" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Donald Pinckney"},"description":"PhD student researching programming languages at Northeastern University.","headline":"Research Interests","name":"Donald Pinckney","url":"https://donaldpinckney.com/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Donald Pinckney"},"description":"PhD student at NEU researching programming languages. Graduating soon, looking for new opportunities!","headline":"Research Interests","name":"Donald Pinckney","url":"https://donaldpinckney.com/"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -113,7 +113,7 @@
           Donald Pinckney
         </a>
       </h1>
-      <p class="lead">PhD student researching programming languages at Northeastern University.</p>
+      <p class="lead">PhD student at NEU researching programming languages. Graduating soon, looking for new opportunities!</p>
     </div>
 
     <nav class="sidebar-nav">
@@ -234,13 +234,14 @@
       <div class="page">  
   <style>
 figure {
-    border: thin #c0c0c0 solid;
+    /* border: thin #c0c0c0 solid; */
     float: right;
     padding: 5px;
     width: 30%;
     min-width: 180px;
     margin: auto;
     margin-left: 1em;
+    max-width: 300px;
 }
 
 figcaption {
@@ -253,86 +254,118 @@ figcaption {
     text-align: center;
 }
 
-p {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
 img {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 </style>
 
 
 <figure>
-    <img src="public/donald2_small.jpg" alt="Donald in Yunnan">
-    <figcaption>Me visiting Yunnan</figcaption>
+    <img src="public/donald2_small.jpg" alt="Donald">
 </figure>
 
-<h1 id="interests" class="post-title titular">Research Interests</h1>
+<h1 id="interests" class="post-title titular">Professional Interests</h1>
 
 <p>
-    My research interests center around programming languages and software engineering.
-    In my work I look to provide formal guarantees of program properties in a way that is meaningful for real-world application.
+    I'm passionate about building new tools (broadly defined) to help software developers be more efficient and focus on the interesting and fun parts of building software!
 </p>
 
-<h1 id="recents" class="clickable-header top-level-header">Recent Projects and News</h1>
+<p>
+    Concretely, I've worked on improving fundamental programming abstractions, such as serverless computing, as well as building better developer tools, such as compilers, runtime systems, and most recently, package managers. Going forward, I expect to think deeply about how generative AI tools can best interface with human developers.
+</p>
+
+<p><strong>
+    I'm aiming to graduate in the summer of 2024, and I'm excited to be looking for new opportunities for where I can best utilize my knowledge and research skills. If you'd be interested in working with me, feel free to just shoot me an <a href="mailto:donald_pinckney@icloud.com">email!</a>
+</strong></p>
+
+<h1 id="recents" class="clickable-header top-level-header">Research Projects</h1>
 
 <ol>
     <li>
-        <strong>Delimited Continuations for WebAssembly (DLS 2020):</strong> 
-        WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
-        support for user-level or multiplexed threads, as seen in Go. Currently such "threads"
-        must be simulated, leading to a significant performance penalty for Go code compiled
-        to Wasm. We resolve this by adding support for <emph>delimited continuations</emph>
-        to WebAssembly, which allows for efficient expression of user-level threads, as well as
-        many other interesting computation effects.
-        This work was <a href="https://dl.acm.org/doi/10.1145/3426422.3426978" target="_blank">presented at DLS 2020</a>.
+        <strong>Automating Dependency Repair (in progress!):</strong> 
+        Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.
+
+        To address this problem, we're building automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we aim to integrate constraint solving with large language models' suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.
     </li>
     <li>
-        <strong>Serverless Computing (OOPSLA 2019):</strong> 
+        <strong>Optimizing Package Management (ICSE 2023):</strong> 
+        Dependency management is unfortunately not as simple as just installing the dependencies you want: part of software engineering
+        now involves careful selection of dependency versions, to make sure that: you get newer versions, you avoid security vulnerabilities, you successfully unify dependencies on the same package into a single version, and so on. These goals are often at odds, and are not handled well by existing package managers' baked-in heuristics.
+
+        To solve this, we built <b>MaxNPM</b>, a fork of the NPM CLI which lets users customize dependency solving goals, so that 
+        software developers can guide the tooling appriopriately for their situation. We evaluated MaxNPM with a large sample of packages from the NPM ecosystem and show that it can reduce vulnerabilities in dependencies, choose newer dependencies than NPM can, and can choose fewer dependencies than NPM.
+        <br />
+        <a href="https://arxiv.org/abs/2203.13737" target="_blank">[paper]</a>
+        <a href="https://youtu.be/O3eMwxRwhgI?si=TQwh39l6sT-NpaKN&t=939" target="_blank">[talk]</a>
+        <a href="https://github.com/donald-pinckney/pacsolve" target="_blank">[github]</a>
+        <a href="https://www.npmjs.com/package/maxnpm" target="_blank">[install]</a>
+    </li>
+    <li>
+        <strong>Big Data Analyses of NPM (MSR 2023, ESEC/FSE 2023):</strong>
+        Package managers and their massive open-source ecosystems are the foundation for how any practical software is built. However, the behavior of how developers share and consume packages at-scale is not terribly well understood. How do developers specify their dependencies? How do developers tag new releases of their own packages? Do common practices lead to issues in dependency management, such as out-of-date dependencies or security issues?
+        To answer these types of questions, we built a system which in realtime archives a replica of the entire NPM ecosystem, including both package metadata and code data (20+ TB). The dataset is now public and can be used for a wide variety of NPM dependency graph queries or big code analysis. Our analysis of the data finds some surprising findings, with an asymmetry between how developers tag updates that they publish vs. how developers write dependency constraints.
+        <br />
+        <a href="https://arxiv.org/abs/2304.00394" target="_blank">[MSR paper]</a>
+        <a href="https://arxiv.org/abs/2308.12545" target="_blank">[ESEC/FSE paper]</a>
+        <a href="https://2023.esec-fse.org/details/fse-2023-demonstrations/5/npm-follower-A-Complete-Dataset-Tracking-the-NPM-Ecosystem" target="_blank">[ESEC/FSE talk]</a>
+        <a href="https://dependencies.science" target="_blank">[dataset]</a>
+        <a href="https://github.com/donald-pinckney/npm-follower" target="_blank">[github]</a>
+    </li>
+    <li>
+        <strong>Evaluating LLMs Across Programming Languages (TSE 2023):</strong> 
+        Large language models (LLMs) are blowing up the internet now, both for casual natural language use as well as for programming tasks.
+        ChatGPT, Codex, and other tools appear to be able to code fairly well, but how well depends on which programming language!
+        We designed and built MultiPL-E, a systematic and extensible system for fairly evaluating LLMs across a large number of programming languages (18!).
+
+        The key insight is that LLM programming benchmark suites (HumanEval, etc.) are written as Python unit tests, and unit tests are (almost always) written in a subset of Python and do not use features such as functions, loops, etc. Therefore, we were able to write trivial "compilers" to translate Python unit tests to nearly any other language, and obtain equivalent benchmark suites.
+        This work was published in TSE 2023 and presented at ESEC/FSE 2023.
+        <br />
+        <a href="https://arxiv.org/abs/2208.08227" target="_blank">[paper]</a>
+        <a href="https://2023.esec-fse.org/details/fse-2023-journal-first/11/MultiPL-E-A-Scalable-and-Polyglot-Approach-to-Benchmarking-Neural-Code-Generation" target="_blank">[talk]</a>
+        <a href="https://github.com/nuprl/MultiPL-E" target="_blank">[github]</a>
+        <a href="https://nuprl.github.io/MultiPL-E/" target="_blank">[website]</a>
+    </li>
+    <li>
+        <strong>Delimited Continuations for WebAssembly (DLS 2020):</strong> 
+        WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
+        support for user-level or multiplexed threads, as seen in Go. Currently such threads
+        must be simulated, leading to a significant performance penalty for Go code compiled
+        to Wasm. We resolve this by adding support for <emph>delimited continuations</emph> (a form of stack capture operations)
+        to WebAssembly, which allows for efficient expression of user-level threads, as well as
+        many other interesting computational effects.
+        This work was presented at DLS 2020.
+        <br />
+        <a href="https://arxiv.org/abs/2010.01723" target="_blank">[paper]</a>
+        <a href="https://youtu.be/2xp1gfYrmi0?si=uagMCYpHIO6oIIFh" target="_blank">[talk]</a>
+        <a href="https://github.com/donald-pinckney/WasmContinuations" target="_blank">[github]</a>
+        <a href="https://wasmk.github.io" target="_blank">[website]</a>
+    </li>
+    <li>
+        <strong>Serverless Computing (OOPSLA 2019, distinguished paper):</strong> 
         Serverless functions are super convenient, but the underlying cloud platforms (such as AWS Lambda) 
         nondeterministically reuse or restart the containers inside of which code is run, leading to
-        bugs in real-world code. We investigate under what formal conditions 
-        serverless functions can be expected to behave deterministically.
-        This work was <a href="https://dl.acm.org/doi/10.1145/3360575" target="_blank">presented at OOPSLA 2019</a>, and received a distinguished paper award.
+        bugs in real-world code. Documentation and online tutorials offer spotty guidance on what exactly this behavior is, and how a programmer can guarantee their code is safe. We help explain these dynamics by building a framework for analyzing the semantics of
+        serverless functions, which others built on when designing richer serverless abstractions, such as <a href="https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview" target="_blank">Microsoft Azure's Durable Functions</a>.
+        This work was presented at OOPSLA 2019, and received a distinguished paper award.
+        <br />
+        <a href="https://arxiv.org/abs/1902.05870" target="_blank">[paper]</a>
+        <a href="https://youtu.be/-6jZfIvxtNI?si=Tfv5_h3R7fDC_OSP" target="_blank">[talk]</a>
+        <a href="https://plasma-umass.org/foundations-of-serverless/home/" target="_blank">[website]</a>
     </li>
 </ol>
 
 <h1 id="bio" class="clickable-header top-level-header">About Me</h1>
 
 <p>
-    Currently, I'm a PhD student at Northeastern University, 
+    Currently, I'm a PhD candidate at Northeastern University, 
     where I study programming languages and software engineering. I'm advised by
-        <a href="https://ccs.neu.edu/~arjunguha/main/home/" target="_blank">Arjun Guha</a> and I'm a member of the
+        <a href="https://ccs.neu.edu/~arjunguha/main/home/" target="_blank">Arjun Guha</a> and <a href="https://www.jonbell.net" target="_blank">Jonathan Bell</a>, and I'm a member of the
         <a href="https://prl.ccs.neu.edu" target="_blank">Programming Research Laboratory</a>.
         Previously I was a PhD student at UMass Amherst, where I was additionally advised by
         <a href="https://people.cs.umass.edu/~brun/" target="_blank">Yuriy Brun</a>, and a member of the 
         <a href="https://plasma-umass.org" target="_blank">PLASMA</a> lab. 
 </p>
 
-<p>
-    However, I'm relatively new to Massachusetts, as I grew up for most of my life in California. 
-    For my undergraduate degree, I completed a double major in math and computer science at UC Davis. 
-    Meanwhile, I interned in industry for 3 summers, once at 
-        <a href="https://www.filemaker.com" target="_blank">FileMaker</a>, and twice at Apple, where I worked on the 
-        <a href="https://developer.apple.com/documentation/appkit" target="_blank">AppKit user interface library</a> for macOS.
-    After interning in industry I decided to pursue a PhD in computer science, and specifically programming languages, 
-    so I can work to drive the field forward in creating correct, safe, and secure software more easily.
-</p>
-
-<figure>
-        <img src="public/jade.jpg" alt="Donald and Jessie on mountain">
-        <figcaption>Jessie and I on top of 玉龙雪山</figcaption>
-</figure>
-
-<p>
-    In addition to programming languages research, I like to somewhat regularly write <a href="/blog/">blog posts</a> about various topics, and I enjoy dabbling in machine learning, as well as abstract algebra and topology on the pure math side. 
-    Outside of academics I enjoy practicing martial arts (in particular Tai Chi, Wing Chun, and Taekwondo), playing music, and archery.
-    I also love to travel with my amazing wife 
-    <a href="https://jessie-jingwen-lin.github.io" target="_blank">Jessie Lin</a> 
-    to see awesome sights. 
-</p>
 </div>
 
     </div>
