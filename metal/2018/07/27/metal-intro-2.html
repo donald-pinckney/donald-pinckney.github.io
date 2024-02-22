@@ -82,9 +82,9 @@
   <!-- TOC -->
   <script src="/public/js/toc.js"></script>
 
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Metal 3D Graphics Part 2: Animated Uniform Data with Synchronization | Donald Pinckney</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.5" />
 <meta property="og:title" content="Metal 3D Graphics Part 2: Animated Uniform Data with Synchronization" />
 <meta name="author" content="Donald Pinckney" />
 <meta property="og:locale" content="en_US" />
@@ -95,8 +95,10 @@
 <meta property="og:site_name" content="Donald Pinckney" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-07-27T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Metal 3D Graphics Part 2: Animated Uniform Data with Synchronization" />
 <script type="application/ld+json">
-{"url":"https://donaldpinckney.com/metal/2018/07/27/metal-intro-2.html","headline":"Metal 3D Graphics Part 2: Animated Uniform Data with Synchronization","dateModified":"2018-07-27T00:00:00-07:00","datePublished":"2018-07-27T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://donaldpinckney.com/metal/2018/07/27/metal-intro-2.html"},"author":{"@type":"Person","name":"Donald Pinckney"},"description":"Recap","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Donald Pinckney"},"dateModified":"2018-07-27T00:00:00-07:00","datePublished":"2018-07-27T00:00:00-07:00","description":"Recap","headline":"Metal 3D Graphics Part 2: Animated Uniform Data with Synchronization","mainEntityOfPage":{"@type":"WebPage","@id":"https://donaldpinckney.com/metal/2018/07/27/metal-intro-2.html"},"url":"https://donaldpinckney.com/metal/2018/07/27/metal-intro-2.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -168,7 +170,7 @@
         <a class="horizontal-item sidebar-nav-item active"
           href="/blog/">Blog Posts</a>
 
-        <a class="horizontal-item sidebar-nav-item" href="https://jessie-jingwen-lin.github.io" target="_blank">Wife</a>
+        <a class="horizontal-item sidebar-nav-item" href="https://drinkdynastea.etsy.com/" target="_blank">Tea</a>
 
         <div class="horizontal-item">
         </div>
@@ -221,7 +223,7 @@
 
     <div class="sidebar-footnote">
       <p class="sidebar-footnote">
-        &copy; 2023 Donald Pinckney. All rights reserved.
+        &copy; 2024 Donald Pinckney. All rights reserved.
         <!-- <br />
         The views and opinions expressed here are my own, and do not reflect the views of Apple, Inc. -->
       </p>
@@ -352,7 +354,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>However, this isn&#39;t quite right for 2 reasons: the first is obvious, we need to define the variable <code>brightness</code>. The second reason will be discussed soon. So how do we define <code>brightness</code>? That is, how does the CPU pass data (the value of <code>brightness</code>) to the GPU? It works in essentially the same way as vertex data: we use a <code>MTLBuffer</code> on the CPU side, and a <code>[[buffer(0)]]</code> on the GPU side, just like the vertex buffer data that is passed to the vertex shader. First, crack open <code>ShaderDefinitions.h</code> and add the following <code>struct</code> definition:</p>
-<div class="highlight"><pre class="highlight cpp"><code><span class="k">struct</span> <span class="n">FragmentUniforms</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight cpp"><code><span class="k">struct</span> <span class="nc">FragmentUniforms</span> <span class="p">{</span>
     <span class="kt">float</span> <span class="n">brightness</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div>
