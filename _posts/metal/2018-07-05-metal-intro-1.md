@@ -430,7 +430,7 @@ pipelineDescriptor.vertexFunction = library?.makeFunction(name: "vertexShader")
 pipelineDescriptor.fragmentFunction = library?.makeFunction(name: "fragmentShader")
 ```
 
-The device is required to make the default library (and is thus a parameter for the function), since when this code is rune the Metal code must be compiled into final machine code that is specific to the device. 
+The device is required to make the default library (and is thus a parameter for the function), since when this code is run the Metal code must be compiled into final machine code that is specific to the device. 
 
 We also need to tell the pipeline in what format to store the pixel data. Options include how many bytes per pixel, and in what order to store red, green, blue, and alpha. But we just need the pipeline's output format to match the format of the `MTKView`, which is why an `MTKView` is a parameter. We setup this configuration with one line:
 
