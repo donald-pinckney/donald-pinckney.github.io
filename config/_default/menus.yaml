@@ -8,8 +8,5 @@ main:
     url: /
     weight: 10
   - name: Publications
-    url: publications/
+    url: publication/
     weight: 20
-  - name: Uses
-    url: uses/
-    weight: 30

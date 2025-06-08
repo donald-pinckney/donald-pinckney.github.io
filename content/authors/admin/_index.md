@@ -13,8 +13,15 @@ status:
 # Is this the primary user of the site?
 superuser: true
 
+highlight_name: true
+
 # Role/position/tagline
 role: AI Engineer, PhD
+
+interests:
+  - Hiking
+  - Photography
+  - Cats
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
