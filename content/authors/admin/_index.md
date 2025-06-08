@@ -1,13 +1,10 @@
 ---
 # Display name
-title: 吳健雄
-
-# Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+title: Donald Pinckney
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Donald
+last_name: Pinckney
 
 # Status emoji
 status:
@@ -17,42 +14,45 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Director of Cloud Infrastructure
+role: AI Engineer, PhD
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: GenCoin
-    url: https://www.example.com/
+  - name: Gitar
+    url: https://gitar.ai
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:donald_pinckney@icloud.com'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/donald-pinckney
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://www.linkedin.com/in/donald-pinckney-56456ba8
+  - icon: brands/google-scholar
+    url: https://scholar.google.com/citations?user=j5kGb8sAAAAJ&hl=en
+  - icon: custom/flickr
+    url: https://www.flickr.com/photos/194281096@N08/
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: PhD, Computer Science
+    institution: Northeastern University
+    institution_url: https://prl.khoury.northeastern.edu
+    institution_logo: custom/neu
+    date_start: 2020-09-01
+    date_end: 2024-11-01
     summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+      Thesis on _Why LLMs are awesome_. Supervised by [Prof Arjun Guha](https://www.khoury.northeastern.edu/home/arjunguha/main/home/). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
       text: 'Read Thesis'
       url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: MS, Computer Science
+    institution: University of Massachusetts Amherst
+    institution_logo: custom/umass
+    date_start: 2018-09-01
+    date_end: 2020-05-01
     summary: |
       GPA: 3.8/4.0
 
@@ -60,10 +60,11 @@ education:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
+  - area: BS, Computer Science; BS, Mathematics
+    institution: University of California Davis
+    institution_logo: custom/davis
+    date_start: 2014-09-01
+    date_end: 2018-06-01
     summary: |
       GPA: 3.4/4.0
       
@@ -72,10 +73,10 @@ education:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
-    company_url: ''
-    company_logo: ''
+  - position: AI Engineer
+    company_name: Gitar
+    company_url: 'https://gitar.ai'
+    company_logo: custom/gitar
     date_start: 2021-01-01
     date_end: ''
     summary: |2-
@@ -169,4 +170,4 @@ awards:
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
-I am currently Director of Cloud Infrastructure at GenCoin where I am leading teams on edge computing, deep sea data center architecture, and hivemind optimization.
+I'm building the next generation of AI-driven developer tooling, and developing techniques for agents to perform long-running and complex code migrations across enterprise-scale codebases.

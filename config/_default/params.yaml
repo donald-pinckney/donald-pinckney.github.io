@@ -6,7 +6,7 @@
 # Appearance
 appearance:
   mode: system
-  color: blue
+  color: purple
 
 # SEO
 marketing:
@@ -30,8 +30,11 @@ marketing:
 header:
   navbar:
     enable: true
-    blox: floating-theme-toggler
-
+    # blox: floating-theme-toggler
+    blox: navbar-simple
+    # align: center
+    fixed_to_top: true
+    
 # Site footer
 footer:
   copyright:

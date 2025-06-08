@@ -11,7 +11,7 @@ design:
 
 # Page sections
 sections:
-  - block: biography
+  - block: resume-biography
     content:
       username: admin
       # Show a call-to-action button under your biography? (optional)
@@ -25,7 +25,7 @@ sections:
       biography:
         # Customize the style of your biography text
         style: 'text-align: justify; font-size: 0.8em;'
-  - block: experience
+  - block: better-experience
     content:
       username: admin
     design:
