@@ -5,6 +5,7 @@ name: Import Publications From Bibtex
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 # Run workflow when a `.bib` file is added or updated in the `data/` folder
 on:
