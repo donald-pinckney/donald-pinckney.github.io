@@ -5,15 +5,17 @@ type: landing
 
 design:
   # Default section spacing
-  spacing: "4rem"
+  spacing: "2rem"
 
 # Note: `username` refers to the user's folder name in `content/authors/`
 
 # Page sections
 sections:
-  - block: resume-biography
+  - block: resume-biography-3
     content:
+      # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
+      text: ""
       # Show a call-to-action button under your biography? (optional)
       button:
         text: Download Résumé
