@@ -1,6 +1,6 @@
 ---
 title: Repyro
-external_link: https://github.com/pandas-dev/pandas
+external_link: uploads/dissertation.pdf
 date: 2024-04-01
 ---
 
