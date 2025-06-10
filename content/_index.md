@@ -37,12 +37,13 @@ sections:
   - block: collection
     content:
       title: Selected Projects
-      text: Building is my form of thinking aloud. Here are a selection of projects that I have worked on over the years.
+      text: Building is my form of expression. Here are a selection of projects that I have worked on over the years.
       filters:
         folders:
           - project
     design:
       view: article-grid
       fill_image: false
+      show_dates: true
       columns: 3
 ---

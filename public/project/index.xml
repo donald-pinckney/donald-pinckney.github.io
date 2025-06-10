@@ -5,7 +5,7 @@
     <link>http://localhost:1313/project/</link>
       <atom:link href="http://localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
       <title>Projects</title>
@@ -13,11 +13,27 @@
     </image>
     
     <item>
-      <title>Pandas</title>
-      <link>http://localhost:1313/project/pandas/</link>
-      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/project/pandas/</guid>
+      <title>Jimy</title>
+      <link>http://localhost:1313/project/jimy/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/jimy/</guid>
       <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Repyro</title>
+      <link>http://localhost:1313/project/repyro/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/repyro/</guid>
+      <description>&lt;p&gt;Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MaxNPM</title>
+      <link>http://localhost:1313/project/maxnpm/</link>
+      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/project/maxnpm/</guid>
+      <description>&lt;p&gt;A fork of NPM which which utilizes SAT-solving to find optimal dependencies, so it can minimize download size, minimize security risk, and more.&lt;/p&gt;</description>
     </item>
     
   </channel>
