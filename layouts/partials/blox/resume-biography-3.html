@@ -92,18 +92,18 @@
     {{ end }}
   </ul>
 
-  <div class="flex-auto max-w-prose md:mt-10">
+  <div class="flex-auto max-w-prose md:mt-10 pl-4 pr-4">
     {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
     <div class="pt-2 d-flex justify-content-center text-gray-700 dark:text-gray-300 prose prose-slate lg:prose-xl dark:prose-invert">
-      <div class="bio-text" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{end}}>
+      <div class="bio-text" style="font-size: 1rem;" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{end}}>
         {{ . }}
       </div>
     </div>
     {{ end }}
     
-    <div class="flex flex-row gap-12" style="justify-content: end">
+    <div class="flex flex-col md:flex-row gap-12 md:justify-end items-start md:items-stretch">
         {{ with $person.interests }}
-        <div class="" style="width: 24rem;">
+        <div class="pl-4 md:pl-0" style="width: 24rem;">
           <div class="section-subheading mb-3">{{ i18n "interests" | markdownify }}</div>
           <ul class="list-disc list-inside space-y-1 pl-2 text-base font-normal text-black dark:text-white text-wrap prose prose-slate dark:prose-invert">
             {{ range . }}
