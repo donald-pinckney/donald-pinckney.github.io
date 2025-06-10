@@ -19,9 +19,10 @@ highlight_name: true
 role: AI Engineer, PhD
 
 interests:
-  - Hiking
-  - Photography
-  - Cats
+  - Building robust agentic systems
+  - Combining AI and static analysis
+  - Scaling AI agents to millions+ LoC
+  - Photography ([Flickr](https://www.flickr.com/photos/194281096@N08/)) and spending time with my cats.
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -48,8 +49,7 @@ education:
     institution: Northeastern University
     institution_url: https://prl.khoury.northeastern.edu
     institution_logo: custom/neu
-    date_start: 2020-09-01
-    date_end: 2024-11-01
+    year: 2024
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Arjun Guha](https://www.khoury.northeastern.edu/home/arjunguha/main/home/). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
@@ -57,9 +57,9 @@ education:
       url: 'https://example.com'
   - area: MS, Computer Science
     institution: University of Massachusetts Amherst
+    institution_url: https://plasma-umass.org
     institution_logo: custom/umass
-    date_start: 2018-09-01
-    date_end: 2020-05-01
+    year: 2020
     summary: |
       GPA: 3.8/4.0
 
@@ -70,8 +70,8 @@ education:
   - area: BS, Computer Science; BS, Mathematics
     institution: University of California Davis
     institution_logo: custom/davis
-    date_start: 2014-09-01
-    date_end: 2018-06-01
+    institution_url: https://www.ucdavis.edu
+    year: 2018
     summary: |
       GPA: 3.4/4.0
       
@@ -84,25 +84,24 @@ work:
     company_name: Gitar
     company_url: 'https://gitar.ai'
     company_logo: custom/gitar
-    date_start: 2021-01-01
+    date_start: 2024-04-01
     date_end: ''
-    summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
-    company_url: ''
-    company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
     summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+      - Building [Jimy](https://gitar.ai/blog/introducing-jimy), the first AI coding agent which leverages deep static analysis and source code-level optimization algorithms to **scale agentic AI to massive enterprise codebases while minimizing hallucinations**.
+      - Leading the AI research team on designing and implementing techniques for **bridging core compiler algorithms with generative AI** in Jimy. 
+      - Architected and implemented static analysis technologies for **automated code refactoring solutions** for enterprise clients, including multiple **Fortune 500 companies**.
+  - position: PhD Candidate
+    company_name: Northeastern University
+    company_url: 'https://prl.khoury.northeastern.edu'
+    company_logo: custom/neu
+    date_start: 2020-09-01
+    date_end: 2024-11-01
+    summary: |
+      - Built a new generation of **intelligent package managers** for JavaScript and Python based on combining **deterministic constraint solving algorithms** with **generative AI** to automatically fix common developer issues, such as solving runtime errors, patching security vulnerabilities and reducing code size.
 
+      - Supervised and guided an undergraduate student ([Federico Cassano](https://federico.codes)) in building a **distributed system** using **relational databases** and **container orchestration** to archive every **NPM** package (over 36 million, 20+ TB) with low-latency (<1 min) within a large (50,000 CPU core) **high-performance computing** (HPC) cluster. 
+      
+      - Developed a novel eval methodology (MultiPL-E) to standardize the **evaluation of large language model (LLM) code generation** across 19 programming languages, which is used extensively by researchers at **Hugging Face**, ServiceNow, IBM Research and SAP.
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
@@ -124,7 +123,7 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: Travel
         description: ''
         percent: 60
         icon: person-simple-walk
