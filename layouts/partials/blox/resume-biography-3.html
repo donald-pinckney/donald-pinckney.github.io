@@ -94,7 +94,7 @@
 
   <div class="flex-auto max-w-prose md:mt-10">
     {{ with ($block.content.text | emojify | $page.RenderString) | default $person_page.Content }}
-    <div class="pt-2 d-flex justify-content-center prose prose-slate lg:prose-xl dark:prose-invert">
+    <div class="pt-2 d-flex justify-content-center text-gray-700 dark:text-gray-300 prose prose-slate lg:prose-xl dark:prose-invert">
       <div class="bio-text" {{ with $block.design.biography.style }}{{ (printf "style=\"%s\"" .) | safe.HTMLAttr }}{{end}}>
         {{ . }}
       </div>
@@ -103,9 +103,9 @@
     
     <div class="flex flex-row gap-12" style="justify-content: end">
         {{ with $person.interests }}
-        <div class="" style="width: 20rem;">
+        <div class="" style="width: 24rem;">
           <div class="section-subheading mb-3">{{ i18n "interests" | markdownify }}</div>
-          <ul class="list-disc list-inside space-y-1 pl-2">
+          <ul class="list-disc list-inside space-y-1 pl-2 text-base font-normal text-black dark:text-white text-wrap prose prose-slate dark:prose-invert">
             {{ range . }}
             <li>
               {{ . | markdownify | emojify }}
