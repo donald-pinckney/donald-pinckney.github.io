@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: June 9, 2025 --><html lang="en-us" dir="ltr"
+<!-- Last Published: June 10, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
@@ -41,7 +41,8 @@
   
     
   
-  <meta name="description" content="" />
+  <meta name="description" content="WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks support for user-level or multiplexed threads, as seen in Go. Currently such threads must be simulated, leading to a significant performance penalty for Go code compiled to Wasm. We resolve this by adding support for delimited continuations (a form of stack capture operations) to WebAssembly, which allows for efficient expression of user-level threads, as well as many other interesting computational effects. This work was presented at DLS 2020.
+" />
 
   
   <link rel="alternate" hreflang="en-us" href="http://localhost:1313/publication/pinckney-wasmk/" />
@@ -178,16 +179,22 @@
   <meta property="og:site_name" content="Donald Pinckney" />
   <meta property="og:url" content="http://localhost:1313/publication/pinckney-wasmk/" />
   <meta property="og:title" content="Wasm/k: Delimited Continuations for WebAssembly | Donald Pinckney" />
-  <meta property="og:description" content="" /><meta property="og:image" content="http://localhost:1313/media/icon_hu_645fa481986063ef.png" />
+  <meta property="og:description" content="WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
+support for user-level or multiplexed threads, as seen in Go. Currently such threads
+must be simulated, leading to a significant performance penalty for Go code compiled
+to Wasm. We resolve this by adding support for delimited continuations (a form of stack capture operations)
+to WebAssembly, which allows for efficient expression of user-level threads, as well as
+many other interesting computational effects.
+This work was presented at DLS 2020." /><meta property="og:image" content="http://localhost:1313/media/icon_hu_645fa481986063ef.png" />
     <meta property="twitter:image" content="http://localhost:1313/media/icon_hu_645fa481986063ef.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2025-06-08T18:28:41&#43;00:00"
+        content="2020-11-15T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2020-01-01T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-11-15T00:00:00&#43;00:00">
   
 
   
@@ -213,8 +220,8 @@
   },
   "headline": "Wasm/k: Delimited Continuations for WebAssembly",
   
-  "datePublished": "2025-06-08T18:28:41Z",
-  "dateModified": "2020-01-01T00:00:00Z",
+  "datePublished": "2020-11-15T00:00:00Z",
+  "dateModified": "2020-11-15T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -229,7 +236,7 @@
       "url": "http://localhost:1313/media/icon_hu_1df060215326dd50.png"
     }
   },
-  "description": ""
+  "description": "\u003cp\u003eWebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks\nsupport for user-level or multiplexed threads, as seen in Go. Currently such threads\nmust be simulated, leading to a significant performance penalty for Go code compiled\nto Wasm. We resolve this by adding support for \u003cstrong\u003edelimited continuations\u003c/strong\u003e (a form of stack capture operations)\nto WebAssembly, which allows for efficient expression of user-level threads, as well as\nmany other interesting computational effects.\nThis work was presented at DLS 2020.\u003c/p\u003e"
 }
 </script>
 
@@ -269,63 +276,70 @@
   
   
   
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
   
   
   
@@ -560,9 +574,25 @@
         <ul class="hb-sidebar-list"><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/dissertation/"
+    
+  >Improving Dependency Management via Formal Semantics
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/publication/pinckney-msr-2023/"
     
   >A Large Scale Analysis of Semantic Versioning in NPM
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/npm-follower/"
+    
+  >npm-follower: A Complete Dataset Tracking the NPM Ecosystem
     </a>
               
             </li><li class="flex flex-col "><a
@@ -576,9 +606,9 @@
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
-    href="/publication/npm-follower/"
+    href="/publication/multipl-e/"
     
-  >Npm-Follower: A Complete Dataset Tracking the NPM Ecosystem
+  >MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation
     </a>
               
             </li><li class="flex flex-col open"><a
@@ -589,6 +619,14 @@
   >Wasm/k: Delimited Continuations for WebAssembly
     </a>
   
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/serverless/"
+    
+  >Formal Foundations of Serverless Computing
+    </a>
               
             </li></ul>
       </div></li>
@@ -647,7 +685,7 @@
       <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Wasm/k: Delimited Continuations for WebAssembly</h1>
 
       <div class="mt-4 mb-16">
-      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Jan 1, 2020</span><span class="mx-1">·</span>
+      <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2"><span class="mr-1">Nov 15, 2020</span><span class="mx-1">·</span>
         
           
           
@@ -680,7 +718,7 @@
         
         <span class="mx-1">·</span>
         <span class="mx-1">
-          0 min read
+          1 min read
         </span>
         
         </div>
@@ -703,8 +741,15 @@
 
 
   
+    
+  
 
 
+
+<a class="hb-attachment-link hb-attachment-large" href="https://arxiv.org/abs/2010.01723" target="_blank" rel="noopener">
+  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9"/></svg>
+  PDF
+</a>
 
 
 
@@ -714,22 +759,36 @@
 </a>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<a class="hb-attachment-link hb-attachment-large" href="https://doi.org/10.1145/3611643.3613094" target="_blank" rel="noopener">
-  DOI
+  
+  
+    
+  
+<a class="hb-attachment-link hb-attachment-large" href="https://github.com/donald-pinckney/WasmContinuations" target="_blank" rel="noopener">
+  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+  Code
 </a>
 
 
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="hb-attachment-link hb-attachment-large" href="https://youtu.be/2xp1gfYrmi0?si=uagMCYpHIO6oIIFh" target="_blank" rel="noopener">
+  <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m15.75 10.5l4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+  Video
+</a>
+
+
+
+
   
   
   
@@ -741,9 +800,24 @@
   
     
   
-  <a class="hb-attachment-link hb-attachment-large" href="https://arxiv.org/abs/2010.01723" target="_blank" rel="noopener">
+  <a class="hb-attachment-link hb-attachment-large" href="https://wasmk.github.io" target="_blank" rel="noopener">
     <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
-    URL</a>
+    Website</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="hb-attachment-link hb-attachment-large" href="https://doi.org/10.1145/3426422.3426978" target="_blank" rel="noopener">
+    <svg style="height: 1em" class='inline-block' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
+    DOI</a>
 
 
 </div>
@@ -789,13 +863,20 @@
       
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
-        
+        <p>WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
+support for user-level or multiplexed threads, as seen in Go. Currently such threads
+must be simulated, leading to a significant performance penalty for Go code compiled
+to Wasm. We resolve this by adding support for <strong>delimited continuations</strong> (a form of stack capture operations)
+to WebAssembly, which allows for efficient expression of user-level threads, as well as
+many other interesting computational effects.
+This work was presented at DLS 2020.</p>
+
       </div>
 
       
-  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2020-01-01T00:00:00.000Z">
+  <time class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400" datetime="2020-11-15T00:00:00.000Z">
     <span>Last updated on</span>
-    Jan 1, 2020</time>
+    Nov 15, 2020</time>
 
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         
@@ -1071,17 +1152,17 @@
   <div class="flex flex-col md:flex-row flex-nowrap justify-between gap-5 pt-2">
     <div class="">
       
-        <a class="group flex no-underline" href="/publication/npm-follower/">
+        <a class="group flex no-underline" href="/publication/multipl-e/">
           <span
             class="mt-[-0.3rem] me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
           ><span class="ltr:inline rtl:hidden">&larr;</span></span>
           <span class="flex flex-col">
             <span
               class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-            >Npm-Follower: A Complete Dataset Tracking the NPM Ecosystem</span>
+            >MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation</span>
             <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
               
-                Jan 1, 2023
+                Apr 17, 2023
               
             </span>
           </span>
@@ -1089,6 +1170,23 @@
       
     </div>
     <div class="">
+      
+        <a class="group flex text-right no-underline" href="/publication/serverless/">
+          <span class="flex flex-col">
+            <span
+              class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+            >Formal Foundations of Serverless Computing</span
+            >
+            <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+              
+                Oct 1, 2019
+              
+            </span>
+          </span>
+          <span
+            class="mt-[-0.3rem] ms-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+          ><span class="ltr:inline">&rarr;</span></span>
+        </a>
       
     </div>
   </div>

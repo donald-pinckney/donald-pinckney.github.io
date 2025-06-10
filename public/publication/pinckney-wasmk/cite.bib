@@ -1,7 +1,17 @@
-@misc{pinckney:arxiv-wasmk,
- author = {Donald Pinckney and Arjun Guha and Yuriy Brun},
- bdsk-url-1 = {https://arxiv.org/abs/2010.01723},
- title = {Wasm/k: Delimited Continuations for WebAssembly},
- url = {https://arxiv.org/abs/2010.01723},
- year = {2020}
+@inproceedings{10.1145/3426422.3426978,
+author = {Pinckney, Donald and Guha, Arjun and Brun, Yuriy},
+title = {Wasm/k: delimited continuations for WebAssembly},
+year = {2020},
+isbn = {9781450381758},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3426422.3426978},
+doi = {10.1145/3426422.3426978},
+abstract = {WebAssembly is designed to be an alternative to JavaScript that is a safe, portable, and efficient compilation target for a variety of languages. The performance of high-level languages depends not only on the underlying performance of WebAssembly, but also on the quality of the generated WebAssembly code. In this paper, we identify several features of high-level languages that current approaches can only compile to WebAssembly by generating complex and inefficient code. We argue that these problems could be addressed if WebAssembly natively supported first-class continuations. We then present Wasm/k, which extends WebAssembly with delimited continuations. Wasm/k introduces no new value types, and thus does not require significant changes to the WebAssembly type system (validation). Wasm/k is safe, even in the presence of foreign function calls (e.g., to and from JavaScript). Finally, Wasm/k is amenable to efficient implementation: we implement Wasm/k as a local change to Wasmtime, an existing WebAssembly JIT. We evaluate Wasm/k by implementing C/k, which adds delimited continuations to C/C++. C/k uses Emscripten and its implementation serves as a case study on how to use Wasm/k in a compiler that targets WebAssembly. We present several case studies using C/k, and show that on implementing green threads, it can outperform the state-of-the-art approach Asyncify with an 18\% improvement in performance and a 30\% improvement in code size.},
+booktitle = {Proceedings of the 16th ACM SIGPLAN International Symposium on Dynamic Languages},
+pages = {16–28},
+numpages = {13},
+keywords = {virtual machines, formal language semantics, first-class continuations},
+location = {Virtual, USA},
+series = {DLS 2020}
 }

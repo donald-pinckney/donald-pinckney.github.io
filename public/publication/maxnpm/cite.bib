@@ -1,7 +1,16 @@
-@inproceedings{maxnpm,
- author = {Pinckney, Donald and Cassano, Federico and Guha, Arjun and Bell, Jonathan and Culpo, Massimiliano and Gamblin, Todd},
- booktitle = {Proceedings of the 2023 International Conference on Software Engineering},
- series = {ICSE},
- title = {Flexible and Optimal Dependency Management via Max-SMT},
- year = {2023}
+@inproceedings{10.1109/ICSE48619.2023.00124,
+author = {Pinckney, Donald and Cassano, Federico and Guha, Arjun and Bell, Jonathan and Culpo, Massimiliano and Gamblin, Todd},
+title = {Flexible and Optimal Dependency Management via Max-SMT},
+year = {2023},
+isbn = {9781665457019},
+publisher = {IEEE Press},
+url = {https://doi.org/10.1109/ICSE48619.2023.00124},
+doi = {10.1109/ICSE48619.2023.00124},
+abstract = {Package managers such as NPM have become essential for software development. The NPM repository hosts over 2 million packages and serves over 43 billion downloads every week. Unfortunately, the NPM dependency solver has several shortcomings. 1) NPM is greedy and often fails to install the newest versions of dependencies; 2) NPM's algorithm leads to duplicated dependencies and bloated code, which is particularly bad for web applications that need to minimize code size; 3) NPM's vulnerability fixing algorithm is also greedy, and can even introduce new vulnerabilities; and 4) NPM's ability to duplicate dependencies can break stateful frameworks and requires a lot of care to workaround. Although existing tools try to address these problems they are either brittle, rely on post hoc changes to the dependency tree, do not guarantee optimality, or are not composable.We present PacSolve, a unifying framework and implementation for dependency solving which allows for customizable constraints and optimization goals. We use PacSolve to build MaxNPM, a complete, drop-in replacement for NPM, which empowers developers to combine multiple objectives when installing dependencies. We evaluate MaxNPM with a large sample of packages from the NPM ecosystem and show that it can: 1) reduce more vulnerabilities in dependencies than NPM's auditing tool in 33\% of cases; 2) chooses newer dependencies than NPM in 14\% of cases; and 3) chooses fewer dependencies than NPM in 21\% of cases. All our code and data is open and available.},
+booktitle = {Proceedings of the 45th International Conference on Software Engineering},
+pages = {1418–1429},
+numpages = {12},
+keywords = {JavaScript, dependency-management, rosette, NPM, max-SMT, package-management},
+location = {Melbourne, Victoria, Australia},
+series = {ICSE '23}
 }

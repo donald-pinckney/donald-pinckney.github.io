@@ -4,6 +4,6 @@ external_link: https://gitar.ai/blog/introducing-jimy
 date: 2025-02-18
 ---
 
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
+We are excited to introduce Jimy - the agentic AI to build better software. Jimy integrates seamlessly across the entire software lifecycle and enables engineering teams to focus on delivering features rather than paying down technical debt
 
 <!--more-->

@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- This site was created with Hugo Blox. https://hugoblox.com -->
-<!-- Last Published: June 9, 2025 --><html lang="en-us" dir="ltr"
+<!-- Last Published: June 10, 2025 --><html lang="en-us" dir="ltr"
       data-wc-theme-default="system">
   
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
@@ -42,6 +42,8 @@
     
   
   <meta name="description" content="Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.
+Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.
+To address this problem, we&rsquo;ve built automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we integrate constraint solving with large language models&rsquo; suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.
 " />
 
   
@@ -178,7 +180,9 @@
   <meta property="og:site_name" content="Donald Pinckney" />
   <meta property="og:url" content="http://localhost:1313/project/repyro/" />
   <meta property="og:title" content="Repyro | Donald Pinckney" />
-  <meta property="og:description" content="Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies." /><meta property="og:image" content="http://localhost:1313/project/repyro/featured.png" />
+  <meta property="og:description" content="Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.
+Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.
+To address this problem, we&rsquo;ve built automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we integrate constraint solving with large language models&rsquo; suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution." /><meta property="og:image" content="http://localhost:1313/project/repyro/featured.png" />
     <meta property="twitter:image" content="http://localhost:1313/project/repyro/featured.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -233,7 +237,7 @@
       "url": "http://localhost:1313/media/icon_hu_1df060215326dd50.png"
     }
   },
-  "description": "\u003cp\u003eCombines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.\u003c/p\u003e"
+  "description": "\u003cp\u003eCombines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.\u003c/p\u003e\n\u003cp\u003eDependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.\u003c/p\u003e\n\u003cp\u003eTo address this problem, we\u0026rsquo;ve built automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we integrate constraint solving with large language models\u0026rsquo; suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.\u003c/p\u003e"
 }
 </script>
 
@@ -273,63 +277,70 @@
   
   
   
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
-      
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-        
-      
-    
   
   
+  
+  
+  
+  
+  
+  
+  
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        
+      
+    
   
   
   
@@ -560,9 +571,25 @@
         <ul class="hb-sidebar-list"><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/dissertation/"
+    
+  >Improving Dependency Management via Formal Semantics
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
     href="/publication/pinckney-msr-2023/"
     
   >A Large Scale Analysis of Semantic Versioning in NPM
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/npm-follower/"
+    
+  >npm-follower: A Complete Dataset Tracking the NPM Ecosystem
     </a>
               
             </li><li class="flex flex-col "><a
@@ -576,9 +603,9 @@
             </li><li class="flex flex-col "><a
     class="hb-sidebar-custom-link
       text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
-    href="/publication/npm-follower/"
+    href="/publication/multipl-e/"
     
-  >Npm-Follower: A Complete Dataset Tracking the NPM Ecosystem
+  >MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation
     </a>
               
             </li><li class="flex flex-col "><a
@@ -587,6 +614,14 @@
     href="/publication/pinckney-wasmk/"
     
   >Wasm/k: Delimited Continuations for WebAssembly
+    </a>
+              
+            </li><li class="flex flex-col "><a
+    class="hb-sidebar-custom-link
+      text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50"
+    href="/publication/serverless/"
+    
+  >Formal Foundations of Serverless Computing
     </a>
               
             </li></ul>
@@ -733,6 +768,8 @@
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert">
         <p>Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.</p>
+<p>Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.</p>
+<p>To address this problem, we&rsquo;ve built automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we integrate constraint solving with large language models&rsquo; suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.</p>
       </div>
 
       

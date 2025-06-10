@@ -17,7 +17,22 @@
       <link>http://localhost:1313/project/jimy/</link>
       <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/project/jimy/</guid>
-      <description>&lt;p&gt;Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.&lt;/p&gt;</description>
+      <description>&lt;p&gt;We are excited to introduce Jimy - the agentic AI to build better software. Jimy integrates seamlessly across the entire software lifecycle and enables engineering teams to focus on delivering features rather than paying down technical debt&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Improving Dependency Management via Formal Semantics</title>
+      <link>http://localhost:1313/publication/dissertation/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/dissertation/</guid>
+      <description>&lt;p&gt;Dependency management is a key part of the software development lifecycle. Choices made when managing dependencies impact both the efficiency of software development and final software quality. Today&amp;rsquo;s package managers automate much of the dependency management work, but key challenges remain generally unsolved, such as aiding developers with dependency repair, optimizing over dependency solutions, and improving transparency of popular package managers&amp;rsquo; semantics. I claim that software dependency specifications can be generalized and formalized across diverse solving algorithms and package ecosystems, and that doing so enables us to attack such challenges.&lt;/p&gt;
+&lt;p&gt;To support this claim, we show three contributions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;an empirical analysis of dependency use in the NPM ecosystem, which motivates questions regarding the design of NPM,&lt;/li&gt;
+&lt;li&gt;an executable formal semantics of dependency solving (PacSolve) and an optimizing NPM solver (MaxNPM), and&lt;/li&gt;
+&lt;li&gt;a system for efficient automated repair of Python dependencies, modeled using PacSolve.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
@@ -25,7 +40,29 @@
       <link>http://localhost:1313/project/repyro/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/project/repyro/</guid>
-      <description>&lt;p&gt;Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Combines generative AI with SAT-solving to find fixes to runtime errors caused by incompatible dependencies.&lt;/p&gt;
+&lt;p&gt;Dependency management is extremely tricky to get right, as programmers need to make sure their dependency version constraints are neither too broad nor too narrow. Compounding this, if there is just one package in your whole dependency tree that has a defective constraint, then you may end up with a solution which causes bugs at runtime.&lt;/p&gt;
+&lt;p&gt;To address this problem, we&amp;rsquo;ve built automated dependency repair tooling, starting with the Python/Pip ecosystem. Building on our previous work (MaxNPM), we integrate constraint solving with large language models&amp;rsquo; suggestions for patching constraints, to iteratively narrow the search space and find a repaired dependency solution.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Large Scale Analysis of Semantic Versioning in NPM</title>
+      <link>http://localhost:1313/publication/pinckney-msr-2023/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/pinckney-msr-2023/</guid>
+      <description>&lt;p&gt;Package managers and their massive open-source ecosystems are the foundation for how any practical software is built. However, the behavior of how developers share and consume packages at-scale is not terribly well understood. How do developers specify their dependencies? How do developers tag new releases of their own packages? Do common practices lead to issues in dependency management, such as out-of-date dependencies or security issues?&lt;/p&gt;
+&lt;p&gt;To answer these types of questions, we built a system which in realtime archives a replica of the entire NPM ecosystem, including both package metadata and code data (20+ TB). The dataset is now public and can be used for a wide variety of NPM dependency graph queries or big code analysis. Our analysis of the data finds some surprising findings, with an asymmetry between how developers tag updates that they publish vs. how developers write dependency constraints.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>npm-follower: A Complete Dataset Tracking the NPM Ecosystem</title>
+      <link>http://localhost:1313/publication/npm-follower/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/npm-follower/</guid>
+      <description>&lt;p&gt;Package managers and their massive open-source ecosystems are the foundation for how any practical software is built. However, the behavior of how developers share and consume packages at-scale is not terribly well understood. How do developers specify their dependencies? How do developers tag new releases of their own packages? Do common practices lead to issues in dependency management, such as out-of-date dependencies or security issues?&lt;/p&gt;
+&lt;p&gt;To answer these types of questions, we built a system which in realtime archives a replica of the entire NPM ecosystem, including both package metadata and code data (20+ TB). The dataset is now public and can be used for a wide variety of NPM dependency graph queries or big code analysis. Our analysis of the data finds some surprising findings, with an asymmetry between how developers tag updates that they publish vs. how developers write dependency constraints.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -37,35 +74,56 @@
     </item>
     
     <item>
-      <title>A Large Scale Analysis of Semantic Versioning in NPM</title>
-      <link>http://localhost:1313/publication/pinckney-msr-2023/</link>
-      <pubDate>Mon, 01 May 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/pinckney-msr-2023/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Flexible and Optimal Dependency Management via Max-SMT</title>
       <link>http://localhost:1313/publication/maxnpm/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/publication/maxnpm/</guid>
-      <description></description>
+      <description>&lt;p&gt;Dependency management is unfortunately not as simple as just installing the dependencies you want: part of software engineering
+now involves careful selection of dependency versions, to make sure that: you get newer versions, you avoid security vulnerabilities, you successfully unify dependencies on the same package into a single version, and so on. These goals are often at odds, and are not handled well by existing package managers&amp;rsquo; baked-in heuristics.&lt;/p&gt;
+&lt;p&gt;To solve this, we built &lt;b&gt;MaxNPM&lt;/b&gt;, a fork of the NPM CLI which lets users customize dependency solving goals, so that
+software developers can guide the tooling appriopriately for their situation. We evaluated MaxNPM with a large sample of packages from the NPM ecosystem and show that it can reduce vulnerabilities in dependencies, choose newer dependencies than NPM can, and can choose fewer dependencies than NPM.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Npm-Follower: A Complete Dataset Tracking the NPM Ecosystem</title>
-      <link>http://localhost:1313/publication/npm-follower/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/publication/npm-follower/</guid>
-      <description></description>
+      <title>MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation</title>
+      <link>http://localhost:1313/publication/multipl-e/</link>
+      <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/multipl-e/</guid>
+      <description>&lt;p&gt;Large language models (LLMs) are blowing up the internet now, both for casual natural language use as well as for programming tasks.
+ChatGPT, Codex, and other tools appear to be able to code fairly well, but how well depends on which programming language!
+We designed and built MultiPL-E, a systematic and extensible system for fairly evaluating LLMs across a large number of programming languages (18!).&lt;/p&gt;
+&lt;p&gt;The key insight is that LLM programming benchmark suites (HumanEval, etc.) are written as Python unit tests, and unit tests are (almost always) written in a subset of Python and do not use features such as functions, loops, etc. Therefore, we were able to write trivial &amp;ldquo;compilers&amp;rdquo; to translate Python unit tests to nearly any other language, and obtain equivalent benchmark suites.
+This work was published in TSE 2023 and presented at ESEC/FSE 2023.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Wasm/k: Delimited Continuations for WebAssembly</title>
       <link>http://localhost:1313/publication/pinckney-wasmk/</link>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/publication/pinckney-wasmk/</guid>
-      <description></description>
+      <description>&lt;p&gt;WebAssembly (Wasm) is a rapidly growing compilation target for the web, but lacks
+support for user-level or multiplexed threads, as seen in Go. Currently such threads
+must be simulated, leading to a significant performance penalty for Go code compiled
+to Wasm. We resolve this by adding support for &lt;strong&gt;delimited continuations&lt;/strong&gt; (a form of stack capture operations)
+to WebAssembly, which allows for efficient expression of user-level threads, as well as
+many other interesting computational effects.
+This work was presented at DLS 2020.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Formal Foundations of Serverless Computing</title>
+      <link>http://localhost:1313/publication/serverless/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publication/serverless/</guid>
+      <description>&lt;p&gt;Serverless functions are super convenient, but the underlying cloud platforms (such as AWS Lambda)
+nondeterministically reuse or restart the containers inside of which code is run, leading to
+bugs in real-world code. Documentation and online tutorials offer spotty guidance on what exactly this behavior is, and how a programmer can guarantee their code is safe. We help explain these dynamics by building a framework for analyzing the semantics of
+serverless functions, which others built on when designing richer serverless abstractions, such as &lt;a href=&#34;https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Azure&amp;rsquo;s Durable Functions&lt;/a&gt;.
+This work was presented at OOPSLA 2019, and received a distinguished paper award.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
