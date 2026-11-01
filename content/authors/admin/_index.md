@@ -16,18 +16,18 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: AI Engineer, PhD
+role: Founder of Sectr, PhD
 
 interests:
-  - Building robust agentic systems
+  - Infrastructure for AI agents
+  - Durable execution and serverless
   - Combining AI and static analysis
-  - Scaling AI agents to millions+ LoC
   - Photography ([Flickr](https://www.flickr.com/photos/194281096@N08/)) and spending time with my cats.
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Gitar
-    url: https://gitar.ai
+  - name: Sectr
+    url: https://sectr.dev
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -80,15 +80,37 @@ education:
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
       - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
-  - position: AI Engineer
+  - position: Founder & CEO
+    company_name: Sectr
+    company_url: 'https://sectr.dev'
+    company_logo: custom/sectr
+    date_start: 2026-08-01
+    date_end: ''
+    summary: |
+      - Building [Sectr](https://sectr.dev), the **data and coordination layer for AI agents**. Sectr stores, streams and resumes agent conversations, so teams can turn their agents into products with **no rewrite and no framework lock-in**.
+    button:
+      text: Try Sectr (free beta)
+      url: https://sectr.dev
+      icon: hero/arrow-top-right-on-square
+  - position: Senior Software Engineer (AI Foundations)
+    company_name: Temporal
+    company_url: 'https://temporal.io'
+    company_logo: custom/temporal
+    date_start: 2025-09-01
+    date_end: 2026-08-01
+    summary: |
+      - Helped build up the newly created **AI Foundations team**, rethinking infrastructure around the **core primitives agents need to run reliably in production**, from durable execution to the SDK abstractions developers build against.
+      - Designed **AI-native SDK primitives** in Python, and a **plugin system** for integrating third-party agent frameworks into the Temporal SDKs.
+      - Led prototyping of the integration between Temporal and **AWS Bedrock AgentCore** ([AWS blog](https://aws.amazon.com/blogs/apn/how-temporal-uses-amazon-bedrock-agentcore-to-create-robust-ai-systems/)), and contributed to the design of the **Google ADK** integration.
+  - position: Founding Engineer
     company_name: Gitar
     company_url: 'https://gitar.ai'
     company_logo: custom/gitar
     date_start: 2024-04-01
-    date_end: ''
+    date_end: 2025-09-01
     summary: |
-      - Building [Jimy](https://gitar.ai/blog/introducing-jimy), the first AI coding agent which leverages deep static analysis and source code-level optimization algorithms to **scale agentic AI to massive enterprise codebases while minimizing hallucinations**.
-      - Leading the AI research team on designing and implementing techniques for **bridging core compiler algorithms with generative AI** in Jimy. 
+      - Built [Jimy](https://gitar.ai/blog/introducing-jimy), the first AI coding agent which leverages deep static analysis and source code-level optimization algorithms to **scale agentic AI to massive enterprise codebases while minimizing hallucinations**. Gitar was later **acquired by Sonar**.
+      - Led the AI research team on designing and implementing techniques for **bridging core compiler algorithms with generative AI** in Jimy. 
       - Architected and implemented static analysis technologies for **automated code refactoring solutions** for enterprise clients, including multiple **Fortune 500 companies**.
   - position: PhD Candidate
     company_name: Northeastern University
@@ -176,4 +198,4 @@ awards:
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
-I'm building the next generation of AI-driven developer tooling, and developing techniques for agents to perform long-running and complex code migrations across enterprise-scale codebases.
+I'm building [Sectr](https://sectr.dev), the data and coordination layer for AI agents, so teams can turn their agents into products without rewriting them.
