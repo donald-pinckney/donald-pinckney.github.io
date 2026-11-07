@@ -1,0 +1,3 @@
+# Local dev: images come from .photos-out/ (mounted at /photos/ by config/development/module.yaml).
+photos:
+  base_url: '/photos'

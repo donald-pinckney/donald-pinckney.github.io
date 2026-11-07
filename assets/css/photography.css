@@ -1,0 +1,187 @@
+/* Photography gallery. Follows the site's light/dark mode; the lightbox is always dark. */
+
+:root {
+  --pg-text: rgb(15 23 42);
+  --pg-muted: rgb(100 116 139);
+  --pg-accent: rgb(var(--color-primary-600, 5 150 105));
+  --pg-gap: 4px;
+  --pg-row: 170px;
+}
+.dark {
+  --pg-text: rgb(241 245 249);
+  --pg-muted: rgb(148 163 184);
+  --pg-accent: rgb(var(--color-primary-400, 52 211 153));
+}
+@media (min-width: 640px) { :root { --pg-gap: 6px; --pg-row: 260px; } }
+@media (min-width: 1280px) { :root { --pg-row: 320px; } }
+
+.pg-wrap {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: var(--pg-text);
+}
+@media (min-width: 768px) { .pg-wrap { padding: 0 32px; } }
+
+/* ── headers ── */
+.pg-head {
+  max-width: 44rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+.pg-head h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin: 0.25rem 0 0;
+}
+.pg-meta {
+  color: var(--pg-muted);
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+  font-variant-numeric: tabular-nums;
+}
+.pg-intro {
+  color: var(--pg-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-top: 1rem;
+}
+.pg-intro p + p { margin-top: 0.75rem; }
+.pg-back {
+  display: inline-block;
+  color: var(--pg-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.pg-back:hover { color: var(--pg-accent); }
+.pg-empty { text-align: center; color: var(--pg-muted); }
+
+/* ── album index ── */
+.pg-albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* a lone album sits centered, not stranded on the left */
+  gap: 2.5rem 2rem;
+  margin-bottom: 4rem;
+}
+.pg-card { display: block; width: 100%; text-decoration: none; color: inherit; }
+@media (min-width: 768px) { .pg-card { width: calc(50% - 1rem); } }
+.pg-card-cover {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.pg-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.pg-card:hover .pg-card-cover img { transform: scale(1.025); }
+.pg-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 0.9rem 0 0;
+}
+.pg-card .pg-meta { margin-top: 0.2rem; }
+.pg-card:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 6px; border-radius: 4px; }
+
+/* ── justified grid ──
+   Each item's width/grow is proportional to its aspect ratio (--ar), so every row fills the width
+   at the same height and no photo is cropped. The ::after spacer keeps the last row from stretching. */
+.pg-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pg-gap);
+  margin-bottom: 4rem;
+}
+.pg-grid::after { content: ""; flex-grow: 999999; }
+.pg-item {
+  position: relative;
+  display: block;
+  flex-grow: calc(var(--ar) * 100);
+  width: calc(var(--ar) * var(--pg-row));
+  overflow: hidden;
+}
+.pg-item::before { content: ""; display: block; padding-bottom: calc(100% / var(--ar)); }
+.pg-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  transition: filter 0.3s, transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+/* Photos rest slightly dimmed and brighten to full under the pointer (or keyboard focus).
+   Touch screens have no hover, so there they stay at full brightness. */
+@media (hover: hover) {
+  .pg-item img { filter: brightness(0.82); }
+  .pg-item:hover img,
+  .pg-item:focus-visible img { filter: none; transform: scale(1.015); }
+}
+.pg-item:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 2px; z-index: 1; }
+/* JS layout (photography-justify.js) sets explicit width/height per item. */
+.pg-grid--js::after { display: none; }
+.pg-grid--js .pg-item { flex: none; }
+.pg-grid--js .pg-item::before { display: none; }
+.pg-chapter {
+  flex-basis: 100%;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 0.5rem;
+}
+.pg-chapter:first-child { margin-top: 0; }
+
+/* ── single photo page ── */
+.pg-photo-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+.pg-photo-top .pg-meta { margin: 0; }
+.pg-photo { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.pg-photo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 220px);
+  background-size: cover;
+}
+.pg-photo figcaption {
+  color: var(--pg-muted);
+  margin-top: 0.9rem;
+  text-align: center;
+  max-width: 44rem;
+}
+.pg-photo-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.25rem 0 3rem;
+}
+.pg-photo-nav a { color: var(--pg-muted); text-decoration: none; transition: color 0.15s; }
+.pg-photo-nav a:hover { color: var(--pg-accent); }
+
+/* ── lightbox ── */
+.pswp { --pswp-bg: #0b0b0d; --pswp-placeholder-bg: #18181b; }
+.pswp__pg-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 24px 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  pointer-events: none;
+}
+.pswp__pg-caption[hidden] { display: none; }

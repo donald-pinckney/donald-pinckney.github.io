@@ -1,0 +1,20 @@
+# Local dev only: serve generated gallery images from .photos-out/ at /photos/.
+# In production the gallery points at Cloudflare R2 instead (params.photos.base_url).
+mounts:
+  - source: hugo-blox/blox/community
+    target: layouts/partials/blox/community/
+    includeFiles: '**.html'
+  - source: hugo-blox/blox/all-access
+    target: layouts/partials/blox/
+    includeFiles: '**.html'
+  - source: hugo-blox/blox
+    target: assets/dist/community/blox/
+    includeFiles: '**.css'
+  - source: layouts
+    target: layouts
+  - source: assets
+    target: assets
+  - source: static
+    target: static
+  - source: .photos-out
+    target: static/photos

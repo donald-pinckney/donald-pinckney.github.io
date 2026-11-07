@@ -2,3 +2,7 @@ resources/
 *.psd
 .DS_Store
 public/
+
+# Photography gallery (see PHOTOS.md)
+node_modules/
+.photos-out/

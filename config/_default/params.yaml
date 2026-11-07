@@ -54,3 +54,8 @@ features:
     enable: false
   privacy_pack:
     enable: false
+
+# Photography gallery (content/photography/, built by `npm run photos`; see PHOTOS.md)
+photos:
+  # Where the web-size images are served from. TODO: create the R2 bucket + custom domain.
+  base_url: 'https://photos.donaldpinckney.com'

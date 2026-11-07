@@ -1,0 +1,18 @@
+{{/*
+  Content adapter: one page per photo at /photography/<album>/<photo-id>/,
+  generated from data/photos/<album>.json (written by `npm run photos`).
+  These pages are for direct links and sharing; the album page itself renders the grid from the same data.
+*/}}
+{{ range $album, $data := .Site.Data.photos }}
+  {{ $n := len $data.photos }}
+  {{ range $i, $p := $data.photos }}
+    {{ $.AddPage (dict
+      "path" (printf "%s/%s" $album $p.id)
+      "kind" "page"
+      "title" (printf "%s · %d of %d" $data.title (add $i 1) $n)
+      "date" $p.date
+      "build" (dict "list" "never")
+      "params" (dict "album" $album "photo_id" $p.id)
+    ) }}
+  {{ end }}
+{{ end }}

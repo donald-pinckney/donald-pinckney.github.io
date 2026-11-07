@@ -22,7 +22,7 @@ interests:
   - Infrastructure for AI agents
   - Durable execution and serverless
   - Combining AI and static analysis
-  - Photography ([Flickr](https://www.flickr.com/photos/194281096@N08/)) and spending time with my cats.
+  - '[Photography](/photography/) and spending time with my cats.'
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -41,8 +41,9 @@ profiles:
     url: https://www.linkedin.com/in/donald-pinckney-56456ba8
   - icon: brands/google-scholar
     url: https://scholar.google.com/citations?user=j5kGb8sAAAAJ&hl=en
-  - icon: custom/flickr
-    url: https://www.flickr.com/photos/194281096@N08/
+  - icon: camera
+    url: /photography/
+    label: Photography
 
 education:
   - area: PhD, Computer Science

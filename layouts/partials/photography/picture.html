@@ -1,0 +1,19 @@
+{{/*
+  <picture> with AVIF + JPEG fallback, intrinsic size set (no layout shift), blurred preview behind it.
+  Input: dict "album" "p" "sizes" (sizes attr) "alt" "eager" (bool) "class"
+*/}}
+{{ $p := .p }}
+{{ $small := index $p.sizes 0 }}
+<picture>
+  <source type="image/avif" srcset="{{ partial "photography/srcset.html" (dict "album" .album "p" $p "ext" "avif") }}" sizes="{{ .sizes }}">
+  <img
+    src="{{ partial "photography/src.html" (dict "album" .album "p" $p "w" $small "ext" "jpg") }}"
+    srcset="{{ partial "photography/srcset.html" (dict "album" .album "p" $p "ext" "jpg") }}"
+    sizes="{{ .sizes }}"
+    width="{{ int $p.w }}" height="{{ int $p.h }}"
+    alt="{{ .alt }}"
+    {{ with .class }}class="{{ . }}"{{ end }}
+    {{ if .eager }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+    decoding="async"
+    style="{{ printf "background-color:%s;background-image:url('%s')" $p.color $p.lqip | safeCSS }}">
+</picture>

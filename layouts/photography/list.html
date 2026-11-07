@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{ if eq .Parent.Kind "home" }}
+  {{/* ───────────── /photography/ : album index ───────────── */}}
+  <div class="pg-wrap">
+    <header class="pg-head">
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}<div class="pg-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    <div class="pg-albums">
+      {{ range .Sections.ByDate.Reverse }}
+        {{ $album := path.Base .File.Dir }}
+        {{ $data := index site.Data.photos $album }}
+        {{ if $data }}
+          {{ $cover := index $data.photos 0 }}
+          {{ with .Params.cover }}{{ with where $data.photos "id" . }}{{ $cover = index . 0 }}{{ end }}{{ end }}
+          <a class="pg-card" href="{{ .RelPermalink }}">
+            <div class="pg-card-cover">
+              {{ partial "photography/picture.html" (dict "album" $album "p" $cover "alt" (printf "%s — cover photo" .Title) "sizes" "(min-width: 768px) 50vw, 100vw" "eager" true) }}
+            </div>
+            <h2>{{ .Title }}</h2>
+            <p class="pg-meta">{{ with .Params.dates }}{{ . }} · {{ end }}{{ len $data.photos }} photos</p>
+          </a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+
+{{ else }}
+  {{/* ───────────── /photography/<album>/ : justified grid + lightbox ───────────── */}}
+  {{ $album := path.Base .File.Dir }}
+  {{ $data := index site.Data.photos $album }}
+  {{ $captions := .Params.captions | default dict }}
+  <div class="pg-wrap">
+    <header class="pg-head">
+      <a class="pg-back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+      <h1>{{ .Title }}</h1>
+      <p class="pg-meta">{{ with .Params.dates }}{{ . }} · {{ end }}{{ if $data }}{{ len $data.photos }} photos{{ end }}</p>
+      {{ with .Content }}<div class="pg-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{ if not $data }}
+      <p class="pg-empty">No photos yet. Run <code>npm run photos</code>.</p>
+    {{ else }}
+      {{ $chapter := "" }}
+      <div class="pg-grid" id="pg-grid">
+        {{ range $i, $p := $data.photos }}
+          {{ if and $p.chapter (ne $p.chapter $chapter) }}
+            {{ $chapter = $p.chapter }}
+            <h2 class="pg-chapter">{{ replaceRE `^\d+\s*-\s*` "" $p.chapter | replaceRE `\s+-\s+` " · " }}</h2>
+          {{ end }}
+          {{ $ar := div (float $p.w) $p.h }}
+          {{ $big := index $p.sizes (sub (len $p.sizes) 1) }}
+          {{ $caption := index $captions $p.id }}
+          {{ $alt := $caption | default (printf "Photo %d from %s" (add $i 1) $.Title) }}
+          {{ $sizes := printf "(min-width: 1280px) %dpx, (min-width: 640px) %dpx, %dpx" (int (math.Round (mul $ar 420))) (int (math.Round (mul $ar 340))) (int (math.Round (mul $ar 250))) }}
+          <a class="pg-item"
+             href="{{ $.RelPermalink }}{{ $p.id }}/"
+             style="{{ printf "--ar:%.4f" $ar | safeCSS }}"
+             data-pswp-src="{{ partial "photography/src.html" (dict "album" $album "p" $p "w" $big "ext" "jpg") }}"
+             data-pswp-width="{{ int $big }}"
+             data-pswp-height="{{ int (math.Round (div (mul (float $p.h) $big) $p.w)) }}"
+             {{- /* not "data-srcset-*": attribute names containing "src" get URL-escaped by Go templates */}}
+             data-avif="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "avif") }}"
+             data-jpeg="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "jpg") }}"
+             {{ with $caption }}data-caption="{{ . }}"{{ end }}>
+            {{ partial "photography/picture.html" (dict "album" $album "p" $p "alt" $alt "sizes" $sizes "eager" (lt $i 6)) }}
+          </a>
+        {{ end }}
+      </div>
+      <script>{{ (resources.Get "js/photography-justify.js" | minify).Content | safeJS }}</script>
+    {{ end }}
+  </div>
+
+  {{ if $data }}
+    {{ $lb := resources.Get "js/vendor/photoswipe/photoswipe-lightbox.esm.min.js" | fingerprint }}
+    {{ $ps := resources.Get "js/vendor/photoswipe/photoswipe.esm.min.js" | fingerprint }}
+    {{ $gallery := resources.Get "js/photography.js" | minify | fingerprint }}
+    <script type="module">
+      import PhotoSwipeLightbox from {{ $lb.RelPermalink }};
+      import { initGallery } from {{ $gallery.RelPermalink }};
+      initGallery(PhotoSwipeLightbox, {{ $ps.RelPermalink }}, {{ .RelPermalink }});
+    </script>
+  {{ end }}
+{{ end }}
+{{ end }}

@@ -1,0 +1,2 @@
+{{/* URL of one web version. Input: dict "album" "p" (photo entry) "w" (width) "ext" ("avif"|"jpg"). */}}
+{{ return printf "%s/%s/%s-%s-%d.%s" site.Params.photos.base_url .album .p.id .p.hash (int .w) .ext }}

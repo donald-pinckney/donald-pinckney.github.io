@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{/* /photography/<album>/<photo-id>/ : one photo, for direct links. Pages come from content/photography/_content.gotmpl. */}}
+{{ $album := .Params.album }}
+{{ $data := index site.Data.photos $album }}
+{{ $albumPage := .Parent }}
+{{ $captions := $albumPage.Params.captions | default dict }}
+{{ $idx := 0 }}
+{{ range $i, $p := $data.photos }}{{ if eq $p.id $.Params.photo_id }}{{ $idx = $i }}{{ end }}{{ end }}
+{{ $p := index $data.photos $idx }}
+{{ $n := len $data.photos }}
+{{ $caption := index $captions $p.id }}
+{{ $prev := cond (gt $idx 0) (index $data.photos (sub $idx 1)) false }}
+{{ $next := cond (lt (add $idx 1) $n) (index $data.photos (add $idx 1)) false }}
+
+<div class="pg-wrap pg-photo-page">
+  <nav class="pg-photo-top">
+    <a class="pg-back" href="{{ $albumPage.RelPermalink }}">← {{ $albumPage.Title }}</a>
+    <span class="pg-meta">{{ add $idx 1 }} / {{ $n }}</span>
+  </nav>
+
+  <figure class="pg-photo">
+    {{ partial "photography/picture.html" (dict "album" $album "p" $p "alt" ($caption | default (printf "Photo %d from %s" (add $idx 1) $albumPage.Title)) "sizes" "(min-width: 1280px) 80vw, 100vw" "eager" true) }}
+    {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+  </figure>
+
+  <nav class="pg-photo-nav">
+    {{ with $prev }}<a id="pg-prev" href="{{ $albumPage.RelPermalink }}{{ .id }}/">← Previous</a>{{ else }}<span></span>{{ end }}
+    {{ with $next }}<a id="pg-next" href="{{ $albumPage.RelPermalink }}{{ .id }}/">Next →</a>{{ else }}<span></span>{{ end }}
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('keydown', (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey || /input|textarea/i.test(e.target.tagName)) return;
+    const go = (id) => { const a = document.getElementById(id); if (a) location.href = a.href; };
+    if (e.key === 'ArrowLeft') go('pg-prev');
+    else if (e.key === 'ArrowRight') go('pg-next');
+    else if (e.key === 'Escape') location.href = {{ $albumPage.RelPermalink }};
+  });
+</script>
+{{ end }}

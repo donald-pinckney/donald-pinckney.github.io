@@ -1,0 +1,9 @@
+{{/* Gallery styles, only on /photography/ pages. Loaded by the theme's head-end hook. */}}
+{{ if eq .Section "photography" }}
+  {{ $css := resources.Get "css/photography.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ if and (eq .Kind "section") (ne .Parent.Kind "home") }}
+    {{ $pswp := resources.Get "js/vendor/photoswipe/photoswipe.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $pswp.RelPermalink }}">
+  {{ end }}
+{{ end }}

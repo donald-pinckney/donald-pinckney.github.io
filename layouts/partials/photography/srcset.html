@@ -1,0 +1,8 @@
+{{/* srcset for all web versions. Input: dict "album" "p" "ext". */}}
+{{ $ctx := . }}
+{{ $parts := slice }}
+{{ range .p.sizes }}
+  {{ $url := partial "photography/src.html" (dict "album" $ctx.album "p" $ctx.p "w" . "ext" $ctx.ext) }}
+  {{ $parts = $parts | append (printf "%s %dw" $url (int .)) }}
+{{ end }}
+{{ return delimit $parts ", " }}
