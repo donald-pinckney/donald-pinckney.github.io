@@ -14,12 +14,13 @@
         {{ if $data }}
           {{ $cover := index $data.photos 0 }}
           {{ with .Params.cover }}{{ with where $data.photos "id" . }}{{ $cover = index . 0 }}{{ end }}{{ end }}
-          <a class="pg-card" href="{{ .RelPermalink }}">
-            <div class="pg-card-cover">
-              {{ partial "photography/picture.html" (dict "album" $album "p" $cover "alt" (printf "%s — cover photo" .Title) "sizes" "(min-width: 768px) 50vw, 100vw" "eager" true) }}
+          <a class="pg-card" href="{{ .RelPermalink }}"
+             {{ with .Params.cover_position }}style="{{ printf "--pos:%s" . | safeCSS }}"{{ end }}>
+            {{ partial "photography/picture.html" (dict "album" $album "p" $cover "alt" "" "sizes" "(min-width: 640px) 360px, calc(100vw - 32px)" "eager" true) }}
+            <div class="pg-card-text">
+              <h2>{{ .Title }}</h2>
+              <p>{{ .Date.Format "2006" }} · {{ len $data.photos }} photos</p>
             </div>
-            <h2>{{ .Title }}</h2>
-            <p class="pg-meta">{{ with .Params.dates }}{{ . }} · {{ end }}{{ len $data.photos }} photos</p>
           </a>
         {{ end }}
       {{ end }}
@@ -35,7 +36,7 @@
     <header class="pg-head">
       <a class="pg-back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
       <h1>{{ .Title }}</h1>
-      <p class="pg-meta">{{ with .Params.dates }}{{ . }} · {{ end }}{{ if $data }}{{ len $data.photos }} photos{{ end }}</p>
+      <p class="pg-meta">{{ .Date.Format "2006" }}{{ if $data }} · {{ len $data.photos }} photos{{ end }}</p>
       {{ with .Content }}<div class="pg-intro">{{ . }}</div>{{ end }}
     </header>
 

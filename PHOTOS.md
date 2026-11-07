@@ -65,8 +65,8 @@ One-time setup: `npm install`.
 ---
 title: Spain
 source: 2025-03-spain          # folder under ~/Pictures/Exports/; the album = its web/ subfolder
-date: 2025-03-25               # orders albums on /photography/ (newest first)
-dates: March – April 2025      # shown under the title
+date: 2025-03-25               # its year is shown; also orders albums (newest first)
+cover_position: 50% 30%        # optional: which part of the cover to keep when cropped
 cover: img-4264                # photo id = file name minus the date prefix, lowercased
 captions:                      # optional, keyed by photo id
   img-4264: Baths of Doña María de Padilla, Real Alcázar, Seville

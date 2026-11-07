@@ -51,6 +51,14 @@ export function initGallery(PhotoSwipeLightbox, pswpModuleUrl, albumUrl) {
     });
   });
 
+  // Animate next/previous. PhotoSwipe only animates when swiping; arrow keys and the arrow buttons
+  // call pswp.next()/prev(), which jump instantly. Route them through an animated slide instead.
+  lightbox.on('init', () => {
+    const pswp = lightbox.pswp;
+    pswp.next = () => pswp.mainScroll.moveIndexBy(1, true);
+    pswp.prev = () => pswp.mainScroll.moveIndexBy(-1, true);
+  });
+
   // URL + Back button handling.
   let pushed = false;
   const syncUrl = () => {

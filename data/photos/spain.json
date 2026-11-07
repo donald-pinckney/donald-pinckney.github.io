@@ -1,5 +1,5 @@
 {
- "title": "Spain",
+ "title": "Spain & Portugal",
  "source": "2025-03-spain",
  "photos": [
   {
@@ -801,22 +801,6 @@
    "date": "2025-04-01T09:25:33Z",
    "color": "#f8f8f8",
    "lqip": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAAAQBwCdASoYACQAPu1qqFAppiOiqqoBMB2JZwDMHd3AqT8TAIihMg8xOQ/4/gqGeoMrlJL4qgHAKzG/EDevmstxwAD+iaqGdaAra9R7SLt53IgZ21oZeeW91zgl5w5sASlZBAgnXwJfgl6aWmScBzmyt6r8SkNbqVhaCiB6btimFcx8CkfSdUvToPqiM0aczqH4Wt9ATa/Rhv30Z3abIOiGB2JrKWFlHbmUpxm05XPp9N9boOaTfaNI9blzi5XAPeuWzekTwBMnPRz8ktr4TBRtL4Ec0pgexCW6dYIo9wlsWv8EJey+El069pAP0FfNv/QywAp3WUoB5i1zT1GH0y/xOvvRiRX5thGONS5eC3JhnPRYBAAAAA=="
-  },
-  {
-   "id": "img-4264",
-   "hash": "8103da06ca",
-   "file": "20250401-IMG_4264.jpg",
-   "chapter": null,
-   "w": 3844,
-   "h": 4626,
-   "sizes": [
-    640,
-    1280,
-    2048
-   ],
-   "date": "2025-04-01T09:39:47Z",
-   "color": "#080808",
-   "lqip": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAAAQBwCdASoYAB0APu1orVCppaQiqAqpMB2JZACdM1j3kRiPqlAo19iNq1lHSjzoKLk087LkP74SBXEdcLZHn/lqAAD+6jf++AuoeDITLJFI/rA67m4NLKgGU/hjKbfob36RwsUAhgM6E/G4cOTIY9yO6qimZ0fkzgycW64+1RRtLAZL47vOfUajr8C4xEcgQszsmMf+qGH95xNf1TnxaUMS2XnB8x1tQzbQuQjC1x6gdmzMulb8L2D6QmiBLxlR+bcCb4w4k+Z37dnlASxghUyUtrlNfzFh9x/ZKim+X94nKSVs392fcqnsReQRNvU92IDYDcbvFWdQFSOek2W0l98EgQBUMQzAMCa1fYrN+L6nVgAA"
   },
   {
    "id": "img-4265",
@@ -1667,22 +1651,6 @@
    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAADwBQCdASoYABgAPu1ur1IppiQiqAgBMB2JZAC+Y1bDyhkLzEBB5vXV/tBjbljwKFIv1a5333lmAAD+ymSSSQwHUq+fYMZkYcsXaX+IXwPV1iC+ZxftVNS7mLxiSQULvsicMC2xNZ/5JCu1aQl045RZe1nmOLWPrK1n5ZwUiXNR87SNsKcfOB5vrmoStHHHaXz38MLYhnxXEMqttUvNhsheOMaS3UhW8CiWH/K4j90jTtlWkQ4zeE1K8YdbfV5+aL7EDqmQ7NY8xVN51ejMCb2uLD4DID3V3WNZZnpFlV8ytSPngR59e7R4WxH5A1iTBDQAAA=="
   },
   {
-   "id": "img-4654",
-   "hash": "560b95cffb",
-   "file": "20250405-IMG_4654.jpg",
-   "chapter": null,
-   "w": 4563,
-   "h": 3248,
-   "sizes": [
-    640,
-    1280,
-    2048
-   ],
-   "date": "2025-04-05T10:08:15Z",
-   "color": "#281808",
-   "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYABEAPu1kpU4ppaMiMBgMATAdiUAABY3kllk7HMPG1x55v1UBgAD+YVF+njfX4bx71xNXAExQk9DOYZ9UFXnnVirfvegsnDYu5uE2x9+wgP2CiXV3rBy76zxHoUJwGFj58p2YvISU62kIF7NCnuTlck+H8jctOkdI/1LDu8XSKsyxS1LkaKM6hu2ggIAAAAA="
-  },
-  {
    "id": "img-0707",
    "hash": "09aa63d619",
    "file": "20250405-IMG_0707.jpg",
@@ -1697,38 +1665,6 @@
    "date": "2025-04-05T11:37:07Z",
    "color": "#d8d8c8",
    "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAACQBQCdASoYABEAPu1sq1EppaOiqAqpMB2JYgCdMy/BxCL5Cu7Hd45CUK5tKfwZevOdIBWeAAD+wWcs0Zx2x6FSSQppnMBmc7DC2teRgTskmLGLVlHeAPiGbgJcUOgrBtAxuEEs1AvrD5DQtxdIf36cqRTtFyQ5f4eXjo1bmsFLLCIDjGN5sCTyvnDCvT7oIIfpRX23rchQyIDT8LLvHtEJx07BetRGQToqbFpyFN1VNpqGkU9tQ/PJO53nEqgyKhON276pQUOe5RwA"
-  },
-  {
-   "id": "img-0715",
-   "hash": "74b259ea1a",
-   "file": "20250406-IMG_0715.jpg",
-   "chapter": null,
-   "w": 4032,
-   "h": 2788,
-   "sizes": [
-    640,
-    1280,
-    2048
-   ],
-   "date": "2025-04-06T12:23:13Z",
-   "color": "#281818",
-   "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADwBACdASoYABEAPu1or1CppaQjqAqpMB2JaACxBaAAK69ibTe10otEh/6iyKu/DgAA9Z1Tip9c0Dmo1fG4CLa4HeNd+ym8ODoClNIKzJJ8ifOroPUlJww0itlSoTYsn/SOHEr873Lcl/j701JGnd0yWBVtVlH2x4S/POXultcDkTCAxy3VodsjLQVEOuePs62ll5/H0cTF5C1gOVsiOXU9RlaZwx34l2Fm6yRGPoqiL+/x1cf3F8ybwGc6AAAA"
-  },
-  {
-   "id": "img-4661",
-   "hash": "c91799ed7c",
-   "file": "20250407-IMG_4661.jpg",
-   "chapter": null,
-   "w": 4000,
-   "h": 4000,
-   "sizes": [
-    640,
-    1280,
-    2048
-   ],
-   "date": "2025-04-07T10:10:25Z",
-   "color": "#886848",
-   "lqip": "data:image/webp;base64,UklGRhIBAABXRUJQVlA4IAYBAADQBQCdASoYABgAPu1qrVCppaQiqAqpMB2JYgCdMtOT/xDh5OiFcZs+jRvok1/wdhIhY7AKqPoAAPqL8OA3jjQhqjm4d7dfDmDRludjmIVPdVYf5ikp6hPYfMPo09pijLGQKVhAoWt58YtClEOL278gkqyiTU/gJr6jPmNek0ecWS/gaHsYsT6+bQMpdgsrjXXucJ872FVv7THVdrf1KeYveusSMZnLRnKAqiBbITMBR2SO3h9e6zMbwfHbyTWRzGNxpZzBRhpvi4i02SLJg6blziZQ2ZyoRzKrZuUNQSpKJIeKibnmqT1PCYK8Yh1TgHUM+8ClCconz+oCJYLyEAYkma8ZYAAA"
   },
   {
    "id": "img-4665",

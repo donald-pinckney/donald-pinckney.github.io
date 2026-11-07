@@ -343,6 +343,7 @@
       "pg-back",
       "pg-card",
       "pg-card-cover",
+      "pg-card-text",
       "pg-grid",
       "pg-head",
       "pg-intro",

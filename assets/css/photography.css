@@ -6,11 +6,13 @@
   --pg-accent: rgb(var(--color-primary-600, 5 150 105));
   --pg-gap: 4px;
   --pg-row: 170px;
+  --pg-glow: 0 0 0 1px rgb(0 0 0 / 0.12), 0 10px 36px rgb(0 0 0 / 0.55), 0 2px 8px rgb(0 0 0 / 0.25);
 }
 .dark {
   --pg-text: rgb(241 245 249);
   --pg-muted: rgb(148 163 184);
   --pg-accent: rgb(var(--color-primary-400, 52 211 153));
+  --pg-glow: 0 0 0 1px rgb(255 255 255 / 0.3), 0 0 40px rgb(255 255 255 / 0.4), 0 0 10px rgb(255 255 255 / 0.25);
 }
 @media (min-width: 640px) { :root { --pg-gap: 6px; --pg-row: 260px; } }
 @media (min-width: 1280px) { :root { --pg-row: 320px; } }
@@ -60,36 +62,72 @@
 .pg-empty { text-align: center; color: var(--pg-muted); }
 
 /* ── album index ── */
+/* Grid of square cards, up to 3 per row. auto-fit + center: one album sits centered;
+   more albums fill rows of 1/2/3 depending on width. */
 .pg-albums {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* a lone album sits centered, not stranded on the left */
-  gap: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 360px));
+  justify-content: center;
+  max-width: calc(3 * 360px + 2 * 20px); /* at most 3 columns */
+  margin-inline: auto;
+  gap: 20px;
   margin-bottom: 4rem;
 }
-.pg-card { display: block; width: 100%; text-decoration: none; color: inherit; }
-@media (min-width: 768px) { .pg-card { width: calc(50% - 1rem); } }
-.pg-card-cover {
-  aspect-ratio: 3 / 2;
+.pg-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  isolation: isolate;
 }
-.pg-card-cover img {
+.pg-card img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: var(--pos, 50% 50%);
   background-size: cover;
-  transition: transform 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
-.pg-card:hover .pg-card-cover img { transform: scale(1.025); }
+/* Bottom gradient so the title reads on any photo. */
+.pg-card::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0), rgb(0 0 0 / 0.38) 45%, rgb(0 0 0 / 0.72));
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+.pg-card-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px;
+  z-index: 2;
+}
 .pg-card h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  margin: 0.9rem 0 0;
+  font-size: 1.45rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.35);
 }
-.pg-card .pg-meta { margin-top: 0.2rem; }
-.pg-card:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 6px; border-radius: 4px; }
+.pg-card p {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: rgb(255 255 255 / 0.82);
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) {
+  .pg-card:hover img { transform: scale(1.04); }
+}
+.pg-card:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 4px; }
 
 /* ── justified grid ──
    Each item's width/grow is proportional to its aspect ratio (--ar), so every row fills the width
@@ -116,14 +154,13 @@
   height: 100%;
   object-fit: cover;
   background-size: cover;
-  transition: filter 0.3s, transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
 }
-/* Photos rest slightly dimmed and brighten to full under the pointer (or keyboard focus).
-   Touch screens have no hover, so there they stay at full brightness. */
+/* Hovered photo gets a soft outer glow (raised above its neighbours so the glow isn't covered). */
+.pg-item { transition: box-shadow 0.25s ease; }
 @media (hover: hover) {
-  .pg-item img { filter: brightness(0.82); }
-  .pg-item:hover img,
-  .pg-item:focus-visible img { filter: none; transform: scale(1.015); }
+  .pg-item:hover { z-index: 1; box-shadow: var(--pg-glow); }
+  .pg-item:hover img { transform: scale(1.015); }
 }
 .pg-item:focus-visible { outline: 2px solid var(--pg-accent); outline-offset: 2px; z-index: 1; }
 /* JS layout (photography-justify.js) sets explicit width/height per item. */
