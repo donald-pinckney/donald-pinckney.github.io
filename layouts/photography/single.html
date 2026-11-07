@@ -9,12 +9,16 @@
 {{ $p := index $data.photos $idx }}
 {{ $n := len $data.photos }}
 {{ $caption := index $captions $p.id }}
+{{ $chapter := index (partial "photography/chapters.html" (dict "page" $albumPage "data" $data)).of $p.id }}
 {{ $prev := cond (gt $idx 0) (index $data.photos (sub $idx 1)) false }}
 {{ $next := cond (lt (add $idx 1) $n) (index $data.photos (add $idx 1)) false }}
 
 <div class="pg-wrap pg-photo-page">
   <nav class="pg-photo-top">
-    <a class="pg-back" href="{{ $albumPage.RelPermalink }}">← {{ $albumPage.Title }}</a>
+    <span>
+      <a class="pg-back" href="{{ $albumPage.RelPermalink }}">← {{ $albumPage.Title }}</a>
+      {{ with $chapter }}<span class="pg-crumb">/ <a class="pg-back" href="{{ $albumPage.RelPermalink }}#{{ .anchor }}">{{ .place }}</a></span>{{ end }}
+    </span>
     <span class="pg-meta">{{ add $idx 1 }} / {{ $n }}</span>
   </nav>
 

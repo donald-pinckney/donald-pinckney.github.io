@@ -1,0 +1,60 @@
+{{/*
+  Chapters (sub-locations) of an album.
+  Source: the album's `chapters:` front matter (each starts at photo id `from` and runs until the next one),
+  or, if absent, the sub-folders of the album's web/ export folder (`chapter` in the data file).
+
+  Input:  dict "page" (album page) "data" (site.Data.photos.<album>)
+  Output: dict
+            "list"  — chapters with photos, in order: {title, region, text, place, anchor, count, from}
+            "start" — photo id → chapter (for the first photo of each chapter)
+            "of"    — photo id → chapter (for every photo in a chapter)
+*/}}
+{{ $photos := .data.photos }}
+{{ $ids := slice }}{{ range $photos }}{{ $ids = $ids | append .id }}{{ end }}
+
+{{ $defs := slice }}
+{{ with .page.Params.chapters }}
+  {{ range . }}
+    {{ if in $ids .from }}
+      {{ $defs = $defs | append (dict "from" .from "title" .title "region" (.region | default "") "text" (.text | default "")) }}
+    {{ else }}
+      {{ warnf "photography: chapter %q starts at unknown photo %q (not in this album)" .title .from }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $prev := "" }}
+  {{ range $photos }}
+    {{ if and .chapter (ne .chapter $prev) }}
+      {{ $prev = .chapter }}
+      {{ $title := replaceRE `^\d+\s*-\s*` "" .chapter | replaceRE `\s+-\s+` " · " }}
+      {{ $defs = $defs | append (dict "from" .id "title" $title "region" "" "text" "") }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $byStart := dict }}
+{{ range $defs }}{{ $byStart = merge $byStart (dict .from .) }}{{ end }}
+
+{{ $of := dict }}
+{{ $counts := newScratch }}
+{{ $cur := "" }}
+{{ range $photos }}
+  {{ with index $byStart .id }}{{ $cur = .from }}{{ end }}
+  {{ if $cur }}
+    {{ $of = merge $of (dict .id (index $byStart $cur)) }}
+    {{ $counts.Add $cur 1 }}
+  {{ end }}
+{{ end }}
+
+{{ $list := slice }}
+{{ $start := dict }}
+{{ range $defs }}
+  {{ $place := cond (ne .region "") (printf "%s · %s" .title .region) .title }}
+  {{ $c := merge . (dict "count" ($counts.Get .from | default 0) "anchor" (anchorize .title) "place" $place) }}
+  {{ $list = $list | append $c }}
+  {{ $start = merge $start (dict .from $c) }}
+{{ end }}
+{{ $ofFull := dict }}
+{{ range $id, $c := $of }}{{ $ofFull = merge $ofFull (dict $id (index $start $c.from)) }}{{ end }}
+
+{{ return dict "list" $list "start" $start "of" $ofFull }}

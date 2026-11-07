@@ -3,6 +3,7 @@
 :root {
   --pg-text: rgb(15 23 42);
   --pg-muted: rgb(100 116 139);
+  --pg-faint: rgb(148 163 184);
   --pg-accent: rgb(var(--color-primary-600, 5 150 105));
   --pg-gap: 4px;
   --pg-row: 170px;
@@ -11,6 +12,7 @@
 .dark {
   --pg-text: rgb(241 245 249);
   --pg-muted: rgb(148 163 184);
+  --pg-faint: rgb(100 116 139);
   --pg-accent: rgb(var(--color-primary-400, 52 211 153));
   --pg-glow: 0 0 0 1px rgb(255 255 255 / 0.3), 0 0 40px rgb(255 255 255 / 0.4), 0 0 10px rgb(255 255 255 / 0.25);
 }
@@ -167,14 +169,89 @@
 .pg-grid--js::after { display: none; }
 .pg-grid--js .pg-item { flex: none; }
 .pg-grid--js .pg-item::before { display: none; }
+/* Chapter (sub-location) heading: a full-width break in the grid. */
 .pg-chapter {
   flex-basis: 100%;
-  font-size: 1.15rem;
-  font-weight: 650;
-  letter-spacing: -0.01em;
-  margin: 2rem 0 0.5rem;
+  margin: 3.5rem 0 0.9rem;
+  scroll-margin-top: 90px; /* clear the sticky navbar when jumping from the place list */
 }
 .pg-chapter:first-child { margin-top: 0; }
+.pg-chapter-region {
+  margin: 0 0 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pg-muted);
+}
+.pg-chapter h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.pg-chapter-text {
+  margin: 0.4rem 0 0;
+  max-width: 42rem;
+  color: var(--pg-muted);
+  line-height: 1.6;
+}
+
+/* Place dock: vertical list of chapters beside the grid (wide screens only).
+   JS sets --s (hover zoom) and .is-current (chapter currently on screen). */
+.pg-dock-col { display: none; }
+@media (min-width: 1100px) {
+  .pg-album--dock {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 36px;
+  }
+  .pg-dock-col {
+    display: block;
+    position: sticky;
+    top: 60px;                 /* below the sticky navbar */
+    height: calc(100vh - 60px);
+    align-self: start;
+  }
+  .pg-dock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    max-height: 100%;
+    overflow: visible;
+  }
+  .pg-dock a {
+    display: flex;
+    align-items: center;
+    padding: 9px 0;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    color: var(--pg-faint);
+    text-decoration: none;
+    transform: scale(var(--s, 1));   /* hover zoom, set by JS; scales from the left edge */
+    transform-origin: left center;
+    transition: color 0.15s, transform 0.15s ease-out;
+  }
+  .pg-dock a::before {
+    content: "";
+    width: 6px;
+    height: 2px;
+    margin-right: 10px;
+    border-radius: 1px;
+    background: currentColor;
+    opacity: 0.35;
+    transition: width 0.2s, opacity 0.2s;
+  }
+  .pg-dock a:hover { color: var(--pg-text); }
+  .pg-dock a:hover::before { opacity: 0.8; }
+  .pg-dock a.is-current { color: var(--pg-accent); font-weight: 600; }
+  .pg-dock a.is-current::before { width: 16px; opacity: 1; }
+}
+.pg-crumb { color: var(--pg-muted); font-size: 0.9rem; margin-left: 0.35rem; }
 
 /* ── single photo page ── */
 .pg-photo-top {
@@ -221,4 +298,12 @@
   line-height: 1.5;
   pointer-events: none;
 }
-.pswp__pg-caption[hidden] { display: none; }
+.pswp__pg-caption[hidden], .pswp__pg-caption [hidden] { display: none; }
+.pswp__pg-place {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+.pswp__pg-text { margin-top: 0.25rem; }

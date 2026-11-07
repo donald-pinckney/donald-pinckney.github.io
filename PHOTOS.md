@@ -70,6 +70,11 @@ cover_position: 50% 30%        # optional: which part of the cover to keep when 
 cover: img-4264                # photo id = file name minus the date prefix, lowercased
 captions:                      # optional, keyed by photo id
   img-4264: Baths of Doña María de Padilla, Real Alcázar, Seville
+chapters:                      # optional sub-locations, in photo order
+  - from: img-4243             # first photo of the chapter; it runs until the next chapter starts
+    title: Seville
+    region: Spain              # optional small label above the title
+    text: Optional sentence or two of context.
 ---
 Optional intro paragraph (Markdown).
 ```
@@ -78,13 +83,13 @@ Optional intro paragraph (Markdown).
 
 ```sh
 npm run photos   # web versions → .photos-out/ (gitignored), metadata → data/photos/<slug>.json
-npm run dev      # hugo server --renderToMemory → http://localhost:1313/photography/
+npm run dev      # hugo server (in memory, full rebuilds) → http://localhost:1313/photography/
 ```
 
 - `npm run photos` only processes new or changed JPEGs (content hash), so re-running is cheap. Photos deleted from `web/` disappear from the album and their web versions are deleted.
 - Use `npm run dev`, not plain `hugo server`: Hugo 0.152 renders to disk by default, which would copy all the images into `public/`.
 - Each photo gets its own page (`/photography/<slug>/<id>/`) from `content/photography/_content.gotmpl`. The lightbox keeps the URL in sync with the open photo.
-- Captions and cover live in `_index.md`, so editing them needs no re-run. Order is chronological (EXIF capture date); sub-folders of `web/` become chapter headings.
+- Captions, cover and chapters live in `_index.md`, so editing them needs no re-run. Order is chronological (true capture time). Chapters show as headings in the grid, a place list under the album title, the place in the lightbox, and a breadcrumb on photo pages. Without a `chapters:` list, sub-folders of `web/` become chapters automatically.
 
 **Images in production** load from `params.photos.base_url` (`config/_default/params.yaml`). Locally they're served from `.photos-out/` via `config/development/`.
 

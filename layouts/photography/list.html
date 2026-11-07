@@ -43,17 +43,30 @@
     {{ if not $data }}
       <p class="pg-empty">No photos yet. Run <code>npm run photos</code>.</p>
     {{ else }}
-      {{ $chapter := "" }}
+      {{ $ch := partial "photography/chapters.html" (dict "page" . "data" $data) }}
+      {{ $dock := gt (len $ch.list) 1 }}
+      <div class="pg-album{{ if $dock }} pg-album--dock{{ end }}">
+      {{ if $dock }}
+        <aside class="pg-dock-col">
+          <nav class="pg-dock" id="pg-dock" aria-label="Places in this album">
+            {{ range $ch.list }}<a href="#{{ .anchor }}" data-anchor="{{ .anchor }}">{{ .title }}</a>{{ end }}
+          </nav>
+        </aside>
+      {{ end }}
       <div class="pg-grid" id="pg-grid">
         {{ range $i, $p := $data.photos }}
-          {{ if and $p.chapter (ne $p.chapter $chapter) }}
-            {{ $chapter = $p.chapter }}
-            <h2 class="pg-chapter">{{ replaceRE `^\d+\s*-\s*` "" $p.chapter | replaceRE `\s+-\s+` " · " }}</h2>
+          {{ with index $ch.start $p.id }}
+            <header class="pg-chapter" id="{{ .anchor }}">
+              {{ with .region }}<p class="pg-chapter-region">{{ . }}</p>{{ end }}
+              <h2>{{ .title }}</h2>
+              {{ with .text }}<p class="pg-chapter-text">{{ . | markdownify }}</p>{{ end }}
+            </header>
           {{ end }}
+          {{ $place := "" }}{{ with index $ch.of $p.id }}{{ $place = .place }}{{ end }}
           {{ $ar := div (float $p.w) $p.h }}
           {{ $big := index $p.sizes (sub (len $p.sizes) 1) }}
           {{ $caption := index $captions $p.id }}
-          {{ $alt := $caption | default (printf "Photo %d from %s" (add $i 1) $.Title) }}
+          {{ $alt := $caption | default (printf "Photo %d from %s" (add $i 1) ($place | default $.Title)) }}
           {{ $sizes := printf "(min-width: 1280px) %dpx, (min-width: 640px) %dpx, %dpx" (int (math.Round (mul $ar 420))) (int (math.Round (mul $ar 340))) (int (math.Round (mul $ar 250))) }}
           <a class="pg-item"
              href="{{ $.RelPermalink }}{{ $p.id }}/"
@@ -64,10 +77,12 @@
              {{- /* not "data-srcset-*": attribute names containing "src" get URL-escaped by Go templates */}}
              data-avif="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "avif") }}"
              data-jpeg="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "jpg") }}"
+             {{ with $place }}data-place="{{ . }}"{{ end }}
              {{ with $caption }}data-caption="{{ . }}"{{ end }}>
             {{ partial "photography/picture.html" (dict "album" $album "p" $p "alt" $alt "sizes" $sizes "eager" (lt $i 6)) }}
           </a>
         {{ end }}
+      </div>
       </div>
       <script>{{ (resources.Get "js/photography-justify.js" | minify).Content | safeJS }}</script>
     {{ end }}
@@ -79,8 +94,9 @@
     {{ $gallery := resources.Get "js/photography.js" | minify | fingerprint }}
     <script type="module">
       import PhotoSwipeLightbox from {{ $lb.RelPermalink }};
-      import { initGallery } from {{ $gallery.RelPermalink }};
+      import { initGallery, initDock } from {{ $gallery.RelPermalink }};
       initGallery(PhotoSwipeLightbox, {{ $ps.RelPermalink }}, {{ .RelPermalink }});
+      initDock();
     </script>
   {{ end }}
 {{ end }}

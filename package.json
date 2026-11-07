@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "photos": "node scripts/photos.mjs",
-    "dev": "hugo server --renderToMemory",
+    "dev": "hugo server --renderToMemory --disableFastRender",
     "photos:upload": "rclone sync .photos-out/ r2:photos --size-only --fast-list --transfers 16 --progress --header-upload 'Cache-Control: public, max-age=31536000, immutable' --exclude '.*'"
   },
   "dependencies": {
