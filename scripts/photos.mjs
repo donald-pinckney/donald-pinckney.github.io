@@ -72,7 +72,7 @@ function slugify(name) {
 //   "places|…" tags and tags the album's chapters refer to are kept: the data file is public, and
 //   darktable tags can include people's names.
 async function captureInfo(file) {
-  const none = { clock: null, offset: null, model: null, tags: [] };
+  const none = { clock: null, offset: null, model: null, tags: [], gear: null };
   try {
     const { exif, xmp } = await sharp(file).metadata();
     const e = exif ? exifReader(exif) : {};
@@ -82,8 +82,38 @@ async function captureInfo(file) {
       offset: e.Photo?.OffsetTimeOriginal ?? e.Photo?.OffsetTime ?? null,
       model: e.Image?.Model ?? null,
       tags: xmp ? tagsFromXmp(xmp.toString('utf8')) : [],
+      gear: gearInfo(e),
     };
   } catch { return none; }
+}
+
+// Camera, lens, exposure and editing software, pre-formatted for display (lightbox + photo page).
+// Fields the file doesn't have are left out (e.g. manual lenses record no lens, aperture or focal length).
+//   { camera: "Canon EOS R50", lens: "RF-S18-45mm F4.5-6.3 IS STM", exposure: "32mm · f/29 · 1/60s · ISO 200", editor: "Lightroom" }
+function gearInfo(e) {
+  const img = e.Image ?? {}, ph = e.Photo ?? {};
+  const make = (img.Make ?? '').trim(), model = (img.Model ?? '').trim();
+  const camera = !model ? make : (!make || /^apple$/i.test(make) || model.toLowerCase().startsWith(make.split(' ')[0].toLowerCase())) ? model : `${make} ${model}`;
+  const phone = /^apple$/i.test(make) || /phone|pixel|galaxy/i.test(model);
+  if (phone) return camera ? { camera } : null; // phone shots: just the phone, no lens/exposure/editor
+  let lens = (ph.LensModel ?? '').trim();
+  if (model && lens.startsWith(model)) lens = ''; // built-in lens named after the camera
+  const num = (v) => (typeof v === 'number' && isFinite(v) && v > 0 ? v : null);
+  const round = (v, d = 1) => String(Math.round(v * 10 ** d) / 10 ** d);
+  const fl = num(ph.FocalLength);
+  const f = num(ph.FNumber), t = num(ph.ExposureTime);
+  const iso = num(ph.ISOSpeedRatings) ?? num(ph.PhotographicSensitivity);
+  const exposure = [
+    fl && `${Math.round(fl)}mm`,
+    f && `f/${round(f)}`,
+    t && (t < 1 ? `1/${Math.round(1 / t)}s` : `${round(t)}s`),
+    iso && `ISO ${iso}`,
+  ].filter(Boolean).join(' · ');
+  const sw = img.Software ?? '';
+  const editor = [['darktable', /darktable/i], ['Lightroom', /lightroom/i], ['Photoshop', /photoshop/i],
+    ['Capture One', /capture ?one/i], ['RawTherapee', /rawtherapee/i]].find(([, re]) => re.test(sw))?.[0] ?? '';
+  const out = Object.fromEntries(Object.entries({ camera, lens, exposure, editor }).filter(([, v]) => v));
+  return Object.keys(out).length ? out : null;
 }
 
 function tagsFromXmp(x) {
@@ -227,6 +257,7 @@ async function buildAlbum(slug, fm) {
     const c = r.capture;
     delete r.entry.place; delete r.entry.places; // (older data formats)
     r.entry.tags = c.tags.filter(keepTags);
+    if (c.gear) r.entry.gear = c.gear; else delete r.entry.gear;
     if (!c.clock) { r.entry.date = null; noDate.push(r.entry.file); continue; }
     let off = offsetMinutes(c.offset);
     if (off == null) { off = offsetMinutes(usualOffset(c.model)) ?? 0; guessed.push(r.entry.file); }

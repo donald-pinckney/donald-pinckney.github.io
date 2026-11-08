@@ -78,7 +78,12 @@
              data-avif="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "avif") }}"
              data-jpeg="{{ partial "photography/srcset.html" (dict "album" $album "p" $p "ext" "jpg") }}"
              {{ with $place }}data-place="{{ . }}"{{ end }}
-             {{ with $caption }}data-caption="{{ . }}"{{ end }}>
+             {{ with $caption }}data-caption="{{ . }}"{{ end }}
+             {{- with $p.gear }}
+             data-gear="{{ delimit (slice (.camera | default "") (.lens | default "") | complement (slice "")) " · " }}"
+             {{ with .exposure }}data-exposure="{{ . }}"{{ end }}
+             {{ with .editor }}data-editor="{{ . }}"{{ end }}
+             {{- end }}>
             {{ partial "photography/picture.html" (dict "album" $album "p" $p "alt" $alt "sizes" $sizes "eager" (lt $i 6)) }}
           </a>
         {{ end }}

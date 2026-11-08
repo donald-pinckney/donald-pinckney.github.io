@@ -21,7 +21,13 @@
    "pixelHash": "be8fd1693f",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "32mm · f/29 · 1/60s · ISO 200",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3942",
@@ -42,7 +48,13 @@
    "pixelHash": "4c587b19cc",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "30mm · f/8 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3943",
@@ -63,7 +75,13 @@
    "pixelHash": "48fcf8c64f",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/8 · 1/320s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3945",
@@ -84,7 +102,13 @@
    "pixelHash": "da127bed18",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3946",
@@ -105,7 +129,13 @@
    "pixelHash": "7f6e575b2c",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "26mm · f/8 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3954",
@@ -122,11 +152,17 @@
    "date": "2025-03-25T17:08:41Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRu4AAABXRUJQVlA4IOIAAACwBgCdASoYACQAPu1uqk+ppqOiKrgMATAdiWUAvz2zQZwP4m0VCsbFvfqZg1VRx4eQunSpCM3Alr7YpcXswAD+P4Sq5OKQsveakSA3+VLFHP2MeD1WAoZRRRtyAQdfReaBXzZLcV1lWrUSJkAwy3PtPIgzWbIfxN4c+1eOiVD2voNf02nUpSGtCAlrMJ4pkGNPpO+4rXthbP6Z9isWdlG5uD/2ex9x7kmaAjdf9QGL0bEQNo6ZFPkgUtH253nKMxsno7yJPx2uH03aoBqVhwRuVPzIX0s7IJ9kFeej8nmOAAAA",
-   "fileHash": "0178a53d1d",
+   "fileHash": "b98e0573d3",
    "pixelHash": "e92c45a9b8",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 4000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3958",
@@ -143,11 +179,17 @@
    "date": "2025-03-25T17:32:36Z",
    "color": "#282828",
    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAwBgCdASoYACQAPu1ep02ppSOiNVQMATAdiWkAAJxHyTGFpDEqH9XzH937ZxBieLufroPgmvvlwiAAAP70IrP4QmaCsAR5UMNswqdxO3KCGoVlV3AwaJh6yEasyVG8PgP8pjD8qqJQfQPlAJW1VFtcxVdkshgbBIig8SY1VMT9+VMC4aR8XTOemGoDJQTIHtViaC0KpK35Yi2D7sZXFeRQ/7oDVegZElK6gAAA",
-   "fileHash": "9680e6941c",
+   "fileHash": "8d36a2c5e5",
    "pixelHash": "a46b5e9811",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/1000s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3961",
@@ -164,11 +206,17 @@
    "date": "2025-03-25T17:43:19Z",
    "color": "#484848",
    "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAABQBgCdASoYACQAPu1ysVOppqSipWgBMB2JaQAIFW6SwnXGS451tuM9gIcd57km7uMntlKjJNE5LTQD2AD+8MgeYwJF1wjBEypuljawKgY2VR/EH1x9TnPRhBtmxbDaSw2Ge3sceU/4yBXz4RWFzn8+iAHkqCu6K3z7ydQUTNAplUv+ebquTtbDD3YJMBasxviPUefFbUytcpC1IOgkJX9V6smp72LhbfW62BkTNx2B8pwMz3St0I8azUv5GYQal0dfJgPDZYc5jQ6bK/4MY/l1Gz7aLAfEllPVGqgA8PqFOQoptAAAAA==",
-   "fileHash": "7ea79402ec",
+   "fileHash": "508fd58845",
    "pixelHash": "492533a0a1",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3966",
@@ -189,7 +237,13 @@
    "pixelHash": "cacec25fa5",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/8 · 1/500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3969",
@@ -210,7 +264,13 @@
    "pixelHash": "9827bbf4de",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/8 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3970",
@@ -231,7 +291,13 @@
    "pixelHash": "83a5634f83",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "35mm · f/8 · 1/60s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3985",
@@ -252,7 +318,13 @@
    "pixelHash": "230026b314",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/8 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3986",
@@ -273,7 +345,13 @@
    "pixelHash": "455cd48829",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "29mm · f/8 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3987",
@@ -294,7 +372,13 @@
    "pixelHash": "20f6491a11",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3990",
@@ -315,7 +399,13 @@
    "pixelHash": "4940074cec",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "24mm · f/8 · 1/80s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-3999",
@@ -336,7 +426,13 @@
    "pixelHash": "32562cd0e9",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/320s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4002",
@@ -353,11 +449,17 @@
    "date": "2025-03-26T12:25:53Z",
    "color": "#887868",
    "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAAAwBgCdASoYACEAPu1oqE8ppiOiKqwBMB2JYwC3uAs5aBJhveXpCdk7Pk5VrR3Txdby33qDANmMaSHYAOa5BoRHMqzf8wh8dWUE86reChu85eMMHRQ8zIY8SltKtOjUH55PZ1GNlAlW4xWftHsyGBgYVpT/DTlrhVVELDHrpN5lxrlZGJSfRMwrP/tukcrIuy5D3ppl3fugxjceBZ5ABCQDx7o7jihU7quwrEdikbpiZM0wIQozjpp8q25MgRT41WFb4AXW80+W+jsAWXRVw3EcPgHEtYqs4+QAAA==",
-   "fileHash": "0464c066c3",
+   "fileHash": "fe2b8649d1",
    "pixelHash": "32ad578072",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4005",
@@ -374,11 +476,17 @@
    "date": "2025-03-26T12:35:21Z",
    "color": "#e8e8f8",
    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABQBgCdASoYACQAPu1mqlCppSOiqrgMATAdiWUAvksvwWRjhy9Ldjxdlz+f7gAFcqTW6FTrkmOXC6UwAAD3B6y+jsOHs0UWW0b56Cx3ev7MgOpwwG8L5JVUuA205+xiNJ4vFlF3E+iqYWOkcgGkUy91zI6mtQeo41hC127SJDLfbBRmnBEISab6dOW//hLAFlMUy3XcaQSW+Vyrik1Tyq3IC3VumJu3jYZ+PnpzbpW/Qa4Qp4br+Yhi0+YAiSQEfmX6VloX9k0brGWVz8lBrcKKryzwXb7RjNa5fBgAAAA=",
-   "fileHash": "43bc418997",
+   "fileHash": "def565e0b8",
    "pixelHash": "3f818dec62",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/800s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4006",
@@ -395,11 +503,17 @@
    "date": "2025-03-26T12:37:37Z",
    "color": "#180808",
    "lqip": "data:image/webp;base64,UklGRiABAABXRUJQVlA4IBQBAABwBgCdASoYACQAPu1yrVGppyQiqrgIATAdiWMAuwGMvOa1/gU3tlVkdRJa3IimIC4ereG1jMykR3zpOoAA/rXT2W8gMtX6iC0td7iyFRiooKYJYrr97+1b6a6BFVw7Y7cubqp+FN+icHXUDkw3pHXPQCRjW2+Z3/PYiFRaIUy3T677mtEJVhcPdStwT1lEyVzHVzCnOKvsjpgCiZreDxjokty9uO5G4J0K9id7q7NnVwHMjjGZpPpZvoyRnpR42HLt4nSaEfMwbZIrDL+B4OxP1wTDLZt8YyZHL94G2Lm/XlduVdDZl3J7K3FmIdS9EKGCo70yt5DyY15UY3oKjpQ1NQK99VSpYE36Gcxg8N8Qd67TwAA=",
-   "fileHash": "2908c8bab5",
+   "fileHash": "53c5118454",
    "pixelHash": "18425a7673",
    "tags": [
     "places|Spain|Segovia"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/1250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4017",
@@ -416,11 +530,17 @@
    "date": "2025-03-26T16:30:13Z",
    "color": "#f8f8f8",
    "lqip": "data:image/webp;base64,UklGRhwBAABXRUJQVlA4IBABAADQBgCdASoYACEAPu1op08ppiMiKqwBMB2JYwDC+zFoa0lv+/JzoUI8NY6sHoK1BIXTEHp2HzH9q+2cAfGVOAAA/u4T7amUfa5ZhU8+1u5CDg7Qi8EfjgRytBo6x1iSoM1R+9nKlIuP3PHHqH6ej+OrCpbTlyEts0sX5NfCcRxfFYhhXCpvvt6DQn/bAZxzUrrQeAcvdPxsHFY1ZlwxSgjJ23MwjwNvrHq6cB5aE0ufBhXOB1j/+IrjQNALnlw/FvGaBJfAYhD8qT6RFdqLQ9JSTYDvbwj7bbN1YL7jEnGeJZd5xgNLiSRZuSjRbNDj4HwVSOsIzrDfPSV0j/KsX5AHuQ0v9HZDmlsC1pK4AGFAAA==",
-   "fileHash": "b217a6d732",
+   "fileHash": "091dd63ace",
    "pixelHash": "3b3fea6815",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4022",
@@ -441,7 +561,13 @@
    "pixelHash": "7ce3227f69",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "22mm · f/8 · 1/60s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4036",
@@ -462,7 +588,13 @@
    "pixelHash": "998b5b1db7",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4040",
@@ -483,7 +615,13 @@
    "pixelHash": "0b8c86839e",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/8 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4042",
@@ -504,7 +642,13 @@
    "pixelHash": "da91994dbb",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "35mm · f/8 · 1/100s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4043",
@@ -525,7 +669,13 @@
    "pixelHash": "8dfb642542",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "32mm · f/8 · 1/320s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4044",
@@ -546,7 +696,13 @@
    "pixelHash": "4524888339",
    "tags": [
     "places|Spain|Salamanca"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/100s · ISO 250",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4075",
@@ -567,7 +723,13 @@
    "pixelHash": "e8d1c28a57",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/7.1 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4088",
@@ -584,11 +746,17 @@
    "date": "2025-03-27T16:59:18Z",
    "color": "#080818",
    "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCxAKADRAGEoyfAHTni7SVD+AD+J2E82OfXVxWFQ5spD839N0qP2dUWKIhVEtjckU4yYbExHRQHksJNiUBzCr6TnoC38Kfndex9UOM4k5rcmTqO1IVSrkc5PcCDbsqycy0j+qyYAdaZgj+mahFxlw0zbJI4a/eStDlZxAZISPJOOdyIOF66uAdlau4DHouNw8FsnjXDxFsAAAA=",
-   "fileHash": "ff9ef338e9",
+   "fileHash": "f40042d6dd",
    "pixelHash": "8a9d0d739b",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4094",
@@ -605,11 +773,17 @@
    "date": "2025-03-27T17:06:06Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAAAQBwCdASoYACQAPu1oq1AppaOiqrgMATAdiWMApd/8Tl6nXnWuIvMx/ZNYrmPZPtesmnaxdVUHIZhNidnAw92RgAD+6dixbVA7WL1xnXIDtnFwWrifDagSkkXv43b+q0jZiXfH4TikUSeFPGDCtMklIbQE0AZ7iaZFnnSa6PbsrUOKeQ21fOlg5Ed6IBwW1cR7AegoCN03lLYupi1Ir3S5okXn+5VinaH56eMUjJibYYrgnPql0X2x6Y2OccaKyLHYBZ9ViQ0krCXgOvGSw9BqFBMBr/3hDB3x0ICjsemyELNwicfOk5FyuSWhkZTKNR0IAA==",
-   "fileHash": "3724ca7f9e",
+   "fileHash": "7395158d58",
    "pixelHash": "34be231bfe",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 4000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4097",
@@ -626,11 +800,17 @@
    "date": "2025-03-27T17:14:32Z",
    "color": "#b8c8e8",
    "lqip": "data:image/webp;base64,UklGRgoBAABXRUJQVlA4IP4AAADwBQCdASoYACQAPu1uq1GppiOipWzJMB2JQBOmcwi8R3XR3e4OheUQZ+I3CM3vshYIYeDvxVE8AAD+1Hczps+Sx1dEloVgxAnsxGHY+VGUH/sa8Cy1kZw1A5VXQgb3JiGaz0Xu0A1Dj+e6dItI42D4dku8ooByRuTo5JaCb23aY/t6gkwaKYfU3S88MH7QpIqvwbHOCfTJhtr1sL0KcZaFSXg/rz2YKvFbax/pSiWGTEHSpJ5aWuDfEjsyzwOUYDL8nMhcat30MrmSivgffWU72LCVhlpVYRZr8/Lxg3/NcJQVXd3i1EIPuGoR1YV1o+jfpk9gKRq136jaGAAAAA==",
-   "fileHash": "e1a48ab32a",
+   "fileHash": "9ab254a474",
    "pixelHash": "dcd78d93eb",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/1000s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4099",
@@ -647,11 +827,17 @@
    "date": "2025-03-27T17:17:04Z",
    "color": "#181818",
    "lqip": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACQBgCdASoYACQAPu1yrlGppyQiqrgIATAdiWcAxCQIjUfkVxTrMbCZg0joffCIhU3maMtD4Ks7Qql2Hx3AAP7Hep+v3vP6IBgUs6zyS56wNle4Q03vAau5a8E0iatMRY9EU8gLzF12vgBnOCyewsGJ7f0GF5Y0V/4QpWXF+X5KwzEMRKxdvg4i3jxD7d7tj58E3HnJNUUkFpr9gqGVif9dzyw6CmbKCCYJT/BHzdcwnKJhxEcA3YdkbLn1Hel4+bR+pAIFOP9Yc7vo5F1O5/VIwCRbJlLUmUbsB/z7Z9Hr9yF03CK3quv7AJwTak1DkJhAAA==",
-   "fileHash": "9479ee103d",
+   "fileHash": "b8bf81e827",
    "pixelHash": "3d8ac733a1",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/125s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4100",
@@ -668,11 +854,17 @@
    "date": "2025-03-27T17:18:19Z",
    "color": "#f8f8f8",
    "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAADwBQCdASoYACoAPu1qq1AppiOiqqoBMB2JZQC8pBZVY4zRISlwyA+OedegjKbiN3u4gQmxk+lpQAD+5x8XCApDMKh8LNncCbiVta/Z+qzMU2eAshTBxdTyQw2G39m40XGam335DPZ+Nw7kmpjLBZfWSZ3wrSY58i14ddzoC2HYvbbIUcNTHX0DwNMCbBYXBRaApKCF3eAy0ccTalBcmXINSsS06ezfAMyM9k11FAQzICs1+6+9WrOHPsyXRywbs5O2Qg5jfn3MVv1xOwfF3D25GNgPUI39z/b393UdvkY5+4LJ4UxojqyZAccMsmCQUN9emZhj22NheLRPfSjnwrmAAAA=",
-   "fileHash": "e8b3ed69a9",
+   "fileHash": "05017be106",
    "pixelHash": "e9b20d70ff",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/320s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4101",
@@ -689,11 +881,17 @@
    "date": "2025-03-27T17:27:04Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRjwBAABXRUJQVlA4IDABAACwBgCdASoYACQAPu1wsFKppiSipWmZMB2JQBfYgTPMREPpOXX1ggGyqT/sKin0Wamzzc3ukbWL3RPDmb9zAAD+wgPwslEksYJqY8QTQvv0krrGYrMsXZrieuMoxLLHvAWt0bpXlJPhdUcQW/YrlajcJTfZcK00wHPe73CIunNG/5x5j46AT0Z4f1h8yM0UlUfyo5w4CmM3evWH53bl5mvliVZO8tu+HPxVQoMe/ty5TRMq5Oi0Oz5LVuSVAlgCwR/JVX64ddRGhzBcc3xRpY+I6Og/X6T/d7/+1t/RCxWA8FxmJbQHtPFaivE57YxKaST3RHHeaHJlRcQ44fhIV1xgohAJog+wlYOJQ14k93nbXWTZmyEWUJ/vp6SNID+uFIQiGRZeEqOnZ0sUPZb6AAAA",
-   "fileHash": "b241366557",
+   "fileHash": "9407b0471d",
    "pixelHash": "9cefc5c9de",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/80s · ISO 160",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4104",
@@ -710,11 +908,17 @@
    "date": "2025-03-27T17:29:58Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRhQBAABXRUJQVlA4IAgBAABwBgCdASoYACQAPu1oqk6ppiOiKqwBMB2JYwC84y5ZJ5zld/mPJlqLaneZiw1wi7Hf7bN+MqdU3AFft4AA9r5OSt6VP0OU9mKYeInD/Fsujb0ewIbdIWIJ9o5QRHcDlWn3nhrI2QlkxWxhmI5rCP72bWYpzcin1jDDbsgUpEPYeTFlNYJpqJ5yGs3L1NmZJbMDW2KKclPlo/Sms4F5j6K45GT+Yvnn2NN2FslyekEhcNlXull2d5XtXj/ydsAeY5jnZJxy5g952DtB2BPwvwDf9+HvnWLcFc+GaAFY4wcJG3fHG7vCo1zsU1O7n1j8nBY9kvxQ2MLVAKtR5QfSADSASPJPAyjAAAA=",
-   "fileHash": "17d38d0b0e",
+   "fileHash": "857bdf28ae",
    "pixelHash": "fdd243c6d9",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 125",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4108",
@@ -731,11 +935,17 @@
    "date": "2025-03-27T17:42:13Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRlQBAABXRUJQVlA4IEgBAABQBwCdASoYACQAPu1us1KppiSipWmZMB2JZAC4Y6UBlnAIwB16kWNCF2wXpxpm5Nyjpfnw6JUH6x1vRTaW0lLSXZIAAP7elQNool/a2yXqcsGkCeRZCjG9/Zibl3r8P77oAlwUnlKNEU/ZivNgVEP18MPTdFDCOYASnaev5yNtW7UpSTm2L5WYQzTEsw67BMupng75qb5pSnwhE9/2x9vjn64chSc72RH/LwGTpcmEjMCb/bne2W99Q4Gv5HdUagEQISGT+tBJua41qR9/GwvYKkr1coULjiiigmbF+DvVoSFKiYeeuaYo/WhAnlFqkuu5O0MVtlYeuGP9Twadbmr3BmE6L14K+YL8VcBfKenBJndV3Bq02BoQPjcWNjjSY2dDC5ZNPiJjTEUNAW0eNXgaVr6G2OYAUuf09dP/jakAXSeX/OUa/gAA",
-   "fileHash": "56d3404eff",
+   "fileHash": "117257af6a",
    "pixelHash": "8d60548bf4",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4115",
@@ -752,11 +962,17 @@
    "date": "2025-03-27T17:57:35Z",
    "color": "#5888b8",
    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwAwCdASoYABAAPu1orU6ppiSiMAgBMB2JbACdMoADTfMZKJb8vcyAAPpc6oKeZIZ1uyTUmTubdTVwA4LhvdEw+dMupCzTgN1J5WdrZfapOAi0/HqFco93d365J0jxRoomR0zbxaN2CCiAD39tc6INTEQtfi98KiwpNB0QAAA=",
-   "fileHash": "89fb409ce0",
+   "fileHash": "735b9173b2",
    "pixelHash": "efc4325f80",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/2500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4125",
@@ -773,11 +989,17 @@
    "date": "2025-03-27T18:04:29Z",
    "color": "#b8d8f8",
    "lqip": "data:image/webp;base64,UklGRl4BAABXRUJQVlA4IFIBAADQBwCdASoYACQAPu1urVCppqQiqqgBMB2JaACdMubn2Jndrh2jDqlNdkXXMaToj+pQB3SJV2TOnu6tjEiILzwb1OsJsCfFAAD+3uR5dWVj0XTkOlpfBIBKbhXuOQMWxvHSZBK5+nHrmoGZ5h+VMaxfk59Fu6jQznphTiVRr6EIGKptDnmKFCwat9ljozYsju9phYqPDrHVVmIBLaHU9k8Y1PKbukyx5Z/tvr7GmH25ptxHbDfdYGOrKuEH4Lo0l+9zrGgtza7PCFrUiRWQIrwyBH7cbNQRqVU3nSSDxlmtc+RdC83yxRQY+OF7sVpeBDkiliHjfh193ED1COTo51gcFSuVvTS4Mj+Hq4Klgor6DS5ahRqT1+Syql6B430X5/vMIpLn1OGxjb4GRa1Z6IakbZ6PpnAW9kOlwtVGXAVwCRBvSSQm322ktbOc59BqS3gAAA==",
-   "fileHash": "c79812bd3a",
+   "fileHash": "09316574fe",
    "pixelHash": "0cf5b8ad2d",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4126",
@@ -794,11 +1016,17 @@
    "date": "2025-03-27T18:10:33Z",
    "color": "#687888",
    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUGUkz/gMSIl7gaLNX2gAAMsS1yXrBdEGvoAKFCxFwG2VFerj0SSaQyl0OjFQx/kT2vPbEJejLDEpdO1NX26KzDi5bYfN84ohhrr2Xyl/yKf4RmSQv/BA5129RimYTh//EmoR7z52AAA=",
-   "fileHash": "a8a112d864",
+   "fileHash": "ab8ecd1c1f",
    "pixelHash": "71739c7fba",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-0493",
@@ -819,7 +1047,10 @@
    "pixelHash": "1bac0d54d9",
    "tags": [
     "places|Portugal|Porto"
-   ]
+   ],
+   "gear": {
+    "camera": "iPhone 8 Plus"
+   }
   },
   {
    "id": "img-4133",
@@ -840,7 +1071,13 @@
    "pixelHash": "af605c310c",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "25mm · f/11 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4136",
@@ -861,7 +1098,13 @@
    "pixelHash": "9a1d584fd5",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "39mm · f/11 · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4139",
@@ -882,7 +1125,13 @@
    "pixelHash": "cc6bb9d8a8",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "38mm · f/11 · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4141",
@@ -903,7 +1152,13 @@
    "pixelHash": "680df70ea2",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/11 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4144",
@@ -924,7 +1179,13 @@
    "pixelHash": "fcdf83c06e",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/11 · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4227",
@@ -945,7 +1206,13 @@
    "pixelHash": "8df53e6ab8",
    "tags": [
     "places|Portugal|Óbidos"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/18 · 1/100s · ISO 200",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-0519",
@@ -966,7 +1233,10 @@
    "pixelHash": "3de7b68570",
    "tags": [
     "places|Portugal|Lisbon"
-   ]
+   ],
+   "gear": {
+    "camera": "iPhone 8 Plus"
+   }
   },
   {
    "id": "img-4243",
@@ -987,7 +1257,13 @@
    "pixelHash": "80d21e41b7",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/18 · 1/80s · ISO 500",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4247",
@@ -1008,7 +1284,13 @@
    "pixelHash": "2446c16ab9",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/18 · 1/100s · ISO 2000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4258",
@@ -1029,7 +1311,13 @@
    "pixelHash": "abaca0727b",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "31mm · f/8 · 1/60s · ISO 1000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4260",
@@ -1050,7 +1338,13 @@
    "pixelHash": "55b75b4cb4",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "27mm · f/8 · 1/100s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4265",
@@ -1071,7 +1365,13 @@
    "pixelHash": "d09521c14e",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "27mm · f/8 · 1/320s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4270",
@@ -1092,7 +1392,13 @@
    "pixelHash": "efd7064b09",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "29mm · f/9 · 1/100s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4272",
@@ -1113,7 +1419,13 @@
    "pixelHash": "02cff75822",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "27mm · f/9 · 1/80s · ISO 2000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4275",
@@ -1134,7 +1446,13 @@
    "pixelHash": "3b09e8a657",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "22mm · f/9 · 1/80s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4279",
@@ -1155,7 +1473,13 @@
    "pixelHash": "7b3034a51a",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "26mm · f/9 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4280",
@@ -1176,7 +1500,13 @@
    "pixelHash": "e76dd5eee6",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/9 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4282",
@@ -1193,11 +1523,17 @@
    "date": "2025-04-01T11:39:04Z",
    "color": "#180808",
    "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACQBQCdASoYAB8APu1or1CppaQiqAqpMB2JbACdMw6Bb+jHJZVgB/6VoNxNrGu0iQYkOaQUAAD+8rSRkK2QBvOSQs19VJd3+26/X1XANZgvJGz0knSfxSHv2miEVg09bFs4zeVADyoY3wwdxmHujBUJ82+nNpnQayI7vkSSAJ/TZkbJk3n8cFjOPJ2D4g+TZBMDc4SABkDokVR2FrOw7wETzgPqyMgA",
-   "fileHash": "ccc36f8be2",
+   "fileHash": "a61310c896",
    "pixelHash": "0fa8a69297",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4293",
@@ -1214,11 +1550,17 @@
    "date": "2025-04-01T11:50:45Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdAYyeugzZc0+10UFmGplIAP6e670DfH4ZcR3HWFIzB5LJM7xKyBInhUE8b683CK8LQYKbFa+BDP/Y2KmOQWnE9rPmidYtKV/zZXOBAWVEx75yBa2qU1Qi6B5F8l6JOc8BUFyma+363PVFj2aoA4Qzv5oALjANllgguU5vWwqXlkAAAA==",
-   "fileHash": "b45474a62e",
+   "fileHash": "aff7f0af32",
    "pixelHash": "686c14c6f2",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/80s · ISO 1600",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4295",
@@ -1235,11 +1577,17 @@
    "date": "2025-04-01T11:52:40Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRkYBAABXRUJQVlA4IDoBAABQBwCdASoYACQAPu1qp08ppiMiKqwBMB2JYwCdKyQh8NekP6WoZCHnu7M3yg2v4A7sw14xXOyp7Rsi6FebkxI3wZbwAMw8oJaPhgGqpMLnswMmdoWfL0fOV9ejy3m3RBNghS7wdvh38UL4Yzksg+kFosErm9kOhA6YMsJ0fMfkkV9x/OZMYuD3ROGeMubp/h6Y0CfYAVtnX6K1GlRvqs9AH6DNzs64AVfwoERdyK98WL8wOVcrvhPuywB7cc+JZklbZTP3dTbB9bGHdZ7N3zv6dkGI6EmciKmTi5ZubtTNNaDkSUwg24LV2BMs4pxuxnNYkxY2/mQrs4rqDkoSoYNa9Ydc5wuz6H6yqbUU/30P2PhVlk6Ha4pGXyai10tvd4WFVYO5YyCMpxK+dAxpSYuc1M3mT/ctFYAAAA==",
-   "fileHash": "9e02ac435c",
+   "fileHash": "b898151a4c",
    "pixelHash": "ef432f6871",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 2500",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4303",
@@ -1256,11 +1604,17 @@
    "date": "2025-04-01T12:11:58Z",
    "color": "#281808",
    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBQCdASoYACQAPt1YpU2opSOiOrZoARAbiUAX5wOgRzEzxg0OCp4k5BoSthCa5cFucawAAP7wQT1mpAHdIoc0ZkJ9PepUkQZgz7WSsOs3LMCqIcPfMzWJtAMcYQuBmqEdVOg6DSmmeaLgY6bZA8CHTDo/rQrwzlIBmwvvAK8FG/MRbV8DEttlcSQP4pgAAAA=",
-   "fileHash": "4631a77b1d",
+   "fileHash": "f4fca92c94",
    "pixelHash": "48a1d9d3fc",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 1250",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4305",
@@ -1277,11 +1631,17 @@
    "date": "2025-04-01T12:21:50Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAAAwBwCdASoYACQAPu1mqE8ppSOiKqwBMB2JQBOmdMdleI2ZMqB7wyvXVG6idc54HoJWDOm6KAsvdvcnbqMINypqugAA/vFOrXWBcRGOdh0+J3fkXra3pjW7SL0jx4PMQGKCoRgHlGEG5dM9PmPkUVseAGotU1OAbF/h/g9ijoiBPqwPXU86o1VCPd9ET0FZ8Dd2qg0UTY5VRVQndCCJ1JhzMbA/Wce7iogR9ZTMHvJkT6Qf0PqetDFOL7klwIaGPxSKSKmH4/Da0TFkowmf7bsq2em64TcpYjuAEuIMv5AUKyOImSMBRkNS8TY9nSb9Ln+R+EcKbtnh5TAQUVUVxD9NZ7R4l2OYNtMs0cIYaHf4z6BplKiSa1dkwhy+bK/QVwDsmJrVmQjKlFUDt14WrZIzCe7pXdL0YBe7sPr1xZzPo29XOXPe4kfFH+JxgDF6Af3wFR1AqGgAAA==",
-   "fileHash": "da1609b61d",
+   "fileHash": "b4dfcc55ad",
    "pixelHash": "c29524aa60",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4309",
@@ -1298,11 +1658,17 @@
    "date": "2025-04-01T12:29:52Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRj4BAABXRUJQVlA4IDIBAAAQBwCdASoYAB4APu1iqE2ppaOiMAgBMB2JZACo+vAds+YErR74UIgup539REq2Pyy6jqVgCv2uu01LuQRqv3FqwAD+tX31/fWU421ksNemrVut4aucTcEBdhx2/X2Jyd9fFGgK9I2kS9VPGn6nRm8dV7Q1tkTsdlxnoSZtHfPYFT+I5Tatsrr0PFhtjEALUOojsBlrFklW7DU/2Jd7xO9EetFtv/GpGQbBTnoRgTPIeH+aqqxQC0mrQL62U4WNAnFtJEB/X0lrNeHiIKKbQZFgb2C5xfTmULaZkZMl0PGOw5psC740rYFE1ULK//7cZ7h/SHMyjLEJLY8k/Ewq0MzqLUVr/NzxOkISAkStAKGO/7O+sv7YEpz+RqEB6dsdYwjrTHC5qmHlEsKEhGk+/tUKgAA=",
-   "fileHash": "5bd63882c6",
+   "fileHash": "22292803e2",
    "pixelHash": "6908bc4b7c",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4310",
@@ -1319,11 +1685,17 @@
    "date": "2025-04-01T12:37:30Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAACQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JbAAFEACqgJTOZxLgAP68BsJ9TCMNAaypvhipGVH1kr+SOtIxuLPqvM6tzBwAhbGJdXICuLUfQ7AbgBDYo2J0BpZjWng9hNO3V4H8urshW8tCcuDynBEHLA/3gkfryWOjNEbdh1FsJ+4MVau9LaQo9qnBD8BWni/NiPYmQjl/06YE/N00aWAA",
-   "fileHash": "6a1ca4bade",
+   "fileHash": "a071937778",
    "pixelHash": "8de440acca",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/1000s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4313",
@@ -1340,11 +1712,17 @@
    "date": "2025-04-01T12:40:22Z",
    "color": "#e8d8d8",
    "lqip": "data:image/webp;base64,UklGRnIBAABXRUJQVlA4IGYBAADQBgCdASoYACQAPu1oq1CppaOiqqgBMB2JQBUiqecM9gMqJgZpL2gg0x8xua9ROCIJhbfMYAW7P2rA920jv0AA1usmh6yNphHoIpfDmTRYlh+lJotzepd7RVYghjKnzqU9Y0cBR6B1EjGUGjwzv6F8EDItbIBRwgrkys5lsuiDuqPxtNqcSE4qxbyHr8p8cTp6jFl6mQnjtTYri1sgvTa13ifMD9r8BigBB7NLfJLStj22MOAqb0CJv0CwO3rAc8rtHs3TLuBLO2sxQcG1/pjxpdd0lR0kYjMTiEiKssMb8rAt8eEI3v/uWj9SkKU0Ytkb+bMNexx7Ufta8wx4GQwc8NWFN01TrqLJE5M1kDWYDcW73C0nwDENpMMsAVaRA4A3QYYw9hisAJreAj+7bCOgTcGnmHOlAma5vmrvKWxVSbQfqtxCC6tYxa68+/tN2UJF5FiOrK0yrL4O2Rtgg9aKgvO/wAAA",
-   "fileHash": "780b4ae24f",
+   "fileHash": "e9bab81987",
    "pixelHash": "6d7f9ab954",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/2000s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4322",
@@ -1361,11 +1739,17 @@
    "date": "2025-04-01T12:56:22Z",
    "color": "#c8b8a8",
    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAACwBQCdASoYABEAPu1srFEppaQiqAqpMB2JQBbfbIXoJoIJzjtYcIodP4mqPi8HDOcBlcfMmgAA/A2R1rHdTzW2iEvJOtnWR+ELap6waJbQKz/vrcEbb+VWuUO8VSdGTzMDi8jHJmk+OcHliHFd3ksu2McotgYZPy1S7Nlg2j76lvM3oT+C31zrBIyRAPPjrwsfFj+eyY2iKfur2VFo2ivgQaXBtrvgJ6LavLo9nz9OmEVdi4STi4WbsgfLfpz9bvkd5Bx1wAA=",
-   "fileHash": "d7248382fb",
+   "fileHash": "ee07e9064f",
    "pixelHash": "aa8325f605",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/2500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4323",
@@ -1382,11 +1766,17 @@
    "date": "2025-04-01T12:58:28Z",
    "color": "#f8f8f8",
    "lqip": "data:image/webp;base64,UklGRnoBAABXRUJQVlA4IG4BAADwBwCdASoYACQAPu1mp08ppSMiKqwBMB2JQBhyK/cRVgHcz39UzAJGKpZT554cXo69JhTldJlh4eb2wbEEVqewZFl8E7yHFgAA/qxSS7HvETMS0Q24Wk245/kV58BlJ5vyh53n9/rNSBgE0DRUZNTZlFCpy5QWo2Gj4aCfCO+y8MUCc2BaV36L6vR3MqJs0SU3V6zP4q3wgzxAc7/w/xNqc2J72XBA9cJYQ79MTH92mE8vEsklOrmcl2ImBWZrB3xLs7A46exNMasP0phlkNCWYCveCtWEbmZSJ0TQS+jiBWlObjcZNGKMJu83gT5aRCAnlWwEDRfEbUH94o1NoDRZEpFPHqIlcPhLL2ZJULlDda2UBDomhS1d3CgDyc+dPgnZ8/Ij78tsZHdBG5pjnb0Ra1eryKa9UV9w4PFyyL7hXVWiSWUyuF0lnwjqOMj1yBtzeUsjpTFUejBZKGvngu/IkZQYOz1OaliOAAwAAAA=",
-   "fileHash": "a5f7a8cd33",
+   "fileHash": "c871ec2299",
    "pixelHash": "f674486422",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/4000s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-0550",
@@ -1407,7 +1797,10 @@
    "pixelHash": "ea490f36de",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "iPhone 8 Plus"
+   }
   },
   {
    "id": "img-0552",
@@ -1428,7 +1821,10 @@
    "pixelHash": "22976222bf",
    "tags": [
     "places|Spain|Seville"
-   ]
+   ],
+   "gear": {
+    "camera": "iPhone 8 Plus"
+   }
   },
   {
    "id": "img-4344",
@@ -1449,7 +1845,13 @@
    "pixelHash": "0bdfad379b",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "22mm · f/8 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4351",
@@ -1470,7 +1872,13 @@
    "pixelHash": "47316c11a0",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "24mm · f/8 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4352",
@@ -1491,7 +1899,13 @@
    "pixelHash": "46653605ea",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/8 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4365",
@@ -1508,11 +1922,17 @@
    "date": "2025-04-02T12:15:20Z",
    "color": "#a8a8a8",
    "lqip": "data:image/webp;base64,UklGRiABAABXRUJQVlA4IBQBAACQBgCdASoYACIAPu1mq1AppSOiqrgMATAdiWUAwvsxAIZhTTw0kweqmp5ktBmDkGtfde0xridMZI5NeUAAAPrzKYU/1ga+98/d4i+3r/cMeynuNL2pM7VbQFYhD4ByU7lMRs9BBoDW0CD12X5IA2Ohg9sAxdGCkiW6B/3bpNtSwds8ExJejzqaKzCJHqYgUYIuwBHA6zGCKzqZsug8+SEKqSyojbzmbktskT2s4dh+zM/baYDDF1/64oaYre48WRe+DjLjLVGxQYZiFML2CHD4sFMczkjlAEnjDV/6XkDYID9c6Iycqw/j9EV+umo869CHLrVjc7R7BRYo60Oujub3QpklGNGYt2dYk1wxWwTOnB8XgAA=",
-   "fileHash": "2057d49a88",
+   "fileHash": "8badf04a87",
    "pixelHash": "5dcb22b08d",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/640s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4367",
@@ -1529,11 +1949,17 @@
    "date": "2025-04-02T12:16:34Z",
    "color": "#181808",
    "lqip": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAABQBgCdASoYAB4APu1irFAppSQisBgIATAdiWMAyJwIEeB7qxfYvPvugL0KXUMn1TJI59aEnqONNnVDIAD+6UNlYanLRIOSmHgvlJK7zRARLFR5PuK0gVrGdicv9oOdxzkTt+B1UXBCZBTdPfmiNDszfDyDRAQGHSWna+SrX1Z/wONZ+Z0MpeN51k6dHedH4Z3LlMau+YaFLnr9m/9QBNQy2BxaalYnCsL8siBstiUV73dBazs3LroNsLUSaW/+BDleO3KZ2BrC5ocHatyZ4J83cKPVSDvaZJgQhuDURaJ5V/dN8Bh96H9ZXG5KNusjmpSkZqqMamt3WePeFeN5DpmrRtPOsSjuWNojk08anTfHxVP2qCUAAA==",
-   "fileHash": "c76d4bf28b",
+   "fileHash": "9ea4016afe",
    "pixelHash": "e5011edc53",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/125s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4375",
@@ -1550,11 +1976,17 @@
    "date": "2025-04-02T12:24:34Z",
    "color": "#181808",
    "lqip": "data:image/webp;base64,UklGRkABAABXRUJQVlA4IDQBAACwBgCdASoYACAAPu1gqE2ppaOiMAgBMB2JZAC94f/s0FsDGBW9ywNJe0IMruJTSnTEjazFgKstBNl4EmsmAAD+JbHG8tD7F4XI5Ca8QyCeDiyPtBWZ+Ul85OV+qAaOMRb04sJknRLWIiZhL1H8qUqqe5RfP39mbU+S+BmNhIsX5aUj87NfzWrij1oUxUiWBRGveTHplHPgXLM0M3BfCmut13bPBCV28cVfB4VHzfpDXwwxWBM0668s/L73WaH6qoX7n32YZB7LSQdO30hEUQNIatVuXprczr2KQSan+15ByH+5al6NF/FrN20EGYfNjoYPzM3x/tHw843o3D7kG86zfJtTPHjtkPkrOV4S5T+SW6qfDfac7ZYKlSul1VuYphd8MGXOgFqcu++V1bH6g2uvAXQAAA==",
-   "fileHash": "e20bc7f297",
+   "fileHash": "66e75fd121",
    "pixelHash": "4c02ccbe53",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/800s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4384",
@@ -1571,11 +2003,17 @@
    "date": "2025-04-02T12:38:48Z",
    "color": "#282828",
    "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBbZMX/apmVQfxei5KEX8Z/lIADiKtlSHCjvIALXLc6ucxY7TFMCWJwTd+FDL9YtanxynCfizi+8GSX9n8sST46A+9QRNinwCVB5mnm7My4KPV6eAo1SPXiGqdfrACzGG19hCJEegSLf8pzVUgcQdEFsLFArxY/kCEu4ZSVwcPrRFLiy3doOlqct7BeVUzaFoH9KAAA=",
-   "fileHash": "bfa1631431",
+   "fileHash": "7f4e597254",
    "pixelHash": "2e53b636bb",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/125s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4393",
@@ -1592,11 +2030,17 @@
    "date": "2025-04-02T12:48:30Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAACwBgCdASoYACQAPu1qqlCppaOiqrgMATAdiWIAsR9C5dEYb41lZi8jqjFUoJF1Y970Q6B1hIQZdd1NobQ5AAD+66aU0EfoDwmrMvWbF9YciBUAYvowVcxAkbU0XhEd8fssqX/5CGa4Xpyc6t9Pek22cpS4Lf2LE1uoAPucoDgkhLGK+oDIGNFvm38BMP5pHBnUwwN1ANLwEC/xmf0J1I5WEjLTzIyaYk8yvu/h1IyJYqqCsNRqyGXrKo0kFFlE5/UGcTwC2Iy9Z3dNr/POkn01MFkcbosTr31WHqn6fSM4onzrd5yoJ8RsB62/QKwSBKj72AVUM5hYni1iugo44NeTJ68b2gC9V3a77zAc0hqwYwDU2dHeOh5/fMdvgVB/4cD633/4UIAAAA==",
-   "fileHash": "94c57b0e84",
+   "fileHash": "a1b9147b94",
    "pixelHash": "3a87b7f3f0",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4405",
@@ -1617,7 +2061,13 @@
    "pixelHash": "4cbb0f7c30",
    "tags": [
     "places|Spain|Ronda"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "28mm · f/13 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4422",
@@ -1634,11 +2084,17 @@
    "date": "2025-04-03T11:16:02Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoYAA8APu1iqU2ppaOiMAgBMB2JQBUfEpgKRENLLtqtKqaFAAD+oJlkNNsoDOdBvbcmAokH9FsEbP3+cScsY4m6nVgAguaBJZy3ho+s8H4xcA/E7ys1jci2+el9RUs0Gr36CiCq8TfXVamV1Aybl6GdPz3zX56Z/1ghi8Uy4AnFwHoAAAA=",
-   "fileHash": "2d62b51016",
+   "fileHash": "05f9f9ec77",
    "pixelHash": "931f05dc49",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/80s · ISO 6400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4424",
@@ -1655,11 +2111,17 @@
    "date": "2025-04-03T11:16:55Z",
    "color": "#b88868",
    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCsDBAAG/8PTRzPHL+/qWRAAP7ZYOx3mrW81U5F7/gdDkPCuBYSbXlyAV4wRVl3jVd7bFXHYMttim7rV9Y4Apl+GJ6qc3EWqPmyOcFYkaBxnNx8lEUAcKreyODC+MRxCcXZkAHugAAA",
-   "fileHash": "70e1a6f49c",
+   "fileHash": "28a709eb29",
    "pixelHash": "ab0f31f1ce",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/80s · ISO 4000",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4438",
@@ -1680,7 +2142,13 @@
    "pixelHash": "e06e3bc4e3",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "26mm · f/5.6 · 1/60s · ISO 500",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4440",
@@ -1701,7 +2169,13 @@
    "pixelHash": "e02dd9d8ba",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "39mm · f/6.3 · 1/60s · ISO 250",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4441",
@@ -1722,7 +2196,13 @@
    "pixelHash": "eb1dad08e8",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "24mm · f/5.6 · 1/80s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4444",
@@ -1739,11 +2219,17 @@
    "date": "2025-04-03T11:36:36Z",
    "color": "#281808",
    "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAACQBgCdASoYACQAPu1sqVAppiOiqqoBMB2JQBBKwLo3Vlm3LViqLaYYEvsM9+b9kHxXCKvJTz49WCtdinGAAP7ul6GChCMAcZV7o3UyUbOAR0cZGjuwxlMBY4hNY46K/s2PEohQa2sjCLeCDQo3+2XRPzBkgYFnFn7eVStRBQrMs36/sKNTca/UT8wqSYdfGEi+2VGvkdkjLas13j2oH7PbhFh2dt06FawispTgpHkJsP7f64dKwn+EAzFXnWXgOdfi4xxygOcyderymIyz76eeOVkiJLIzDhczm7jMGU7WUn9kwKSjCPTiCIeAAA==",
-   "fileHash": "0e9a2d74bb",
+   "fileHash": "6db92bc721",
    "pixelHash": "9c5ac9d84d",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/800s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4462",
@@ -1764,7 +2250,13 @@
    "pixelHash": "68c729f5df",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "31mm · f/6.3 · 1/40s · ISO 6400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4471",
@@ -1785,7 +2277,13 @@
    "pixelHash": "db32198d04",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/6.3 · 1/15s · ISO 6400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4501",
@@ -1806,7 +2304,13 @@
    "pixelHash": "c590291ed9",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "23mm · f/6.3 · 1/60s · ISO 125",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4526",
@@ -1823,11 +2327,17 @@
    "date": "2025-04-03T13:06:39Z",
    "color": "#181818",
    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JaQAAYfFdCjrBvldoluPAAP7p94y40IqioH1DNkq7t+lvtMzeqdqp2+xpFaTvcv4HFn5DDlmBcSW1k4zAggk8Vm1/t3xO2JLfO78f6fto9DkRLy9m/qj403DaxT2Vlf01/14ncPSCAAAA",
-   "fileHash": "34f353df1c",
+   "fileHash": "a0b6070515",
    "pixelHash": "ebc0f219c3",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4527",
@@ -1844,11 +2354,17 @@
    "date": "2025-04-03T13:07:43Z",
    "color": "#e8e8e8",
    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoYABAAPu1kqU2ppaQiMAgBMB2JaQAAW33eGHCHzFGOPXjYAP7tQwaV/CYuI72Dqt7eVX22jodZZVNQIQ3Wg6FpWHcYv+hOKB9LX/cv9Y9sqdh/wnX2Kl4PN+l3QK5ZVrOdFauYBvO/DLj/juEYYTCWP1K4qRNGgjEFc/K1IECuu/0k32s4/IZRidAAAA==",
-   "fileHash": "88db232b04",
+   "fileHash": "d62b7fbd28",
    "pixelHash": "615b7a45e0",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4536",
@@ -1865,11 +2381,17 @@
    "date": "2025-04-03T13:16:20Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoYAAoAPu1iqU2ppaOiMAgBMB2JYwC06Yxs0B/mB3MEsL/1l5QYAAD+6QD1pPGRfnpJP2bIPwR2WZfya8mITWTm6uGrVp3e7qFRAZ8Hrfj6fG4R7lKg+LGHFjX/nPbUEy3uJibVNKjSUNIh/X+FM27nrF9AaU9IWsJWcCxRfSdvqpKj6tl80tGhW37xmLGAAAA=",
-   "fileHash": "e7ccc9a3dc",
+   "fileHash": "03f4342157",
    "pixelHash": "30519b24f2",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/800s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4538",
@@ -1886,11 +2408,17 @@
    "date": "2025-04-03T13:16:40Z",
    "color": "#383838",
    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaQAIEC6VEwl1FNkJC6ZGxAQA/toy1FuIIr/uDmWCdLifxxXmlEyw6aILJUZxfCPHytavrLmpIeaYwk4qLAl5j8eMUq8dJ6vgpfw2XUJd5+Eywmb/e6MXBCf9jk+Jj8F10G8pw9vKPhugzGNK+9L8sPvZTxdvhtt+fDPMYFEzAwMYe2SuYwurWOveHa8oie4AAA==",
-   "fileHash": "59c6fe5136",
+   "fileHash": "500cb746d6",
    "pixelHash": "885032e55a",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4556",
@@ -1907,11 +2435,17 @@
    "date": "2025-04-03T13:44:01Z",
    "color": "#385808",
    "lqip": "data:image/webp;base64,UklGRhoBAABXRUJQVlA4IA4BAABQBgCdASoYABgAPu1oqU+ppaOiKA1RMB2JbACsMvXHjoUFQWDpJaAuJk1vuE3HLRMA4TWIMi1A4kv9gAD+umVn21b/QEWU3SGV3SvrglnJiaLBlLt/MNIaOaQEIEM9KKn5KS7M7D4Mk31aO9lCKGgxIhdCVKUAuEaNuAlVJUxEwD4cvxy8iDUN2AV9aEzAAmeMuS4R6nMOLCZct5sQdi8/iMUbQpD84NI79X3oGhblQwvkdZ71WGeGL8sLbXu5vjQJSwof3ZnjATzxtffdA/u7YpQR/bB/DWFPZo0rxxIGXZTqafT8Viz7CL/2rd66IynD5yZ1NNdKsMRj6OZqdphHOL0ye4Z39ZuM6/PIAAA=",
-   "fileHash": "d638553f2f",
+   "fileHash": "cc4966532b",
    "pixelHash": "773640f72b",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4557",
@@ -1932,7 +2466,13 @@
    "pixelHash": "7d93442992",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "37mm · f/6.3 · 1/400s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4563",
@@ -1953,7 +2493,13 @@
    "pixelHash": "457695590b",
    "tags": [
     "places|Spain|Granada"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/6.3 · 1/100s · ISO 200",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4570",
@@ -1974,7 +2520,13 @@
    "pixelHash": "a2f60d4688",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "37mm · f/6.3 · 1/60s · ISO 125",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4601",
@@ -1991,11 +2543,17 @@
    "date": "2025-04-04T14:51:52Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRhgBAABXRUJQVlA4IAwBAADQBgCdASoYABgAPu1urlIppiQiqAgBMB2JQBZ3d/I2KsBvAG85t9W4At804XddHxX5AJ6FN5esFCaE5iGjAAAA/vQrY8XOC2frE4EarUK7CzfmOo3A5CsBK9wvYWZeGdQlzdy7Gt3crqa+zN4et7uLeQUIGn6ODKgWsdsVyG0j/sumFQybQUcgXamgtSMU2VpwYnDDwXHU06+cdrRclm833dtG0BcL4tCEecF6TeYA/H1qa9JW28FbenrJlkOTYvGGGS2grchPjel5MWYuRsR4lUN944WXI8Q0uYPWIS64AMbdTqaUyZlUlVkDSVizWimDEyPyYua+G+q50aO1orq00iq1AEALZhlFqAAA",
-   "fileHash": "3613f4a9a5",
+   "fileHash": "42ee8af40a",
    "pixelHash": "5458ad5280",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 250",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4607",
@@ -2012,11 +2570,17 @@
    "date": "2025-04-04T15:03:29Z",
    "color": "#582808",
    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoRwN4AAYQ7otdmQelmD77AAAP0sD0j6jQUtFNmulen/8hE842K57sgavjP+6YYKjOqKnPdfyjz41ZfA6qBLxR+w7N784ZhoeMUVGycHiH+I1nhMnNhTS56EleExW81Pbho3SPIbQ28ih+8o97TttCqvh7lWALlkTvyYat3Bn4dDC+ZGJv5C4ECAAAA=",
-   "fileHash": "586be0d16a",
+   "fileHash": "14c264291c",
    "pixelHash": "e3e2ef75dd",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 1600",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4609",
@@ -2033,11 +2597,17 @@
    "date": "2025-04-04T15:07:19Z",
    "color": "#180808",
    "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAADwBQCdASoYABEAPu1ur1IppiQiqAgBMB2JYgCxHuOCv+UrfAvMOjA7I6O4XhspB4c/7+xIvVzdYAD+8rQwi9/XiSv9nUvnJ3AQ1mHe9b3zjPsjEe38711tHycZLozlEonzOMRupl05GvAjkTSJpIKvCnuTwHKBco4QjJB0j74xBrXFTndY3w8TNtwoFFVEquaOHS7UMT6aeIYt3iF9wXV0xfK80X2P5VGAj5oioIj6E04QZdsbQcGEjUNzE+B4Ht1QAA==",
-   "fileHash": "4be4b322a9",
+   "fileHash": "e8c2c865b7",
    "pixelHash": "0e8830b2b7",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 400",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4610",
@@ -2054,11 +2624,17 @@
    "date": "2025-04-04T15:11:08Z",
    "color": "#481808",
    "lqip": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JagCdMoAlrQuRw+QDbZ64lWzgAP7Qyg8KeqLY+umSRbCkRVd3WbWW4ytn+6Qr9wCyEYuvFh+YcISx8TwdqbE12Fk0sJWclpj2BmDFYJiEXsSxrCUgdSYCR5ks8475ptUQi2d5xs6/hYf4YBtmTODR3YYFbeOTQr6mfdo5PutZvvuoDXK/OAwea+Qg4E7s0WAAAA==",
-   "fileHash": "d8d9eaa7db",
+   "fileHash": "0a6d73e235",
    "pixelHash": "8f9250c97f",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 3200",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4612",
@@ -2075,11 +2651,17 @@
    "date": "2025-04-04T15:14:49Z",
    "color": "#381808",
    "lqip": "data:image/webp;base64,UklGRi4BAABXRUJQVlA4ICIBAACwBwCdASoYACQAPu1wr1IppiQiqrgIATAdiWYArDNPe57E5OTvAHdPzEcPmpgyax6NoBWCqkqDcfRc6GLkr5QPSTxjA6AAAPdJkJya9jiYy9PpZIyfF851eAh4xbS+Uml1XyTzYa04+u//+EBBgPUGzDixNHE5IulNW1HbcKmW+Ny5fj8vyflE+aQNlqwNKVtM94jUelUkHWeAl8I2+3gkLwcECmAHOyUXMTJZHTRl6fFaw6+NDGd/tbXF1FQWcXSZsy8gW8vq7caSC64Kyn+kB+bydJLMopT96dGQXr25iAUq1NS5EisqikBRoJ3t05afaiSn8xbX6N9BsimHHoCKCEWgdkjy3guYZkcH6E9F35Qm/16+IH7/p1nF4WeQtwAAAA==",
-   "fileHash": "392eb4f57c",
+   "fileHash": "7008bb2910",
    "pixelHash": "9a4b769e00",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 3200",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4618",
@@ -2096,11 +2678,17 @@
    "date": "2025-04-04T15:18:31Z",
    "color": "#080808",
    "lqip": "data:image/webp;base64,UklGRuAAAABXRUJQVlA4INQAAAAQBgCdASoYABEAPu1qr1CppiQiqAqpMB2JbAC1A1MH0DjMsIpwvTox+1+reCByNJT0M6vHEafXFgAA/vQwaOmoAqxyXyyXlsFYjc9F1oCfVSonLKbSkYXRzSRmciyoTVxDa6E1mc4t7wQ5YDu/vtA0eTxIW4EzjKKrViawHC9CtwbwOtN/k4Yve3dmq+NSkJN3o1+VQ1hkAY7OKwCmZit2OYoiCeJjC/5N8IIwtjdufJ8Y/kKCakfMIRSxYoHW3kkBFmVWFFY4tsB/4INVj+0VWAAAAA==",
-   "fileHash": "2c6ce3d398",
+   "fileHash": "3a70889c8e",
    "pixelHash": "add9ea2b41",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/500s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4623",
@@ -2117,11 +2705,17 @@
    "date": "2025-04-04T15:22:45Z",
    "color": "#180808",
    "lqip": "data:image/webp;base64,UklGRjYBAABXRUJQVlA4ICoBAABQBwCdASoYACQAPu1wsFKppiSipWmZMB2JYwDBD3JvVjQ4x8fQArClvupc5xM6NILNHDetWyrucpMQMWgCylbref4AAP72jmvLtOhzpeW2MqR78QJmkQE3T3dVJEStoaIC5Ja4elQnKh/ayd2DoutlRy6MpE9pAiiIF5qepQdqjmKB8GlacMaq2XVIj5coxoDA+vJuNn2mBKvcwXnk360yWSz1p/0b/WcGpXaHR9oIH4cSMpQJtzJNAAR0BO99Ww/bidqs0ZPeB70/dslYfnf2hSS5EAXw8fRftQ8pNrOetMKpfuejexrZkUFLROY4wcsHATJsRubWyijL4FJFYYB56HnETxSIMTeVTBkAvOgMbMMgb25fPT7yH44IF9V+Na00NvwN+FD7jRwA",
-   "fileHash": "39869bce51",
+   "fileHash": "0706076055",
    "pixelHash": "5c8bc2cd6c",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/100s · ISO 640",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4624",
@@ -2138,11 +2732,17 @@
    "date": "2025-04-04T15:23:47Z",
    "color": "#180808",
    "lqip": "data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAADQBwCdASoYACQAPuFap02opSOiNVgMARAcCUAVJPGoUGk+JOZ7KCVEEI6hmfH89MUmMDqe12s6SXVG0alusNgx9N3rJBtMAAD+8qQdQKBbRB6ZguPyWwo1pPmJ1DzuvOh3r5hUt04qyB1vjZblhgO5Bi/DLeyVg/rIMJhqTpDDRP/bbSWoY9Sxq4GFQgz/Ufnhtmfsr6aRSh8DNpgEl3J4MigPM0msa+7/lWQWIM/CWsIJgeyEOpSs+HjsEd1paBN8O9Y7H0UF129idHYV1oycl3U9D24AGxDmw7SpX+K1Ta1Rh11hpQcEAqY5yZCFL7poCRS8kOLX747raBS7yGUEXnY9+To9n6Xef7Bx5kntIqtAAAE4AA==",
-   "fileHash": "0b205311d3",
+   "fileHash": "9c65e3a4b7",
    "pixelHash": "8c4d2c2658",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/125s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4635",
@@ -2163,7 +2763,13 @@
    "pixelHash": "b592b1d251",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "22mm · f/6.3 · 1/160s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-0707",
@@ -2184,7 +2790,10 @@
    "pixelHash": "583762d855",
    "tags": [
     "places|Spain|Córdoba"
-   ]
+   ],
+   "gear": {
+    "camera": "iPhone 8 Plus"
+   }
   },
   {
    "id": "img-4665",
@@ -2205,7 +2814,13 @@
    "pixelHash": "e4c2394114",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "45mm · f/6.3 · 1/640s · ISO 100",
+    "editor": "Lightroom"
+   }
   },
   {
    "id": "img-4690",
@@ -2226,7 +2841,13 @@
    "pixelHash": "54bcbb2dd2",
    "tags": [
     "places|Spain|Madrid"
-   ]
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "18mm · f/6.3 · 1/250s · ISO 100",
+    "editor": "Lightroom"
+   }
   }
  ]
 }

@@ -307,3 +307,32 @@
   color: rgba(255, 255, 255, 0.6);
 }
 .pswp__pg-text { margin-top: 0.25rem; }
+/* Camera details: for the nerds, so quiet. */
+.pswp__pg-gear {
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: rgba(255, 255, 255, 0.38);
+}
+@media (min-width: 900px) {
+  .pswp__pg-gear {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+    margin: 0;
+    text-align: right;
+  }
+}
+
+/* same, under the photo on its own page */
+.pg-gear {
+  margin: 0.9rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--pg-faint);
+  text-align: center;
+}
+.pg-gear span + span::before { content: "·"; margin: 0 0.5em; }

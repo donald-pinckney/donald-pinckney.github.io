@@ -1,6 +1,6 @@
 // Album lightbox (PhotoSwipe 5).
 // - Uses AVIF in the lightbox only if the browser already picked AVIF for the grid.
-// - Shows the photo's place (chapter) and optional caption.
+// - Shows the photo's place (chapter), optional caption, and camera/lens/exposure details.
 // - Keeps the URL in sync with the open photo (/photography/<album>/<id>/), and the browser
 //   Back button closes the lightbox instead of leaving the album.
 
@@ -46,14 +46,23 @@ export function initGallery(PhotoSwipeLightbox, pswpModuleUrl, albumUrl) {
         place.className = 'pswp__pg-place';
         const text = document.createElement('div');
         text.className = 'pswp__pg-text';
-        el.append(place, text);
+        // Camera / lens / exposure / editor: small and faint, bottom right (below the caption on phones).
+        const gear = document.createElement('div');
+        gear.className = 'pswp__pg-gear';
+        const gearTop = document.createElement('div');
+        const gearBottom = document.createElement('div');
+        gear.append(gearTop, gearBottom);
+        el.append(place, text, gear);
         pswp.on('change', () => {
           const d = pswp.currSlide?.data.element?.dataset ?? {};
           place.textContent = d.place || '';
           text.textContent = d.caption || '';
+          gearTop.textContent = d.gear || '';
+          gearBottom.textContent = [d.exposure, d.editor && `Edited in ${d.editor}`].filter(Boolean).join(' · ');
           place.hidden = !d.place;
           text.hidden = !d.caption;
-          el.hidden = !d.place && !d.caption;
+          gear.hidden = !gearTop.textContent && !gearBottom.textContent;
+          el.hidden = place.hidden && text.hidden && gear.hidden;
         });
       },
     });

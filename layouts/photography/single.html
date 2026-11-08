@@ -31,6 +31,14 @@
   <figure class="pg-photo">
     {{ partial "photography/picture.html" (dict "album" $album "p" $p "alt" ($caption | default (printf "Photo %d from %s" (add $idx 1) $albumPage.Title)) "sizes" "(min-width: 1280px) 80vw, 100vw" "eager" true) }}
     {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+    {{ with $p.gear }}
+      <p class="pg-gear">
+        {{ with .camera }}<span>{{ . }}</span>{{ end }}
+        {{ with .lens }}<span>{{ . }}</span>{{ end }}
+        {{ with .exposure }}<span>{{ . }}</span>{{ end }}
+        {{ with .editor }}<span>Edited in {{ . }}</span>{{ end }}
+      </p>
+    {{ end }}
   </figure>
 
   <nav class="pg-photo-nav">
