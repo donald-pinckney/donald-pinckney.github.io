@@ -1,0 +1,10 @@
+{{/* A photo's own place for display, from its first place tag: "places|Spain|Seville" → "Seville · Spain".
+     Deeper tags show the most specific part and the top: "China|云南|大理|洱海" → "洱海 · China". */}}
+{{ $out := "" }}
+{{ $places := slice }}
+{{ range .tags }}{{ if hasPrefix . "places|" }}{{ $places = $places | append (strings.TrimPrefix "places|" .) }}{{ end }}{{ end }}
+{{ with index $places 0 }}
+  {{ $parts := split . "|" }}
+  {{ $out = cond (gt (len $parts) 1) (printf "%s · %s" (index $parts (sub (len $parts) 1)) (index $parts 0)) (index $parts 0) }}
+{{ end }}
+{{ return $out }}

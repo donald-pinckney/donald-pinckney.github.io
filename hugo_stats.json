@@ -346,6 +346,7 @@
       "pg-card",
       "pg-card-text",
       "pg-chapter",
+      "pg-chapter-label",
       "pg-chapter-region",
       "pg-chapter-text",
       "pg-crumb",
@@ -468,12 +469,14 @@
       "z-30"
     ],
     "ids": [
+      "andalusia",
       "clip_0",
       "collapse-main-navbar",
       "córdoba",
       "granada",
       "lisbon",
       "madrid",
+      "madrid-2",
       "page-bg",
       "paint0_linear_1452_5317",
       "pg-dock",
@@ -482,6 +485,8 @@
       "pg-prev",
       "porto",
       "profile",
+      "ronda",
+      "salamanca",
       "section-better-experience",
       "section-collection",
       "section-resume-biography-3",
@@ -494,7 +499,8 @@
       "share-link-x",
       "sintra",
       "toledo",
-      "top"
+      "top",
+      "óbidos"
     ]
   }
 }

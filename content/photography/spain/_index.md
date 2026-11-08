@@ -9,38 +9,29 @@ cover: img-3986
 # Optional one-line captions, keyed by photo id. Shown in the lightbox and on the photo's page.
 captions:
   # img-3986: Your caption here
-# Sub-locations. Each chapter starts at photo `from` and runs until the next chapter (photos are in
-# capture order). `region` (optional) is the small label above the title; `text` (optional) is a
-# sentence or two of context.
-# MOCK DATA: places guessed from capture dates — replace with the real ones.
+# Chapters, rendered in this order. Each lists the photo tags it contains (darktable hierarchical tags,
+# exported into the JPEGs); a photo goes in the first chapter that matches. A tag also matches the tags
+# under it: "places|Spain" would match every Spain photo.
 chapters:
-  - from: img-3938
-    title: Madrid
-    region: Spain
-    text: The Royal Palace and Almudena Cathedral, under a very blue sky.
-  - from: img-3966
-    title: Segovia
-    region: Spain
-  - from: img-4075
-    title: Toledo
-    region: Spain
-  - from: img-0493
-    title: Córdoba
-    region: Spain
-  - from: img-4243
-    title: Seville
-    region: Spain
-    text: The Real Alcázar, its gardens and the baths beneath them.
-  - from: img-4344
-    title: Granada
-    region: Spain
-  - from: img-4422
-    title: Lisbon
-    region: Portugal
-  - from: img-4570
-    title: Sintra
-    region: Portugal
-  - from: img-0707
-    title: Porto
-    region: Portugal
+  - title: Madrid
+    label: Spain
+    tags: [places|Spain|Madrid]
+  - title: Segovia
+    label: Spain
+    tags: [places|Spain|Segovia]
+  - title: Salamanca
+    label: Spain
+    tags: [places|Spain|Salamanca]
+  - title: Porto
+    label: Portugal
+    tags: [places|Portugal|Porto]
+  - title: Óbidos
+    label: Portugal
+    tags: [places|Portugal|Óbidos]
+  - title: Lisbon
+    label: Portugal
+    tags: [places|Portugal|Lisbon]
+  - title: Andalusia
+    label: Spain
+    tags: [places|Spain|Seville, places|Spain|Ronda, places|Spain|Granada, places|Spain|Córdoba]
 ---

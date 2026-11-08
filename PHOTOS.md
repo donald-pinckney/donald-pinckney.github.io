@@ -30,6 +30,7 @@ How photos get from the camera to the `/photography/` gallery on this site.
 | `app|print` (+ `10:8`, `1:1`, `8:10`) | Intended for printing. Every print photo is also `app|art`. |
 | `app|memory` | Keepsake, not portfolio (China). |
 | `pii|yes` | Contains people / personal info. **Never publish.** |
+| `places|<Country>|<Place>` | Where the photo was taken, e.g. `places|Spain|Seville`. Exported into the JPEG; **the site builds album chapters from it.** |
 | `stage|final-lightroom` | Final edit was made in Lightroom; darktable's edit is NOT the real one. **Never re-export these from darktable.** (Spain) |
 | `stage|edited` | Rarely used; not a reliable "finished" marker. |
 
@@ -52,7 +53,7 @@ Exporting is always manual. Steps:
    - size: 0 × 0 (full size)
    - profile: sRGB
    - style: none
-   - Metadata settings don't matter: the site script strips everything except the color profile, including GPS and people tags.
+   - Metadata: keep **tags + hierarchical tags** enabled in the export module's metadata preferences, so `places|…` tags reach the JPEG (the site reads them for chapters). Everything else is fine either way: the web versions are stripped of all metadata except the color profile (no GPS, no people tags).
 4. Publish on the site (next section).
 
 ## Site side
@@ -70,11 +71,11 @@ cover_position: 50% 30%        # optional: which part of the cover to keep when 
 cover: img-4264                # photo id = file name minus the date prefix, lowercased
 captions:                      # optional, keyed by photo id
   img-4264: Baths of Doña María de Padilla, Real Alcázar, Seville
-chapters:                      # optional sub-locations, in photo order
-  - from: img-4243             # first photo of the chapter; it runs until the next chapter starts
-    title: Seville
-    region: Spain              # optional small label above the title
+chapters:                      # optional; rendered in this order (no list = plain grid)
+  - title: Andalusia
+    label: Spain               # optional small label above the title
     text: Optional sentence or two of context.
+    tags: [places|Spain|Seville, places|Spain|Granada]   # photos with these tags (or tags under them)
 ---
 Optional intro paragraph (Markdown).
 ```
@@ -89,7 +90,15 @@ npm run dev      # hugo server (in memory, full rebuilds) → http://localhost:1
 - `npm run photos` only processes new or changed JPEGs (content hash), so re-running is cheap. Photos deleted from `web/` disappear from the album and their web versions are deleted.
 - Use `npm run dev`, not plain `hugo server`: Hugo 0.152 renders to disk by default, which would copy all the images into `public/`.
 - Each photo gets its own page (`/photography/<slug>/<id>/`) from `content/photography/_content.gotmpl`. The lightbox keeps the URL in sync with the open photo.
-- Captions, cover and chapters live in `_index.md`, so editing them needs no re-run. Order is chronological (true capture time). Chapters show as headings in the grid, a place list under the album title, the place in the lightbox, and a breadcrumb on photo pages. Without a `chapters:` list, sub-folders of `web/` become chapters automatically.
+- Captions, cover and chapter notes live in `_index.md`, so editing them needs no re-run. Order is chronological (true capture time).
+- **Chapters** are listed in `_index.md` (`chapters:`), rendered in that order. Each selects photos by **tags** (darktable hierarchical tags, exported into the JPEGs), so one chapter can group several places (e.g. Andalusia = Seville + Ronda + Granada + Córdoba), and any tag tree works, not just `places|…`. A tag also matches the tags under it (`places|Spain` matches `places|Spain|Seville`).
+  - A photo goes in the first chapter that matches; within a chapter photos are in capture order. Photos matching no chapter go last, with a build warning; a chapter matching no photos also warns.
+  - Starting point: if an album has place tags but no `chapters:`, `npm run photos` prints a suggested list (one chapter per place, in trip order) to paste and then group/rename.
+  - Privacy: the album data file (`data/photos/*.json`) is committed and public, so the script only records `places|…` tags plus tags the album's chapters refer to (never e.g. `subjects|people|…`). If a chapter starts using a new tag, re-run `npm run photos`.
+  - Re-run `npm run photos` after changing tags in the photos; tag-only edits don't re-encode or re-upload anything (web versions are keyed by pixel content).
+  - Chapters show as headings in the grid and a sticky place sidebar on wide screens. Each photo's own place (from its `places|…` tag) shows in the lightbox and on its page.
+  - No `chapters:` list: sub-folders of `web/` (if any) become chapters; otherwise a plain grid.
+- No GPS on the camera? Places can be inferred by matching each photo's capture time to the nearest iPhone photo's GPS (that's how Spain's were set; then written into the JPEGs with exiftool).
 
 **Images in production** load from `params.photos.base_url` (`config/_default/params.yaml`). Locally they're served from `.photos-out/` via `config/development/`.
 
@@ -141,4 +150,4 @@ The `AUTO SIMPLE` style sets the exposure module to **automatic** (deflicker mod
 ## History / recovery
 
 - 2026-11-06: `~/Pictures` reorganized into `Library/` + `Exports/`. Move log: `~/Pictures/.reorganize-2026-11-06.log`. darktable film-roll paths were updated by SQL. DB backups: `~/.config/darktable/library.db-pre-reorg-20261106`, `*-pre-tag-20261106`.
-- Spain (`2025-03-spain`): all edits were done in Lightroom (and published to Flickr, ~111 photos). darktable never got those edits. `Exports/2025-03-spain/web/` holds the 113 finals: 112 Lightroom renders plus IMG_4264, re-edited in darktable in January 2026.
+- Spain (`2025-03-spain`): places were added to the 106 final JPEGs with exiftool on 2026-11-07 (metadata only; pixels verified identical), inferred from the iPhone GPS track. All edits were done in Lightroom (and published to Flickr, ~111 photos). darktable never got those edits. `Exports/2025-03-spain/web/` holds the 113 finals: 112 Lightroom renders plus IMG_4264, re-edited in darktable in January 2026.

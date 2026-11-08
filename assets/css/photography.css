@@ -176,7 +176,7 @@
   scroll-margin-top: 90px; /* clear the sticky navbar when jumping from the place list */
 }
 .pg-chapter:first-child { margin-top: 0; }
-.pg-chapter-region {
+.pg-chapter-label {
   margin: 0 0 0.15rem;
   font-size: 0.72rem;
   font-weight: 600;

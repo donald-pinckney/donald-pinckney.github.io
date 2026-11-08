@@ -4,20 +4,26 @@
 {{ $data := index site.Data.photos $album }}
 {{ $albumPage := .Parent }}
 {{ $captions := $albumPage.Params.captions | default dict }}
+{{/* Same order as the album grid (chapter by chapter), so position and prev/next match it. */}}
+{{ $ch := partialCached "photography/chapters.html" (dict "page" $albumPage "data" $data) $album }}
+{{ $photos := $ch.photos }}
 {{ $idx := 0 }}
-{{ range $i, $p := $data.photos }}{{ if eq $p.id $.Params.photo_id }}{{ $idx = $i }}{{ end }}{{ end }}
-{{ $p := index $data.photos $idx }}
-{{ $n := len $data.photos }}
+{{ range $i, $p := $photos }}{{ if eq $p.id $.Params.photo_id }}{{ $idx = $i }}{{ end }}{{ end }}
+{{ $p := index $photos $idx }}
+{{ $n := len $photos }}
 {{ $caption := index $captions $p.id }}
-{{ $chapter := index (partial "photography/chapters.html" (dict "page" $albumPage "data" $data)).of $p.id }}
-{{ $prev := cond (gt $idx 0) (index $data.photos (sub $idx 1)) false }}
-{{ $next := cond (lt (add $idx 1) $n) (index $data.photos (add $idx 1)) false }}
+{{ $chapter := index $ch.of $p.id }}
+{{ $place := partial "photography/place.html" $p }}
+{{ $chapterTitle := "" }}{{ with $chapter }}{{ $chapterTitle = .title }}{{ end }}
+{{ $prev := cond (gt $idx 0) (index $photos (sub $idx 1)) false }}
+{{ $next := cond (lt (add $idx 1) $n) (index $photos (add $idx 1)) false }}
 
 <div class="pg-wrap pg-photo-page">
   <nav class="pg-photo-top">
     <span>
       <a class="pg-back" href="{{ $albumPage.RelPermalink }}">← {{ $albumPage.Title }}</a>
-      {{ with $chapter }}<span class="pg-crumb">/ <a class="pg-back" href="{{ $albumPage.RelPermalink }}#{{ .anchor }}">{{ .place }}</a></span>{{ end }}
+      {{ with $chapter }}<span class="pg-crumb">/ <a class="pg-back" href="{{ $albumPage.RelPermalink }}#{{ .anchor }}">{{ .title }}</a></span>{{ end }}
+      {{ with $place }}{{ if not (hasPrefix . $chapterTitle) }}<span class="pg-crumb">· {{ . }}</span>{{ end }}{{ end }}
     </span>
     <span class="pg-meta">{{ add $idx 1 }} / {{ $n }}</span>
   </nav>

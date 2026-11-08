@@ -43,7 +43,7 @@
     {{ if not $data }}
       <p class="pg-empty">No photos yet. Run <code>npm run photos</code>.</p>
     {{ else }}
-      {{ $ch := partial "photography/chapters.html" (dict "page" . "data" $data) }}
+      {{ $ch := partialCached "photography/chapters.html" (dict "page" . "data" $data) $album }}
       {{ $dock := gt (len $ch.list) 1 }}
       <div class="pg-album{{ if $dock }} pg-album--dock{{ end }}">
       {{ if $dock }}
@@ -54,15 +54,15 @@
         </aside>
       {{ end }}
       <div class="pg-grid" id="pg-grid">
-        {{ range $i, $p := $data.photos }}
+        {{ range $i, $p := $ch.photos }}
           {{ with index $ch.start $p.id }}
             <header class="pg-chapter" id="{{ .anchor }}">
-              {{ with .region }}<p class="pg-chapter-region">{{ . }}</p>{{ end }}
+              {{ with .label }}<p class="pg-chapter-label">{{ . }}</p>{{ end }}
               <h2>{{ .title }}</h2>
               {{ with .text }}<p class="pg-chapter-text">{{ . | markdownify }}</p>{{ end }}
             </header>
           {{ end }}
-          {{ $place := "" }}{{ with index $ch.of $p.id }}{{ $place = .place }}{{ end }}
+          {{ $place := partial "photography/place.html" $p }}{{ if not $place }}{{ with index $ch.of $p.id }}{{ $place = .title }}{{ end }}{{ end }}
           {{ $ar := div (float $p.w) $p.h }}
           {{ $big := index $p.sizes (sub (len $p.sizes) 1) }}
           {{ $caption := index $captions $p.id }}

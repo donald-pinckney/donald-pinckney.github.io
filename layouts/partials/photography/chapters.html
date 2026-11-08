@@ -1,60 +1,90 @@
 {{/*
-  Chapters (sub-locations) of an album.
-  Source: the album's `chapters:` front matter (each starts at photo id `from` and runs until the next one),
-  or, if absent, the sub-folders of the album's web/ export folder (`chapter` in the data file).
+  Chapters of an album = its `chapters:` front matter, rendered in that order:
+
+    chapters:
+      - title: Andalusia
+        label: Spain                                 # optional small label above the title
+        text: A sentence of context.                 # optional
+        tags: [places|Spain|Seville, places|Spain|Granada]   # a tag also matches tags under it,
+                                                             # e.g. places|Spain matches places|Spain|…
+
+  A photo goes in the FIRST chapter that matches one of its tags. Within a chapter, photos keep
+  capture order. Photos no chapter claims come last (with a build warning).
+  Without `chapters:`, sub-folders of the album's web/ folder (if any) become chapters; otherwise none.
 
   Input:  dict "page" (album page) "data" (site.Data.photos.<album>)
   Output: dict
-            "list"  — chapters with photos, in order: {title, region, text, place, anchor, count, from}
-            "start" — photo id → chapter (for the first photo of each chapter)
-            "of"    — photo id → chapter (for every photo in a chapter)
+            "list"   — chapters that have photos: {title, label, text, anchor, count}
+            "photos" — all photos in display order (chapter by chapter)
+            "start"  — photo id → chapter, for each chapter's first photo
+            "of"     — photo id → chapter, for every photo in a chapter
 */}}
 {{ $photos := .data.photos }}
-{{ $ids := slice }}{{ range $photos }}{{ $ids = $ids | append .id }}{{ end }}
-
 {{ $defs := slice }}
+{{ $assign := dict }} {{/* photo id → chapter index */}}
+
 {{ with .page.Params.chapters }}
   {{ range . }}
-    {{ if in $ids .from }}
-      {{ $defs = $defs | append (dict "from" .from "title" .title "region" (.region | default "") "text" (.text | default "")) }}
-    {{ else }}
-      {{ warnf "photography: chapter %q starts at unknown photo %q (not in this album)" .title .from }}
+    {{ $sels := slice }}
+    {{ range .tags }}{{ $sels = $sels | append (string .) }}{{ end }}
+    {{ $defs = $defs | append (dict "title" .title "label" (.label | default "") "text" (.text | default "") "sels" $sels) }}
+  {{ end }}
+  {{ range $photos }}
+    {{ $pid := .id }}
+    {{ $pls := .tags | default slice }}
+    {{ $found := -1 }}
+    {{ range $ci, $d := $defs }}
+      {{ range $d.sels }}
+        {{ $sel := . }}
+        {{ range $pls }}
+          {{ if and (lt $found 0) (or (eq . $sel) (hasPrefix . (printf "%s|" $sel))) }}{{ $found = $ci }}{{ end }}
+        {{ end }}
+      {{ end }}
     {{ end }}
+    {{ if ge $found 0 }}{{ $assign = merge $assign (dict $pid $found) }}{{ end }}
   {{ end }}
 {{ else }}
-  {{ $prev := "" }}
+  {{ $names := slice }}
+  {{ range $photos }}{{ with .chapter }}{{ if not (in $names .) }}{{ $names = $names | append . }}{{ end }}{{ end }}{{ end }}
+  {{ range $names }}
+    {{ $defs = $defs | append (dict "title" (replaceRE `^\d+\s*-\s*` "" . | replaceRE `\s+-\s+` " · ") "label" "" "text" "") }}
+  {{ end }}
   {{ range $photos }}
-    {{ if and .chapter (ne .chapter $prev) }}
-      {{ $prev = .chapter }}
-      {{ $title := replaceRE `^\d+\s*-\s*` "" .chapter | replaceRE `\s+-\s+` " · " }}
-      {{ $defs = $defs | append (dict "from" .id "title" $title "region" "" "text" "") }}
-    {{ end }}
+    {{ $pid := .id }}
+    {{ with .chapter }}{{ $name := . }}{{ range $ci, $n := $names }}{{ if eq $n $name }}{{ $assign = merge $assign (dict $pid $ci) }}{{ end }}{{ end }}{{ end }}
   {{ end }}
 {{ end }}
 
-{{ $byStart := dict }}
-{{ range $defs }}{{ $byStart = merge $byStart (dict .from .) }}{{ end }}
-
-{{ $of := dict }}
-{{ $counts := newScratch }}
-{{ $cur := "" }}
-{{ range $photos }}
-  {{ with index $byStart .id }}{{ $cur = .from }}{{ end }}
-  {{ if $cur }}
-    {{ $of = merge $of (dict .id (index $byStart $cur)) }}
-    {{ $counts.Add $cur 1 }}
-  {{ end }}
-{{ end }}
-
+{{ $ordered := slice }}
 {{ $list := slice }}
 {{ $start := dict }}
-{{ range $defs }}
-  {{ $place := cond (ne .region "") (printf "%s · %s" .title .region) .title }}
-  {{ $c := merge . (dict "count" ($counts.Get .from | default 0) "anchor" (anchorize .title) "place" $place) }}
-  {{ $list = $list | append $c }}
-  {{ $start = merge $start (dict .from $c) }}
+{{ $of := dict }}
+{{ $seen := newScratch }}
+{{ range $ci, $d := $defs }}
+  {{ $members := slice }}
+  {{ range $photos }}{{ if and (isset $assign .id) (eq (index $assign .id) $ci) }}{{ $members = $members | append . }}{{ end }}{{ end }}
+  {{ if not $members }}
+    {{ warnf "photography: chapter %q in %q matches no photos (tags: %s). New tag? Re-run npm run photos." $d.title $.page.Title (delimit $d.sels ", ") }}
+  {{ end }}
+  {{ if $members }}
+    {{/* Unique anchors if two chapters share a title: madrid, madrid-2 */}}
+    {{ $base := anchorize $d.title }}
+    {{ $seen.Add $base 1 }}
+    {{ $anchor := cond (gt ($seen.Get $base) 1) (printf "%s-%d" $base ($seen.Get $base)) $base }}
+    {{ $c := dict "title" $d.title "label" $d.label "text" $d.text "anchor" $anchor "count" (len $members) }}
+    {{ $list = $list | append $c }}
+    {{ $start = merge $start (dict (index $members 0).id $c) }}
+    {{ range $members }}{{ $of = merge $of (dict .id $c) }}{{ end }}
+    {{ $ordered = $ordered | append $members }}
+  {{ end }}
 {{ end }}
-{{ $ofFull := dict }}
-{{ range $id, $c := $of }}{{ $ofFull = merge $ofFull (dict $id (index $start $c.from)) }}{{ end }}
 
-{{ return dict "list" $list "start" $start "of" $ofFull }}
+{{ $rest := slice }}
+{{ range $photos }}{{ if not (isset $assign .id) }}{{ $rest = $rest | append . }}{{ end }}{{ end }}
+{{ if and $defs $rest }}
+  {{ $ids := slice }}{{ range $rest }}{{ $ids = $ids | append .id }}{{ end }}
+  {{ warnf "photography: %d photo(s) in %q match no chapter (shown at the end): %s" (len $rest) .page.Title (delimit $ids ", ") }}
+{{ end }}
+{{ $ordered = $ordered | append $rest }}
+
+{{ return dict "list" $list "photos" $ordered "start" $start "of" $of }}

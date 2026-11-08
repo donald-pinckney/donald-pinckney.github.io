@@ -4,9 +4,10 @@
 // For every album  content/photography/<slug>/_index.md  with  `source: <trip>`  in its front matter,
 // read every JPEG under  ~/Pictures/Exports/<trip>/web/  (sub-folders become chapters) and write:
 //   .photos-out/<slug>/<id>-<hash>-<width>.{avif,jpg}   web versions (sRGB, all metadata stripped)
-//   data/photos/<slug>.json                            what Hugo needs: sizes, dims, date, color, blur preview
+//   data/photos/<slug>.json                            what Hugo needs: sizes, dims, date, place, color, blur preview
 //
-// Re-running is cheap: unchanged files (same content hash) are skipped. Photos removed from web/ are
+// Re-running is cheap: unchanged files are skipped, and files whose pixels are unchanged (only metadata
+// such as place tags edited) reuse their existing web versions. Photos removed from web/ are
 // dropped from the JSON and their files deleted from .photos-out/.
 //
 // Usage: npm run photos            (PHOTOS_EXPORTS=/other/path to override ~/Pictures/Exports)
@@ -62,20 +63,52 @@ function slugify(name) {
   return name.replace(/\.[^.]+$/, '').replace(/^\d{8}-/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-// Capture time as the camera's clock showed it, plus the clock's UTC offset and the camera model.
-// The offset matters: e.g. in Spain the Canon was still on US Eastern time (-05:00) while the
-// iPhone was on local time (+01:00/+02:00), so wall-clock times alone interleave wrongly.
+// Per-photo facts read from the file's metadata (cheap: header only), re-read on every run:
+// - capture time as the camera's clock showed it, the clock's UTC offset, and the camera model.
+//   The offset matters: e.g. in Spain the Canon was still on US Eastern time (-05:00) while the
+//   iPhone was on local time (+01:00/+02:00), so wall-clock times alone interleave wrongly.
+// - tags: the photo's hierarchical tags (darktable exports them as lr:hierarchicalSubject; falls back to
+//   XMP/IPTC Country + City as "places|Country|City"). Album chapters select photos by these. Only
+//   "places|…" tags and tags the album's chapters refer to are kept: the data file is public, and
+//   darktable tags can include people's names.
 async function captureInfo(file) {
+  const none = { clock: null, offset: null, model: null, tags: [] };
   try {
-    const { exif } = await sharp(file).metadata();
+    const { exif, xmp } = await sharp(file).metadata();
     const e = exif ? exifReader(exif) : {};
     const d = e.Photo?.DateTimeOriginal; // exif-reader returns the wall-clock time as a UTC Date
     return {
       clock: d instanceof Date && !isNaN(d) ? d.toISOString().slice(0, 19) : null,
       offset: e.Photo?.OffsetTimeOriginal ?? e.Photo?.OffsetTime ?? null,
       model: e.Image?.Model ?? null,
+      tags: xmp ? tagsFromXmp(xmp.toString('utf8')) : [],
     };
-  } catch { return { clock: null, offset: null, model: null }; }
+  } catch { return none; }
+}
+
+function tagsFromXmp(x) {
+  const decode = (t) => t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim();
+  const block = x.match(/<lr:hierarchicalSubject>([\s\S]*?)<\/lr:hierarchicalSubject>/)?.[1] ?? '';
+  const tags = [...new Set([...block.matchAll(/<rdf:li[^>]*>([^<]*)<\/rdf:li>/g)].map((m) => decode(m[1])).filter(Boolean))];
+  if (!tags.some((t) => t.startsWith('places|'))) {
+    const field = (name) => decode((x.match(new RegExp(`photoshop:${name}="([^"]*)"|<photoshop:${name}>([^<]*)<`)) ?? []).slice(1).find(Boolean) ?? '');
+    const [country, city] = [field('Country'), field('City')];
+    if (city) tags.push(['places', country, city].filter(Boolean).join('|'));
+  }
+  return tags;
+}
+
+// Keep "places|…" tags, plus tags matching (or under) a tag some chapter selects by.
+const keepTag = (selectors) => (t) =>
+  t.startsWith('places|') || selectors.some((s) => t === s || t.startsWith(s + '|'));
+
+// Hash of the decoded pixels (+ orientation): unchanged when only metadata (tags, places) is edited,
+// so such edits don't re-encode or re-upload anything.
+async function pixelSha(file) {
+  const img = sharp(file);
+  const { orientation } = await img.metadata();
+  const raw = await img.raw().toBuffer();
+  return crypto.createHash('sha1').update(raw).update(String(orientation ?? 1)).digest('hex').slice(0, 10);
 }
 
 const offsetMinutes = (o) => {
@@ -84,20 +117,27 @@ const offsetMinutes = (o) => {
 };
 
 async function processPhoto(src, albumOut, prev) {
-  const hash = await sha(src.file);
   const id = src.id;
-  const cached = prev.get(hash);
-  const widthsFor = (w) => [...new Set([...WIDTHS.filter((x) => x < w), Math.min(w, WIDTHS.at(-1))])];
-  const fname = (w, ext) => `${id}-${hash}-${w}.${ext}`;
+  const fileHash = await sha(src.file);
+  const capture = await captureInfo(src.file); // always re-read so sorting and places stay right
 
-  const capture = await captureInfo(src.file); // cheap (header only); always re-read so sorting stays right
-
+  // Reuse existing web versions if the file is byte-identical, or if only its metadata changed.
+  let cached = prev.byFile.get(fileHash);
+  let pixelHash = cached?.pixelHash;
+  if (!pixelHash) {
+    pixelHash = await pixelSha(src.file);
+    cached = cached ?? prev.byPixel.get(pixelHash);
+  }
   if (cached && cached.id === id) {
-    const all = cached.sizes.flatMap((w) => [fname(w, 'avif'), fname(w, 'jpg')]);
+    const all = cached.sizes.flatMap((w) => [`${id}-${cached.hash}-${w}.avif`, `${id}-${cached.hash}-${w}.jpg`]);
     if ((await Promise.all(all.map((f) => exists(path.join(albumOut, f))))).every(Boolean)) {
-      return { entry: { ...cached, file: src.name, chapter: src.chapter }, capture, files: all, fresh: false };
+      return { entry: { ...cached, fileHash, pixelHash, file: src.name, chapter: src.chapter }, capture, files: all, fresh: false };
     }
   }
+
+  const hash = fileHash; // names the web versions; content-addressed, so they can be cached forever
+  const widthsFor = (w) => [...new Set([...WIDTHS.filter((x) => x < w), Math.min(w, WIDTHS.at(-1))])];
+  const fname = (w, ext) => `${id}-${hash}-${w}.${ext}`;
 
   const meta = await sharp(src.file).metadata();
   const rotated = (meta.orientation ?? 1) >= 5;
@@ -119,7 +159,7 @@ async function processPhoto(src, albumOut, prev) {
 
   return {
     entry: {
-      id, hash, file: src.name, chapter: src.chapter,
+      id, hash, fileHash, pixelHash, file: src.name, chapter: src.chapter,
       w, h, sizes,
       color,
       lqip: `data:image/webp;base64,${lqip.toString('base64')}`,
@@ -148,7 +188,10 @@ async function buildAlbum(slug, fm) {
 
   const dataFile = path.join(DATA, `${slug}.json`);
   const prevData = (await exists(dataFile)) ? JSON.parse(await fs.readFile(dataFile, 'utf8')) : { photos: [] };
-  const prev = new Map(prevData.photos.map((p) => [p.hash, p]));
+  const prev = {
+    byFile: new Map(prevData.photos.map((p) => [p.fileHash ?? p.hash, p])),
+    byPixel: new Map(prevData.photos.filter((p) => p.pixelHash).map((p) => [p.pixelHash, p])),
+  };
 
   const sources = await walkJpegs(webDir);
   const seen = new Map();
@@ -170,6 +213,7 @@ async function buildAlbum(slug, fm) {
 
   // `date` = true capture instant in UTC (used only for ordering; never displayed).
   // Photos missing an offset borrow the most common offset of the same camera in this album.
+  const keepTags = keepTag((fm.chapters ?? []).flatMap((c) => c.tags ?? []).map(String));
   const usual = new Map();
   for (const { capture: c } of results) {
     if (c.offset == null) continue;
@@ -181,6 +225,8 @@ async function buildAlbum(slug, fm) {
   const noDate = [], guessed = [];
   for (const r of results) {
     const c = r.capture;
+    delete r.entry.place; delete r.entry.places; // (older data formats)
+    r.entry.tags = c.tags.filter(keepTags);
     if (!c.clock) { r.entry.date = null; noDate.push(r.entry.file); continue; }
     let off = offsetMinutes(c.offset);
     if (off == null) { off = offsetMinutes(usualOffset(c.model)) ?? 0; guessed.push(r.entry.file); }
@@ -203,9 +249,27 @@ async function buildAlbum(slug, fm) {
   }
 
   await fs.writeFile(dataFile, JSON.stringify({ title: fm.title ?? slug, source: fm.source, photos }, null, 1) + '\n');
+  if (!fm.chapters) suggestChapters(slug, photos);
   const fresh = results.filter((r) => r.fresh).length;
   console.log(`  ${slug}: ${photos.length} photos (${fresh} processed, ${photos.length - fresh} unchanged, ${removed} stale files removed)`);
   return slug;
+}
+
+// Album has place tags but no `chapters:` yet: print a starting point (one chapter per place, in
+// trip order) to paste into its _index.md and then group/rename as wanted.
+function suggestChapters(slug, photos) {
+  const seen = [];
+  for (const p of photos) for (const t of p.tags ?? []) if (t.startsWith('places|') && !seen.includes(t)) seen.push(t);
+  if (seen.length < 2) return;
+  console.log(`\n  ${slug}: photos have place tags but _index.md has no chapters. Suggested starting point:\n`);
+  console.log('chapters:');
+  for (const t of seen) {
+    const parts = t.split('|').slice(1);
+    console.log(`  - title: ${parts.at(-1)}`);
+    if (parts.length > 1) console.log(`    label: ${parts[0]}`);
+    console.log(`    tags: [${t}]`);
+  }
+  console.log('');
 }
 
 async function main() {
