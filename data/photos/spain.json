@@ -2125,21 +2125,20 @@
   },
   {
    "id": "img-4438",
-   "hash": "5d2908b32d",
+   "hash": "8feacd2a03",
+   "fileHash": "8feacd2a03",
+   "pixelHash": "cb32fc370d",
    "file": "20250403-IMG_4438.jpg",
    "chapter": null,
-   "w": 5901,
-   "h": 3847,
+   "w": 2890,
+   "h": 2890,
    "sizes": [
     640,
     1280,
     2048
    ],
-   "date": "2025-04-03T11:27:21Z",
-   "color": "#e8e8e8",
-   "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUDX/wFMIVvgcjx61wAD+nrkAx8eq0ig/O98MfAI7ywcZ5vDX9mqoZfcQRwJnA4DtfgzaRcnlmPQsERqccyioBDbVQ8pfSIFZofQAAA==",
-   "fileHash": "6e7e3bbac7",
-   "pixelHash": "e06e3bc4e3",
+   "color": "#d8d8d8",
+   "lqip": "data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAADQBQCdASoYABgAPu1ur1IppiQiqAgBMB2JZjuCC5DAOwOm/jNbTotZZJoiyzculnliJ9DtBxIAAP7fSe4fG6BW3gHLE2JKwQr4q8XtYXMuf7wANVsVTHyxApUYRBwRAajuqEQAQa4CJ3RuVdPg3nKj10FR5fsGfBU5U/0kn2GZmO8yXsCSoD+rJ2RGbYPg0UIK94Jyqs43Ksz81vAKpCwScUZjQL14G2+/jLiBQYOi33xITuhHkliqI4NuvEkPjL4J0GYw7Akjd6Gnn23Sfh6HSLfG9zBakGzoNf+kEIpOTr6TUSYMtllcQiGJpnKhnJxgzdtBf6IWkfD6yAA=",
    "tags": [
     "places|Spain|Granada"
    ],
@@ -2147,8 +2146,9 @@
     "camera": "Canon EOS R50",
     "lens": "RF-S18-45mm F4.5-6.3 IS STM",
     "exposure": "26mm · f/5.6 · 1/60s · ISO 500",
-    "editor": "Lightroom"
-   }
+    "editor": "darktable"
+   },
+   "date": "2025-04-03T11:27:21Z"
   },
   {
    "id": "img-4440",
@@ -2314,21 +2314,20 @@
   },
   {
    "id": "img-4526",
-   "hash": "e6d3e4a765",
+   "hash": "a512c8e2b5",
+   "fileHash": "a512c8e2b5",
+   "pixelHash": "0e5cec0d28",
    "file": "20250403-IMG_4526.jpg",
    "chapter": null,
-   "w": 6000,
-   "h": 4000,
+   "w": 4727,
+   "h": 3929,
    "sizes": [
     640,
     1280,
     2048
    ],
-   "date": "2025-04-03T13:06:39Z",
-   "color": "#181818",
-   "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JaQAAYfFdCjrBvldoluPAAP7p94y40IqioH1DNkq7t+lvtMzeqdqp2+xpFaTvcv4HFn5DDlmBcSW1k4zAggk8Vm1/t3xO2JLfO78f6fto9DkRLy9m/qj403DaxT2Vlf01/14ncPSCAAAA",
-   "fileHash": "a0b6070515",
-   "pixelHash": "ebc0f219c3",
+   "color": "#080808",
+   "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoYABQAPu1wsFIppiSiqAgBMB2JaQAALo34X583ap8+vIAkFTdJNMZWgAD+8zMyTer9JRkJfHSS9nWGl3h7OJM7uVWa26WEqC4D+TpfrSzH+WadwtfxWuWHh996UYB4APwLTAyngLjDf060spIMqGpaFJO7A7BQCjCJjMdE2+YzTYLWx+G/4wJrCTQpXRvp4AA=",
    "tags": [
     "places|Spain|Granada"
    ],
@@ -2336,26 +2335,26 @@
     "camera": "Canon EOS R50",
     "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
     "exposure": "60mm · 1/200s · ISO 100",
-    "editor": "Lightroom"
-   }
+    "editor": "darktable"
+   },
+   "date": "2025-04-03T13:06:39Z"
   },
   {
    "id": "img-4527",
-   "hash": "9933540e17",
+   "hash": "990cc9b11f",
+   "fileHash": "990cc9b11f",
+   "pixelHash": "64f0e820eb",
    "file": "20250403-IMG_4527.jpg",
    "chapter": null,
-   "w": 6000,
-   "h": 4000,
+   "w": 4324,
+   "h": 3593,
    "sizes": [
     640,
     1280,
     2048
    ],
-   "date": "2025-04-03T13:07:43Z",
-   "color": "#e8e8e8",
-   "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoYABAAPu1kqU2ppaQiMAgBMB2JaQAAW33eGHCHzFGOPXjYAP7tQwaV/CYuI72Dqt7eVX22jodZZVNQIQ3Wg6FpWHcYv+hOKB9LX/cv9Y9sqdh/wnX2Kl4PN+l3QK5ZVrOdFauYBvO/DLj/juEYYTCWP1K4qRNGgjEFc/K1IECuu/0k32s4/IZRidAAAA==",
-   "fileHash": "d62b7fbd28",
-   "pixelHash": "615b7a45e0",
+   "color": "#080808",
+   "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwBACdASoYABQAPu1qrlCppaQiqAqpMB2JaQATwADgdhdf7kzJl6Joo7Oh2eDCWmgA/vNyNFHsplkamMyCm0cjaSHRQ4/699erE9kHDr9vQLgK7ghVBGeAnYxuJtlXT7osjGqcGqXxka80YOyaUdrkHYbV1n/cKflb5WkPDLIFMgs4vEIdRYPGp4PEn+8UAAAAAA==",
    "tags": [
     "places|Spain|Granada"
    ],
@@ -2363,8 +2362,9 @@
     "camera": "Canon EOS R50",
     "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
     "exposure": "60mm · 1/250s · ISO 100",
-    "editor": "Lightroom"
-   }
+    "editor": "darktable"
+   },
+   "date": "2025-04-03T13:07:43Z"
   },
   {
    "id": "img-4536",

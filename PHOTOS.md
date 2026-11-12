@@ -6,14 +6,20 @@ How photos get from the camera to the `/photography/` gallery on this site.
 
 ```
 ~/Pictures/
-  Library/YYYY-MM-name/      RAWs + darktable .xmp sidecars, phone/camera originals, videos.
-                             The irreplaceable originals. One darktable film roll per trip
-                             (China is split into numbered sub-folders).
+  Library/YYYY-MM-name/      RAWs + darktable .xmp sidecars, phone/camera originals.
+                             The irreplaceable originals. FLAT: one folder = one darktable
+                             film roll per trip. Locations, subjects etc. are darktable tags,
+                             not sub-folders. Only exception: videos/ (darktable can't tag
+                             videos, so their place goes in the file name: "洱海 - MVI_7511.MP4").
   Exports/YYYY-MM-name/      Rendered JPEGs, organized by purpose:
     web/                     ← THE SITE PUBLISHES EXACTLY THIS FOLDER
     print/                   print crops / sizes
     personal/, …             anything else
 ```
+
+Two kinds of sidecar sit next to the RAWs, and both are kept:
+- `IMG_1234.CR3.xmp`: darktable's (edit history, tags, rating). darktable writes these "on import" and keeps them updated, so tags survive even without darktable's database.
+- `IMG_1234.xmp` (no `.CR3`): **Lightroom's develop settings** (Spain, Canada, Southwest Jan '25), from before the switch to darktable. darktable ignores them. They're the only record of those edits; darktable's Lightroom import (partial: crop, exposure, white balance, …) can read them if a photo is ever re-edited.
 
 - **Publish a photo:** put its JPEG in `Exports/<trip>/web/`.
 - **Unpublish a photo:** delete it from `web/`.
@@ -22,17 +28,18 @@ How photos get from the camera to the `/photography/` gallery on this site.
 
 ## What goes on the site
 
-**Rule: darktable tag `app|art` minus `pii|yes`.**
+**Rule: darktable tag `app|art` minus `pii|yes`, never rejected.** Rejection beats tags: a rejected photo is out, whatever it's tagged.
 
 | Tag | Meaning |
 |---|---|
 | `app|art` | Worth showing. Candidate for the site. |
-| `app|print` (+ `10:8`, `1:1`, `8:10`) | Intended for printing. Every print photo is also `app|art`. |
+| `app|print` (+ `10:8`, `1:1`, `8:10`) | Intended for printing. **Every print photo in `Library/` is also `app|art`** (print ⊆ art). The RuneScape posters (`app|fun`) are the exception. |
 | `app|memory` | Keepsake, not portfolio (China). |
 | `pii|yes` | Contains people / personal info. **Never publish.** |
 | `places|<Country>|<Place>` | Where the photo was taken, e.g. `places|Spain|Seville`. Exported into the JPEG; **the site builds album chapters from it.** |
-| `stage|final-lightroom` | Final edit was made in Lightroom; darktable's edit is NOT the real one. **Never re-export these from darktable.** (Spain) |
-| `stage|edited` | Rarely used; not a reliable "finished" marker. |
+| `stage|final|darktable` | The darktable edit is finished. Add it when you're done editing a photo; remove it if you start re-editing. |
+| `stage|final|lightroom` | Final edit was made in Lightroom; darktable's edit is NOT the real one. **Never re-export these from darktable.** (Spain; was `stage|final-lightroom` until 2026-11-12) |
+| *rejected* (darktable's reject, not a tag) | **Delete eventually.** A photo can be both rejected and tagged (e.g. `app|art`); the rejection wins, so it's never published. Clean up now and then: lighttable, rating filter *rejected only*, check, then delete (to trash). |
 
 Color labels aren't used. If photos mysteriously go missing in lighttable, check the quick-filter bar for a color-label or rating filter.
 
@@ -44,7 +51,9 @@ Exporting is always manual. Steps:
    - folder = `Library/<trip>`
    - add rule *narrow down search* → tag → `app|art`
    - add rule *exclude images* → tag → `pii|yes`
-   - Check the count. Make sure the top-bar rating/color filters aren't hiding anything.
+   - add rule *narrow down search* → tag → `stage|final|darktable` (only finished edits; Lightroom finals are exported from Lightroom, never darktable)
+   - Top-bar rating filter: **all except rejected**. No color-label filter.
+   - Check the count.
 2. **Select all** (⌘A).
 3. **Export module:**
    - storage: file on disk
@@ -115,39 +124,126 @@ npm run photos:upload   # rclone sync .photos-out/ → r2:photos (bucket served 
 ### R2 setup (one time)
 
 - [x] Bucket `photos` created. DNS for donaldpinckney.com is on Cloudflare.
-- [ ] Bucket → Settings → Custom Domains → connect `photos.donaldpinckney.com` (wait for **Active**).
-- [ ] R2 API token: Object Read & Write, scoped to bucket `photos`.
-- [ ] rclone remote named `r2` (run in your own terminal so the secret stays local):
+- [x] Bucket → Settings → Custom Domains → connect `photos.donaldpinckney.com` (wait for **Active**).
+- [x] R2 API token: Object Read & Write, scoped to bucket `photos`.
+- [x] rclone remote named `r2` (run in your own terminal so the secret stays local):
       `rclone config create r2 s3 provider=Cloudflare access_key_id=… secret_access_key=… endpoint=https://<account-id>.r2.cloudflarestorage.com acl=private no_check_bucket=true`
-
-Until R2 is live, **don't push** the gallery commits: the production site would link to images that don't exist yet.
-
-### TODO: save this as darktable presets (not done yet)
-
-- [ ] Collections preset **"Website picks"** with the three rules from step 1 (the folder rule is changed per trip).
-- [ ] Export preset **"Website"** with the settings from step 3. A path that works out the trip folder automatically would be `$(FILE_FOLDER/Library/Exports)/web/…`, but that syntax is **untested**, and it breaks for trips split into sub-folders (China): each sub-folder would get its own `web/`. Typing the trip path per export is fine.
-- [ ] Change darktable's default export path. It is still `$(FILE_FOLDER)/darktable_exported/$(FILE_NAME)`, which writes exports into `Library/`.
 
 ## Before you edit: avoid bulk auto-styles
 
 The `AUTO SIMPLE` style sets the exposure module to **automatic** (deflicker mode, target −2.5 EV). That's meant for time-lapses and makes dark, moody scenes look washed out. Spain's darktable history is mostly this style and was never hand-edited. Keep styles for things that are the same on every photo (lens correction, denoise, sharpening, a deliberate color grade), never for exposure or white balance. Prefer auto-apply module presets over styles for lens correction.
 
-## Trips with sub-locations (China)
+## Locations within a trip (China)
 
-`Library/2026-07-china/` is one trip split into numbered sub-folders, one per location (`NN - province - city - place`). This is intentional and works well:
-- The darktable folder rule `Library/2026-07-china*` (with the `*`) collects the whole trip.
-- File names are unique across all sub-folders, so exporting everything into one `web/` folder is safe.
-- No GPS data, so darktable's map view isn't useful here unless geotagged from a track later.
+Places are tags, never folders: `places|China|<province>|<place>`, in Chinese, at most two levels below the country, and geographically correct (e.g. 织金 is `贵州|织金`, not under 贵阳 even though it was a day trip from there). Display names (e.g. English) belong in the album's YAML, not in the tags. Album chapters select and group these tags (e.g. a 大理 chapter listing `云南|大理`, `云南|洱海`, `云南|喜洲镇`, …).
 
-**Idea for when China is edited:** keep the location in the export path, e.g. `Exports/2026-07-china/web/09 - 云南 - 大理 - 洱海/…`, and have the site show the China album as **chapters by location** (北京 → 贵州 → 云南 · 大理 → 四川) instead of one long grid.
+`2026-07-china` was flattened from 25 numbered sub-folders on 2026-11-08; the folder → tag mapping used, in trip order:
+
+| Tag (`places\|China\|…`) | Old folder |
+|---|---|
+| 天津 · 北京 · 北京\|颐和园 · 上海 | 00–04 (04 "上海 - anyi" → 上海; anyi is a person: `subjects\|people\|anyi`, `pii\|yes`) |
+| 贵州\|高荡村 · 贵州\|织金 · 贵州\|云峰屯堡 | 05–07 (were under 贵阳) |
+| 云南\|大理 · 洱海 · 喜洲镇 · 崇圣寺三塔 · 巍山古城 · 巍宝山 · 凤羽镇 · 沙溪古镇 · 石宝山 | 08–16 |
+| 四川\|丹巴 · 四姑娘山 · 茂县 · 上白腊海 · 黄龙 · 雪宝顶 · 九寨沟 · 平武 | 17–24 (19 was misnamed "冒险", 20 "上百拉海") |
+
+No GPS data, so darktable's map view isn't useful here unless geotagged from a track later.
+
+## Album status
+
+Where each trip is on the way to the site. Update this table by hand as stages finish. `python3 scripts/album-status.py` prints the underlying numbers from darktable and `Exports/`. As of 2026-11-11, counts exclude rejected photos.
+
+Stages: **Cull** (rejects/ratings done) → **Places** (`places|` tags in darktable) → **Picks** (`app|art` chosen, `pii|yes` checked) → **Edit** (final edit exists) → **Render** (final JPEGs in `Exports/<trip>/web/`) → **Site** (album published).
+✅ done · ◐ partly · — not started.
+
+| Album | Photos | Cull | Places | Picks | Edit | Render | Site |
+|---|---|---|---|---|---|---|---|
+| `2024-09-canada` | 168 (47 CR3, 120 iPhone) | ✅ | — | ✅ 20 art | ◐ Lightroom settings only | — none anywhere | — |
+| `2024-boston-new-england` | 263 | — clean slate | ✅ | — | — Lightroom edits lost | — | — |
+| `2025-01-southwest` | 13 (+73 rejected) | ✅ | — | ✅ 10 art (+3 kept, not art) | ◐ Lightroom; darktable re-edits on some, maybe more editing | ◐ 10 in `unsorted/` | — |
+| `2025-03-spain` | 861 (+8 rejected) | ✅ | ✅ | ✅ 110 art (106 on site) | ◐ 3 picks to edit | ✅ 106 `web/` (103 Lightroom, 3 darktable) | ✅ live |
+| `2025-09-southwest` | 692 (+6 videos) | ✅ | — | ✅ 67 art | ◐ 61 edited in darktable | — (1 in `unsorted/`) | — |
+| `2026-03-peru` | 307 (+4 videos) | — | — | — | — | — | — |
+| `2026-04-savannah` | 34 (+41 rejected) | ✅ | — | — | ✅ darktable | ◐ 34 in `unsorted/` | — |
+| `2026-05-hua-hua-kittens` | 16 | ✅ | n/a | ✅ all `app\|memory` | ✅ darktable | ✅ 16 | n/a: memory, not for the site |
+| `2026-07-china` | 466 (+756 rejected) | ✅ | ✅ | ✅ 109 art, 466 memory | — barely started | — | — |
+| `georgia` | 25 (Dahlonega 7, Buford 18) | — clean slate | ✅ | — | ◐ 4 old darktable edits kept | — | — |
+| `placeless` | 26 | — | n/a | — | — | — | n/a |
+
+Next step per album:
+- **Canada:** the `app|art` picks are trusted. The finished edits exist only as Lightroom settings (`IMG_xxxx.xmp`); no rendered JPEGs exist anywhere (not on disk, not on Flickr). Re-edit the 20 picks in darktable (its Lightroom import can bring over crop/exposure/white balance as a starting point), add places, export.
+- **Boston:** cull, pick, then edit from scratch in darktable.
+- **Southwest Jan '25:** unclear which photos are the real picks. What's known: the 10 JPEGs in `unsorted/` are Lightroom exports from 2025-01-19, the same day the Lightroom ratings were set. They are Lightroom's ten 5-stars minus IMG_3758/3775, plus two 4-stars (IMG_3699/3702). IMG_3815's is a 2048 px version; the other nine are full size with metadata stripped. darktable re-edits were started on 2025-12-27 / 2026-01-02 (7 of the 10, plus IMG_3786/3823/3827) and never exported. `app|art` currently mirrors `unsorted/`. Culled 2026-11-11: kept the 10 picks plus IMG_3786/3823/3827, rejected the other 73. Next: add places, maybe more editing (decide Lightroom or darktable finals), then `web/`.
+- **Spain:** on the site. darktable tags match it (2026-11-12). Remaining: edit IMG_4390 (5★), IMG_4634 and IMG_7087 (3★) in darktable, export to `web/`.
+- **Southwest Sep '25:** culling is trusted. Add places, finish edits (67 picks vs 61 edited), export to `web/`.
+- **Peru:** cull.
+- **Savannah:** culling is trusted. Tag picks (`app|art`) and places, move the renders from `unsorted/` to `web/`, delete the 41 rejects.
+- **Georgia:** merged from `2025-06-dahlonega`, `2025-09-buford`, `2026-04-buford` (2026-11-11). Ratings, rejects and `app|`/`stage|` tags cleared; subject tags and darktable edits kept. Re-cull. Will collect future local shoots too.
+- **Kittens:** done; kept for memory only.
+- **China:** edit the 109 `app|art` picks in darktable. Delete the 756 rejects eventually.
+
+Not albums: `placeless` (one-off shots, no trip) and `~/Pictures/RuneScape Posters` (digital art).
+
+Picks tagged `subjects|people` but not `pii|yes` (strangers in the scene, presumably fine): Spain 4, Southwest Sep '25 10, Southwest Jan '25 2, China 7, Canada 1. Check them when publishing.
+
+## darktable to-do
+
+Things to do next time darktable is open. Tick them off here.
+
+**Sync (done 2026-11-11):**
+- [x] **Write sidecar files** in darktable for these folders (tags were changed in darktable's database directly, so their .xmp files are out of date). In lighttable, select all photos of each folder → history stack → **write sidecar files**. Then tick it off here.
+  - [x] `2026-07-china`: `places|` tags added (2026-11-08); `app|art`/`app|memory` removed from 16 rejected photos (2026-11-09)
+  - [x] `2025-03-spain`: `app|art` + `app|print|10:8` removed from rejected IMG_3935 (2026-11-09)
+  - [x] `2024-boston-new-england`: ratings and tags cleared, rejects kept (2026-11-09); `places|USA|Massachusetts|…` + `subjects|transit` added (2026-11-11). Do this **before** the Boston re-import below.
+  - [x] `placeless`: IMG_2401/2402 (cat macro) moved here from Boston, ratings/tags cleared with Boston's (2026-11-09)
+  - [x] `2025-01-southwest`: `app|art` added to IMG_3699/3702/3812; `app|art` + `app|print…` removed from IMG_3786/3823/3827 (2026-11-08)
+- [x] **Canada: re-import** `Library/2024-09-canada` in darktable (import → add to library; only adds files it doesn't have). Brought back 10 photos that were once removed from darktable; their tags are already written in their .xmp: IMG_5998/6005/6011/6012/6014/6016/6110/6024 `app|memory`, IMG_6018 `app|art`, IMG_2893 `app|memory` + `pii|yes`. (2026-11-09)
+- [x] **Boston: re-import** `Library/2024-boston-new-england` in darktable (import → add to library). Brought back 85 CR3s that were once removed from darktable. Their sidecars were cleared (no stars, no old tags) and already carry their `places|` tags, so they arrive ready for a fresh cull.
+- [x] `Buford 2026` (`Library/2026-04-buford`) imported (13 photos).
+
+**Cleanup (done 2026-11-11):**
+- [x] Remove the 7 leftover green color labels (Canada ×1, Southwest Sep '25 ×6), probably accidental F3 presses. Consider unbinding F1–F5.
+
+**Sync (from 2026-11-11, second round):**
+- [x] **Write sidecar files** (lighttable, select all → history stack → write sidecar files) for: (done 2026-11-11)
+  - [x] `2025-03-spain`: `places|Spain|…` / `places|Portugal|…` added to 866 photos
+  - [x] `georgia`: folders merged; ratings and `app|`/`stage|` tags cleared; `places|USA|Georgia|Dahlonega` / `Buford` added
+  - [x] `2026-05-hua-hua-kittens`: `app|memory` added
+
+**Sync (2026-11-12):**
+- [ ] **Write sidecar files** (lighttable, select all → history stack → write sidecar files) for these folders. Their stage tags changed: `stage|final-lightroom` became `stage|final|lightroom`, `stage|final|darktable` was added, and `stage|edited` was removed. Spain also got `app|art` on its 54 untagged `web/` photos, `app|memory` on the 7 in `memories/`, and the review of its 21 print picks (2026-11-12).
+  - [ ] `2025-03-spain`
+  - [ ] `2026-05-hua-hua-kittens`
+  - [ ] `2026-04-savannah`
+  - [ ] `2025-09-southwest`
+  - [ ] `2024-09-canada`
+  - [ ] `~/Pictures/RuneScape Posters`
+
+- [ ] **Spain: discard darktable history** of IMG_0552, IMG_3966, IMG_4441, IMG_4618 (lighttable → select → history stack → **discard history**). Their Lightroom edit is the final (`stage|final|lightroom`); the darktable re-edits were compared and rejected 2026-11-12. Do this after writing Spain's sidecars.
+
+**Setup (saves typing on future exports):**
+- [ ] Collections preset **"Website picks"** with the three rules from step 1 (the folder rule is changed per trip).
+- [ ] Export preset **"Website"** with the settings from step 3. A path that works out the trip folder automatically would be `$(FILE_FOLDER/Library/Exports)/web/…`, but that syntax is **untested**. Typing the trip path per export is fine.
+- [ ] Change darktable's default export path. It is still `$(FILE_FOLDER)/darktable_exported/$(FILE_NAME)`, which writes exports into `Library/`.
 
 ## Other TODOs
 
-- [ ] Off-site backup of `~/Pictures/Library` (RAW + .xmp). Disk is ~96% full and this is currently the only copy. Options: Backblaze Personal, or B2. Do not use the R2 free tier for RAWs.
-- [ ] Remove the 7 leftover green color labels (Canada ×1, Southwest Sep '25 ×6), probably accidental F3 presses. Consider unbinding F1–F5.
-- [ ] `Buford 2026` (`Library/2026-04-buford`) was never imported into darktable.
+- [ ] Off-site backup of `~/Pictures/Library` (RAW + .xmp). Disk is ~99% full (17 GB free on 2026-11-08) and this is currently the only copy. Options: Backblaze Personal, or B2. Do not use the R2 free tier for RAWs.
 
 ## History / recovery
 
 - 2026-11-06: `~/Pictures` reorganized into `Library/` + `Exports/`. Move log: `~/Pictures/.reorganize-2026-11-06.log`. darktable film-roll paths were updated by SQL. DB backups: `~/.config/darktable/library.db-pre-reorg-20261106`, `*-pre-tag-20261106`.
 - Spain (`2025-03-spain`): places were added to the 106 final JPEGs with exiftool on 2026-11-07 (metadata only; pixels verified identical), inferred from the iPhone GPS track. All edits were done in Lightroom (and published to Flickr, ~111 photos). darktable never got those edits. `Exports/2025-03-spain/web/` holds the 113 finals: 112 Lightroom renders plus IMG_4264, re-edited in darktable in January 2026.
+- 2026-11-08: Spain's 49 manual-lens shots got `LensModel` = Laowa 60mm f/2.8 2X Ultra-Macro and `FocalLength` = 60 with exiftool (metadata only). `2026-05-hua-hua-kittens` flattened (Library and Exports). `non-photography/rs` moved to `~/Pictures/RuneScape Posters` (film roll repointed). China tagged with `places|` (SQL) and flattened; DB backups: `~/.config/darktable/{library,data}.db.bak-20261108-*`.
+- 2026-11-09: Canada: 6 never-imported photos trashed, 9 others tagged in their sidecars for re-import. Boston: renamed `2024-04-boston-new-england` → `2024-boston-new-england` (spans Mar–Oct 2024), its 16 out-of-camera JPEGs trashed (9 removed from darktable), the 88 CR3s missing from darktable had their old ratings and `app:gallery` tags cleared, and the 188 in darktable had theirs cleared too (IMG_2328/2329 stay rejected). Whole folder is a clean slate for re-culling. Sidecar backups in that session's scratchpad (temporary).
+- 2026-11-09: Rejections reviewed. China's are intentional (756); rejected photos lost their `app|` tags (16 in China, IMG_3935 in Spain). Savannah IMG_6792/6793 converted from the old reject format (rating 6) to the current one. Stray `2025-03-spain/IMG_7021.JPG` (a screenshot) trashed. Boston IMG_2328/2329 stay rejected.
+- 2026-11-11: Boston grouped into outing sub-folders, named and culled by hand (11 photos deleted, cat macro IMG_2401/2402 moved to `placeless`), then tagged `places|USA|Massachusetts|<place>` from the folder names and flattened again. Places: Boston (incl. Harbor Point, Newbury St, the T), Arnold Arboretum, Castle Island, Chinatown, ICA Watershed, JFK Library, Quincy, Cider Hill Farm (Amesbury), Great Meadows NWR (Concord), Gibbet Hill. The T photos also get `subjects|transit`. 265 photos.
+- 2026-11-11: darktable to-do list done (sidecars written; Canada, Boston, Buford, `placeless` imported). Leftover `app:gallery` tags gone: IMG_5782 (Southwest Sep '25) → `app|art`; `placeless` IMG_2400/2547 cleared. Spain's and Peru's videos moved into `videos/`. Every Library folder now has exactly its photos in darktable (videos excepted).
+- 2026-11-11: Spain's places written into darktable (`places|Spain|…`, `places|Portugal|…`) for all photos, not just the 106 web JPEGs. Method: camera times converted to UTC (the Canon's clock was on New York time, UTC−5), each photo given the place of the nearest iPhone GPS fix or tagged export in time. Checked against the 106 hand-checked web tags: 0 mismatches. Adds Sintra (17) and Málaga (1) not in the web set. IMG_7118/7119 (Granada cathedral) and IMG_7141 (Bar Santos) were placed by eye; IMG_7120/7121 (pastry case, undated) left untagged. `2025-06-dahlonega`, `2025-09-buford`, `2026-04-buford` merged into `georgia` and its culling cleared. Kittens tagged `app|memory`. DB backups `~/.config/darktable/{library,data}.db.bak-20261111-201410`.
+- 2026-11-11: Southwest Jan '25 culled: kept the 10 `app|art` picks plus IMG_3786/3823/3827; the other 73 rejected (DB + sidecars, so no sidecar write needed). DB backup `~/.config/darktable/library.db.bak-20261111-213722`.
+- 2026-11-12: Southwest Jan '25: IMG_3786/3823/3827 rejected too (DB + sidecars), leaving the 10 picks. Finished-edit tags introduced: `stage|final-lightroom` renamed `stage|final|lightroom` (Spain, 112); `stage|final|darktable` added to Spain IMG_4264, Kittens (16) and Savannah's 34 kept. DB backups `~/.config/darktable/{library,data}.db.bak-20261112-081647`.
+- 2026-11-12: `stage|edited` retired (checked by hand: all were finished edits). Southwest Sep '25 (8) and Canada IMG_2785 → `stage|final|darktable`. Spain's 7 already had `stage|final|lightroom`. RuneScape posters get no stage tag (not edited). DB backups `*.bak-20261112-*`.
+- 2026-11-12: Spain's darktable tags aligned with the site: `app|art` added to the 54 `web/` photos that lacked it (all 106 now tagged), `app|memory` added to the 7 in `memories/`. The 21 `app|art` print picks not on the site, reviewed by hand: IMG_4390/4634/7087 stay `app|art` for the site (4390 5★, the others re-rated 3★); IMG_0526/4093/4145/4271/4392/4592/7088 rejected (`app|` tags removed); IMG_0527/0537/0539/3984/4234/4396/4423/4457 `app|art` → `app|memory` (print tags kept); IMG_4134/4264 (memories) lost `app|art`; IMG_4118 (pii, personal) unchanged. DB backup `*.bak-20261112-084602`.
+- 2026-11-12: The 8 Spain photos moved to `app|memory` lost `app|print` too (not good enough to print). IMG_4396 → 1★, IMG_3984 → 3★. Rule restored: every `app|print` photo is also `app|art`. DB backup `*.bak-20261112-085124`.
+- 2026-11-12: IMG_4134 (Spain, `memories/`) got `app|art`; IMG_4264 lost `app|print`. No `Library/` photo now has `app|print` without `app|art`. DB backup `*.bak-20261112-*`.
+- 2026-11-12: Spain's 7 photos with both a Lightroom and a darktable edit compared side by side. darktable chosen for IMG_4438, 4526, 4527: re-exported with darktable-cli (full size, q95, EXIF; places and Laowa lens copied from the old JPEGs) into `web/`, retagged `stage|final|darktable`; the replaced Lightroom JPEGs and their `IMG_xxxx.xmp` Lightroom sidecars went to the macOS Trash. Lightroom kept for IMG_0552, 3966, 4441, 4618 (darktable history to be discarded, see to-do). DB backup `*.bak-20261112-091339`.
+- 2026-11-12: IMG_4526/4527 rotated upright in darktable and re-exported to `web/` (same method). The Laowa shots carry a bogus f/0.022 in Canon's maker notes; the site doesn't read it.
