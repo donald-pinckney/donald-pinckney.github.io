@@ -1080,6 +1080,33 @@
    }
   },
   {
+   "id": "img-4134",
+   "hash": "ef34fa0df6",
+   "fileHash": "ef34fa0df6",
+   "pixelHash": "9c266d3d0e",
+   "file": "20250329-IMG_4134.jpg",
+   "chapter": null,
+   "w": 4000,
+   "h": 6000,
+   "sizes": [
+    640,
+    1280,
+    2048
+   ],
+   "color": "#f8f8f8",
+   "lqip": "data:image/webp;base64,UklGRkIBAABXRUJQVlA4IDYBAAAQCACdASoYACQAPu1kqlCppSOiqrgMATAdiWQAtvu/7/54Ay2QbVoQYx/j8VviOWWm9iQHQlzuTJZfa0juhdLsKLZ5U6JeJINAAP7isHgnxhhTKK/DHsUY9rrGX4ZL80tAVXe8gYPPY5YQX7gzWFGEf+1ZAmKzNIAmEUhxPzkNEkaXfqgjCJz8isFQ9BeeTWPLzShZze/92WH+y8zIeVb03vsMxPME7wCgwQJ1A26pOvl7/xmr59RRcjaL5xfDxNx3vqEqarzyxezliqLMl4Romn9gFjFXx1tD8geqmkx0yGfapYvE2WolLDgen+G174mD+Jod5L29YYs/R/GozEQtcJfNs4SQPeCFz4DFNN0iFZstmSkt6NIVrkGNdnw9SFItZhQVQNJ+LcRv1/Lw9pLmOYDkTXAA",
+   "tags": [
+    "places|Portugal|Óbidos"
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "RF-S18-45mm F4.5-6.3 IS STM",
+    "exposure": "37mm · f/11 · 1/200s · ISO 100",
+    "editor": "Lightroom"
+   },
+   "date": "2025-03-29T11:06:26Z"
+  },
+  {
    "id": "img-4136",
    "hash": "1f13f477bd",
    "file": "20250329-IMG_4136.jpg",
@@ -1237,6 +1264,30 @@
    "gear": {
     "camera": "iPhone 8 Plus"
    }
+  },
+  {
+   "id": "img-7087",
+   "hash": "ea1d43de73",
+   "fileHash": "ea1d43de73",
+   "pixelHash": "972ebad663",
+   "file": "20250331-IMG_7087.jpg",
+   "chapter": null,
+   "w": 3016,
+   "h": 3629,
+   "sizes": [
+    640,
+    1280,
+    2048
+   ],
+   "color": "#7898d8",
+   "lqip": "data:image/webp;base64,UklGRh4BAABXRUJQVlA4IBIBAABQBgCdASoYAB0APu1wsFKppiSiqAgBMB2JbACdMuuw6cAdwFox9wVboPQWDGAFuWulDg3JHJimxTsAAAD+v7QL044hG+wo6HaI3GcrKpYcwqgrzI1gOUJjQru3WRrKc+7DXzjhDsOHbtc2ldw3c3Jh50LHoAuGuLkYg9bA2Q750060NMSXLFeW0HMqscd7PU/H2wcmPYuDaHazZAqbfdgYCufF5NWu/quNyncooey826Whpgr9HNibCvh8xJCzeN5v0xnSlxDCvdFSVCRGY3Sy7CrKkISf7SeN1AdzGBdw1lvwCkki6JqKsJEuIHlxVq8200gFHrYff2/oIJSQJ/2ViVKZkmuXU1sPorFfX2ZBfgAA",
+   "tags": [
+    "places|Portugal|Lisbon"
+   ],
+   "gear": {
+    "camera": "iPhone 13 mini"
+   },
+   "date": "2025-03-31T10:55:16Z"
   },
   {
    "id": "img-4243",
@@ -2016,6 +2067,33 @@
    }
   },
   {
+   "id": "img-4390",
+   "hash": "e1ecacdfd9",
+   "fileHash": "e1ecacdfd9",
+   "pixelHash": "6de8c4ee13",
+   "file": "20250402-IMG_4390.jpg",
+   "chapter": null,
+   "w": 4000,
+   "h": 4812,
+   "sizes": [
+    640,
+    1280,
+    2048
+   ],
+   "color": "#f8f8f8",
+   "lqip": "data:image/webp;base64,UklGRg4BAABXRUJQVlA4IAIBAACwBQCdASoYAB0APu1qrVEppaQiqAqpMB2JaAC7AgFsv8k/Z2/gjUx9UHmlwzPmcodc+fX/cFwA/vIhHGQpC8N2IWASavZ4H2kzGnE7XsbofBwu7yagVE+INFOviMbfo7FGZpAbaHgj0XaZ2AUnEDmneckIhmXCHFjSvDx++6TR5lfo+HOJXCvY4m8bShfrn5z+ApMnccOycv4GPVw9XqEu79avG1XWhUH1dMGl2I/vefJFbhVajP9tz1C20ixC4kv5kIjghP4QnVsH6TDLo0/XumdzLv1D0CGv5MdlVw1YCzcwilYGCzs9xbWPgQJCaS4n3C0Hw/jm0Az++BYqZ8miAAA=",
+   "tags": [
+    "places|Spain|Ronda"
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/320s · ISO 100",
+    "editor": "darktable"
+   },
+   "date": "2025-04-02T12:47:01Z"
+  },
+  {
    "id": "img-4393",
    "hash": "d0839c1a21",
    "file": "20250402-IMG_4393.jpg",
@@ -2743,6 +2821,33 @@
     "exposure": "60mm · 1/125s · ISO 100",
     "editor": "Lightroom"
    }
+  },
+  {
+   "id": "img-4634",
+   "hash": "e4a25fbc78",
+   "fileHash": "e4a25fbc78",
+   "pixelHash": "58d6276ca7",
+   "file": "20250404-IMG_4634.jpg",
+   "chapter": null,
+   "w": 3022,
+   "h": 3636,
+   "sizes": [
+    640,
+    1280,
+    2048
+   ],
+   "color": "#281808",
+   "lqip": "data:image/webp;base64,UklGRjQBAABXRUJQVlA4ICgBAABQBgCdASoYAB0APu1qq1EppaOiqAqpMB2JYgCdMsfpAVt8dJqkQh9rJ5ntjUfdsyy/0z9bVgc3Fv3AAAD+2VeupaqnBPY0u6uFiHfunkrbV1IP9RJJZg4B0cWJbPUiOX+YhjdWe4YBqjjNObBrsCPEv9xvDX8RoTQN63WIHtopuon0sKza0m/+821CEJZABl/ySD/obACa2IH7t/OGOzo95lCkds4pq+jnMVv0nqkMNRlsh4eHbbdM3rj3FkyRDpFnKUIhFI0kB1G5dV1ExtTk8lhoFkxteiK4K5m5L4ofQlmTrFrZt6kRjBhA3lkWcMmaRAtg20wxxwdYn0y5Ea5jzDxdFmMsVmFRCtGnTBDL82j8VJIl57HWXJss/NcF1UOldZCkmwAAAA==",
+   "tags": [
+    "places|Spain|Córdoba"
+   ],
+   "gear": {
+    "camera": "Canon EOS R50",
+    "lens": "Laowa 60mm f/2.8 2X Ultra-Macro",
+    "exposure": "60mm · 1/80s · ISO 2000",
+    "editor": "darktable"
+   },
+   "date": "2025-04-04T15:36:31Z"
   },
   {
    "id": "img-4635",
